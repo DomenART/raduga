@@ -1,0 +1,312 @@
+// @import "uikit.less";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&subset=cyrillic');
+@import "fonts";
+@import (less) "../../node_modules/normalize.css/normalize.css";
+
+@font-alt:  "Stark", sans-serif;
+
+html {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.intro {
+    background: url('../img/intro.jpg') no-repeat 50% 50%;
+    background-size: cover;
+    position: relative;
+}
+
+.header {
+    position: absolute;
+    top: 24px;
+    right: 132px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-social {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    li {
+        list-style: none;
+        margin: 0 2px;
+    }
+    a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        svg {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            fill: #ccc;
+        }
+        &:focus {
+            outline: none;
+            background: #00ffff;
+            svg {
+                fill: #000;
+            }
+        }
+        &:active,
+        &:hover {
+            background: transparent;
+            svg {
+                fill: #ffffff;
+                &.svg-vkontakte {
+                    fill: #4e759f;
+                }
+                &.svg-instagram {
+                    fill: #6a473f;
+                }
+                &.svg-youtube {
+                    fill: #e42a27;
+                }
+            }
+        }
+    }
+}
+
+.header__email {
+    color: #fffefe;
+    font-size: 16px;
+    letter-spacing: 3.2px;
+    text-decoration: none;
+    border-bottom: 1px dashed #ccc;
+    margin-left: 46px;
+    padding: 3px 0;
+    line-height: 1;
+    &:focus {
+        outline: none;
+        background: #00ffff;
+        color: #000;
+        border-bottom-color: #000000;
+    }
+    &:hover,
+    &:active {
+        background: transparent;
+        border-bottom-color: #ccc;
+        color: #fffefe;
+    }
+}
+
+.header__phone {
+    color: #ffffff;
+    font-family: @font-alt;
+    font-size: 24px;
+    text-decoration: none;
+    margin-left: 87px;
+    span {
+        font-size: 14px;
+    }
+    &:focus {
+        outline: none;
+        background: #00ffff;
+        color: #000;
+    }
+    &:hover,
+    &:active {
+        background: transparent;
+        color: #ffffff;
+    }
+}
+
+.intro__logo {
+    position: relative;
+    display: block;
+    margin-bottom: 9.1%;
+    span {
+        position: absolute;
+        top: 20px;
+        right: -3px;
+        color: #ffffff;
+        font-size: 15px;
+        letter-spacing: 0.05px;
+        transform: rotate(8.4deg);
+        transform-origin: 50% 50%;
+    }
+    svg {
+        fill: #fff;
+    }
+    &:focus {
+        outline: none;
+        background: #00ffff;
+        span {
+            color: #000;
+        }
+        svg {
+            fill: #000;
+        }
+    }
+    &:hover,
+    &:active {
+        background: transparent;
+        span {
+            color: #fff;
+        }
+        svg {
+            fill: #fff;
+        }
+    }
+}
+
+.intro__container {
+    // min-height: 100vh;
+    height: 950px;
+    box-sizing: border-box;
+    padding-bottom: 4.7%;
+
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-nav {
+
+}
+
+@keyframes navdotvertical1 { 
+    0% { 
+        transform: translateY(20px);
+    } 
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes navdotvertical2 { 
+    0% { 
+        transform: translateY(20px);
+    } 
+    100% {
+        transform: translateY(8px);
+    }
+}
+
+@keyframes navdotvertical3 { 
+    0% { 
+        transform: translateY(20px);
+    } 
+    100% {
+        transform: translateY(16px);
+    }
+}
+
+.intro-nav__dot-vertical {
+    margin-left: -3.6px; // letter-spacing of .intro-nav__first a
+    fill: #299798;
+    circle {
+        transform: translateY(20px);
+        &:nth-child(1) {
+            animation: navdotvertical1 .8s ease;
+            transform: translateY(0);
+        }
+        &:nth-child(2) {
+            animation: navdotvertical2 .5s ease;
+            transform: translateY(8px);
+        }
+        &:nth-child(3) {
+            animation: navdotvertical3 .3s ease;
+            transform: translateY(16px);
+        }
+    }
+}
+
+.intro-nav__first {
+    display: flex;
+    padding: 0;
+    margin: 0 0 25px;
+    justify-content: center;
+    align-items: center;
+    li {
+        list-style: none;
+        margin: 0 15px;
+        a {
+            color: #ffffff;
+            font-family: @font-alt;
+            font-size: 36px;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: 3.6px;
+            text-decoration: none;
+            &:focus {
+                outline: none;
+                color: #000000;
+                background-color: #00ffff;
+            }
+        }
+    }
+}
+
+.intro-nav__second {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    li {
+        list-style: none;
+        margin: 0 20px;
+        a {
+            color: #ffffff;
+            font-size: 26px;
+            line-height: 1;
+            letter-spacing: 1.3px;
+            text-decoration: none;
+            position: relative;
+            display: inline-block;
+            padding: 16px;
+            &::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                width: 124px;
+                margin-left: -62px;
+                bottom: 0;
+                border-bottom: 4px dotted transparent;
+            }
+            &:focus {
+                outline: none;
+                color: #000000;
+                background-color: #00ffff;
+            }
+        }
+        &:nth-child(1) {
+            a {
+                &::after {
+                    border-bottom-color: #00ffff;
+                }
+                &:focus {
+                    color: #000000;
+                    background-color: #00ffff;
+                }
+            }
+        }
+        &:nth-child(2) {
+            a {
+                &::after {
+                    border-bottom-color: #8bdf3b;
+                }
+                &:focus {
+                    color: #000000;
+                    background-color: #8bdf3b;
+                }
+            }
+        }
+        &:nth-child(3) {
+            a {
+                &::after {
+                    border-bottom-color: #f258ae;
+                }
+                &:focus {
+                    color: #000000;
+                    background-color: #f258ae;
+                }
+            }
+        }
+    }
+}
