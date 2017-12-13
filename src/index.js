@@ -7,7 +7,7 @@ import './html/index.html'
 import './html/second.html'
 
 /* import styles */
-import './less/main.less'
+import './less/home.less'
 
 /* import scripts */
 import './js/main.js'
