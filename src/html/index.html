@@ -10,7 +10,7 @@
     </head>
     <body>
         <main>
-            <button class="header-menu">
+            <button type="button" class="header-menu">
                 <div class="header-menu__decor"></div>
                 меню
             </button>
@@ -19,11 +19,11 @@
                     от 4 лет
                 </div>
                 <div class="menu-bar__title">
-                    <span>Детский<br>хореографический ансамбль</span>
+                    <div>Детский хореографический ансамбль</div>    
                 </div>
                 <div class="menu-bar__logo"></div>
                 <button class="menu-bar-button">
-                    <div class="menu-bar-button__decor"></div>
+                    <div type="button" class="menu-bar-button__decor"></div>
                     меню
                 </button>
             </div>
@@ -89,6 +89,35 @@
                         </ul>
                     </nav>
                 </div>
+                <div class="enroll">
+                    <div class="enroll__title">
+                        Записаться<br>
+                        на урок
+                    </div>
+                    <form id="enroll" action="" method="post">
+                        <div>
+                            <input type="text" class="enroll__input" name="name" placeholder="Имя:">
+                        </div>
+                        <div>
+                            <input type="tel" class="enroll__input" name="tel" pattern="^[ 0-9]+$" placeholder="Телефон*:" required>
+                        </div>
+                        <div>
+                            <textarea class="enroll__textarea" placeholder="Сообщение*:" required></textarea>
+                        </div>
+                        <div class="enroll__agreement">
+                            <input type="checkbox" class="enroll__check" name="agreement" id="agreement" hidden>
+                            <span class="enroll__check-lovely"></span>
+                            <label for="agreement" class="enroll__agreement-text">
+                                Прочитал(-а) пользовательское соглашение 
+                                и соглашаюсь на <a href="#">обработку своих <br>персональных данных</a>
+                            </label>
+                        </div>
+                        <button type="submt" class="button-more enroll__submit">Записаться</button>
+                        <div class="agreement__tip">
+                            Поля, отмеченные *, обязательны для заполнения
+                        </div>
+                    </form>
+                </div>
             </section>
             <section class="ensemble">
                 <h2 class="ensemble__background-title background-title">Об ансамбле</h2>
@@ -108,7 +137,7 @@
                                     г. Москва;</li>
                                 <li>Чемпионат и Первенство ЦФО по современным танцевальным направлениям, г. Орел.</li> 
                             </ul> 
-                            <a href="#" class="link-more">
+                            <a href="#" class="button-more">
                                 Подробнее 
 
                             </a>
@@ -309,7 +338,7 @@
                         <div class="parents__more">
                             + индивидуальные тренировки по всем направлениям
                         </div>
-                        <a href="#" class="link-more">Записаться</a>
+                        <a href="#" class="button-more">Записаться</a>
                     </div>
                 </section>
                 <section class="map">

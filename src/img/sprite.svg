@@ -34,5 +34,7 @@
         <circle cx="4" cy="4" r="4" />
         <circle cx="4" cy="4" r="4" />
     </symbol>
-    
+    <symbol id="check">
+		<defs><path id="wk14a" d="M1452 409.33l1.02-1.35 3.56 3.51 8.15-13.49 1.27 1.35-9.16 15.65z"/></defs><g><g transform="translate(-1450 -396)"><use fill="#5e5e5e" xlink:href="#wk14a"/></g></g>
+	</symbol>
 </svg>
