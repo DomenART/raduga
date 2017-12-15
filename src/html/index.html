@@ -10,21 +10,36 @@
     </head>
     <body>
         <main>
-            <button type="button" class="header-menu">
-                <div class="header-menu__decor"></div>
-                меню
+            <nav class="menu" hidden>
+                <ul class="menu__list">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Об ансамбле</a></li>
+                    <li><a href="#">Расписание</a></li>
+                    <li><a href="#">Преподаватели</a></li>
+                    <li><a href="#">Новости</a></li>
+                    <li><a href="#">Цены и акции</a></li>
+                    <li><a href="#">Фотоальбом</a></li>
+                    <li><a href="#">Видео</a></li>
+                    <li><a href="#">Отзывы</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+                <div class="menu__substrate"></div>
+            </nav>
+            <button type="button" class="button-menu header-menu">
+                <span class="button-menu__show">меню</span>
+                <span class="button-menu__hide" hidden>закрыть</span>
             </button>
             <div class="menu-bar">
                 <div class="menu-bar__threshold">
                     от 4 лет
                 </div>
                 <div class="menu-bar__title">
-                    <div>Детский хореографический ансамбль</div>    
+                    <div class="menu-bar__title-text">Детский <br>хореографический ансамбль</div>    
                 </div>
                 <div class="menu-bar__logo"></div>
-                <button class="menu-bar-button">
-                    <div type="button" class="menu-bar-button__decor"></div>
-                    меню
+                <button class="button-menu menu-bar-button">
+                    <span class="button-menu__show">меню</span>
+                    <span class="button-menu__hide" hidden>закрыть</span>
                 </button>
             </div>
             <section class="intro">
@@ -90,29 +105,30 @@
                     </nav>
                 </div>
                 <div class="enroll">
+                    <button type="button" class="form-close js-close"></button>
                     <div class="enroll__title">
                         Записаться<br>
                         на урок
                     </div>
-                    <form id="enroll" action="" method="post">
+                    <form id="enroll" action="" method="post" class="js-form">
                         <div>
                             <input type="text" class="enroll__input" name="name" placeholder="Имя:">
                         </div>
                         <div>
-                            <input type="tel" class="enroll__input" name="tel" pattern="^[ 0-9]+$" placeholder="Телефон*:" required>
+                            <input type="tel" class="enroll__input" name="tel" pattern="^[ 0-9]+$" minlength="8" placeholder="Телефон*:" required>
                         </div>
                         <div>
                             <textarea class="enroll__textarea" placeholder="Сообщение*:" required></textarea>
                         </div>
                         <div class="enroll__agreement">
                             <input type="checkbox" class="enroll__check" name="agreement" id="agreement" hidden>
-                            <span class="enroll__check-lovely"></span>
+                            <label for="agreement" class="enroll__check-lovely"></label>
                             <label for="agreement" class="enroll__agreement-text">
                                 Прочитал(-а) пользовательское соглашение 
                                 и соглашаюсь на <a href="#">обработку своих <br>персональных данных</a>
                             </label>
                         </div>
-                        <button type="submt" class="button-more enroll__submit">Записаться</button>
+                        <button type="submt" id="#submit" class="button-more enroll__submit js-submit">Записаться</button>
                         <div class="agreement__tip">
                             Поля, отмеченные *, обязательны для заполнения
                         </div>
