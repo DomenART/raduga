@@ -1316,6 +1316,7 @@ a.footer__tel {
     position: absolute;
     top: 5px;
     right: 5px;
+    z-index: 15;
     border: 2px solid #cccccc;
     background: #e6e6e6 url('../img/close.svg') 50% 50% no-repeat;
     cursor: pointer;
@@ -1330,15 +1331,9 @@ a.footer__tel {
     top: 79px;
     right: 101px;
     input, textarea {
+        box-shadow: none;
         &:focus {
             outline: 1px solid #0066cc;
-        }
-        &:invalid {
-            outline-color: #0066cc;
-            box-shadow: none;
-            &:focus {
-                outline-color: transparent;
-            }
         }
         &::-moz-placeholder {
             color: #666666;
@@ -1457,3 +1452,42 @@ a.footer__tel {
     letter-spacing: -0.05px;
 }
 
+.enroll-success {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 127px 70px 54px; 
+    background: #ffffff url('../img/bg-enroll-success.png') 50% 50% no-repeat;
+    background-size: cover;
+    text-align: center;
+    transition: 1s;
+}
+
+.enroll-success__major-text {
+    margin-bottom: 50px;
+    color: #333333;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.enroll-success__minor-text {
+    margin-bottom: 69px;
+    color: #333333;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.enroll-success__logo {
+    width: 214px;
+    height: 100px;
+    margin: 0 auto;
+    background: url('../img/success-logo.svg') 50% 50% no-repeat;
+    background-size: cover;
+}

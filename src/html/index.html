@@ -121,18 +121,27 @@
                             <textarea class="enroll__textarea" placeholder="Сообщение*:" required></textarea>
                         </div>
                         <div class="enroll__agreement">
-                            <input type="checkbox" class="enroll__check" name="agreement" id="agreement" hidden>
+                            <input type="checkbox" class="enroll__check" name="agreement" id="agreement" hidden required checked>
                             <label for="agreement" class="enroll__check-lovely"></label>
                             <label for="agreement" class="enroll__agreement-text">
                                 Прочитал(-а) пользовательское соглашение 
                                 и соглашаюсь на <a href="#">обработку своих <br>персональных данных</a>
                             </label>
                         </div>
-                        <button type="submt" id="#submit" class="button-more enroll__submit js-submit">Записаться</button>
+                        <button type="submit" class="button-more enroll__submit">Записаться</button>
                         <div class="agreement__tip">
                             Поля, отмеченные *, обязательны для заполнения
                         </div>
                     </form>
+                    <div class="enroll-success" hidden>
+                        <div class="enroll-success__major-text">
+                            Ваше сообщение успешно отправлено,
+                        </div>
+                        <div class="enroll-success__minor-text">
+                            в ближайшее время мы свяжемся с вами.
+                        </div>
+                        <div class="enroll-success__logo"></div>
+                    </div>
                 </div>
             </section>
             <section class="ensemble">

@@ -37,13 +37,10 @@ let forms = document.querySelectorAll('form');
 
 if (forms) {
     forms.forEach(element => {  
-
         //Валидация форм
         let fields = element.querySelectorAll('input, textarea');
-        let submit =element.querySelector('.js-submit');
-
+        let submit = element.querySelector('button[type="submit"]');
         submit.addEventListener('click',function(event) {
-            console.log(fields);
             fields.forEach(element => {
                 element.classList.add('validity');
             }); 
@@ -57,11 +54,6 @@ if (forms) {
                 }
             });
         });
-
-        //Отчёт об отправке
-        element.addEventListener('submit',function() {
-            console.log('send'); /* Доработать!  */
-        });
     });
 
     //Кнопка закрытия блока формы
@@ -72,8 +64,17 @@ if (forms) {
     });
 }
 
-//Фиксация и стилизация синего блока меню
+//Отображение блока успешной отправки сообщения формы "Записаться на урок"
+let enrollForm = document.querySelector('#enroll');
 
+if (enrollForm) {
+    let  enrollMessage = document.querySelector('.enroll-success');
+    enrollForm.addEventListener('submit', function() {
+        enrollMessage.hidden = false;
+    });
+}
+
+//Фиксация и стилизация синего блока меню
 let menuBar = document.querySelector('.menu-bar');
 let homepageHeader = document.querySelector('.intro__container');
 
@@ -121,8 +122,7 @@ menuButtons.forEach(element => {
             menuHide.forEach(element => {
                 element.hidden = true;
             });
-            menuHeaderButton.hidden = false;
-           
+            menuHeaderButton.hidden = false;          
             if (window.pageYOffset < homepageHeader.offsetHeight) {
                 menuBar.classList.remove('menu-bar-fixed');
             }
@@ -130,7 +130,3 @@ menuButtons.forEach(element => {
     });
 });
 
-//Открыть меню
-
-
-//menuHeaderButton.classList.add('button-menu-fixed');
