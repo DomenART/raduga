@@ -130,3 +130,15 @@ menuButtons.forEach(element => {
     });
 });
 
+//Включить анимации  
+let menuBarText = document.querySelector('.menu-bar__title-text');
+
+window.addEventListener('load', function() {
+    document.body.classList.add('animations');
+    if (!menuBar.classList.contains('menu-bar-fixed')) {
+        menuBar.style.animation = '2s ease-in-out 0s menu-bar-appereance';
+    };
+    menuBar.addEventListener('animationend', function() {
+        menuBarText.style.opacity = '1';
+    });
+});
