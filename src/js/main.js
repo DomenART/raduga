@@ -80,7 +80,7 @@ let homepageHeader = document.querySelector('.intro__container');
 
 if (homepageHeader) {
     window.addEventListener('scroll', function() {
-        if ((window.pageYOffset >= homepageHeader.offsetHeight) && (!window.matchMedia('(max-width: 767px)'))) {
+        if ((window.pageYOffset >= homepageHeader.offsetHeight) && (!window.matchMedia('(max-width: 639px)'))) {
             menuBar.classList.add('menu-bar-fixed');  
         } else {
             if (!menu.classList.contains('menu-opened')) {
@@ -112,7 +112,7 @@ menuButtons.forEach(element => {
             menuHide.forEach(element => {
                 element.hidden = false;
             });
-            if (!window.matchMedia('(max-width: 767px)').matches) {
+            if (!window.matchMedia('(max-width: 639px)').matches) {
                 menuHeaderButton.hidden = true;
             }
             menuBar.classList.add('menu-bar-fixed');
@@ -136,7 +136,7 @@ let menuBarText = document.querySelector('.menu-bar__title-text');
 
 window.addEventListener('load', function() {
     document.body.classList.add('animations');
-    if ((!menuBar.classList.contains('menu-bar-fixed')) && (!window.matchMedia('(max-width: 767px)').matches)) {
+    if ((!menuBar.classList.contains('menu-bar-fixed')) && (!window.matchMedia('(max-width: 639px)').matches)) {
         menuBar.style.animation = '2s ease-in-out 0s menu-bar-appereance';
     } else {
         menuBarText.style.opacity = '1';
@@ -147,14 +147,31 @@ window.addEventListener('load', function() {
 });
 
 
-//адаптация под телефоны
-if (window.matchMedia('(max-width: 767px)').matches) {
+//адаптация под экраны меньше 767px
+if (window.matchMedia('(max-width: 639px)').matches) {
     let menuBarThreshold = document.querySelector('.menu-bar__threshold');
     let menuBarDivider = document.querySelector('.menu-bar__divider');
     let menuBarLogo = document.querySelector('.menu-bar__logo');
     let introContainer = document.querySelector('.intro__container');
+    
+    let programIntro = document.querySelector('.programm__intro');
+    let programContainer = document.querySelector('.js-program-container');
+    let programList = document.querySelector('.program__list');
+
+    let reviewsViewAll = document.querySelector('.reviews__all');
+    let reviewsSection = document.querySelector('.reviews');
+
+    let counterSite = document.querySelector('.footer__counter');
+    let footerBottom = document.querySelector('.footer__bottom');
 
     introContainer.appendChild(menuBarThreshold);
     menuBarThreshold.appendChild(menuBarDivider);
     introContainer.appendChild(menuBarLogo);
+    
+    programList.parentNode.insertBefore(programList, programIntro);
+
+    reviewsSection.appendChild(reviewsViewAll);
+
+    footerBottom.appendChild(counterSite);
 }
+

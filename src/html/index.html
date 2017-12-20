@@ -172,7 +172,7 @@
                                     г. Москва;</li>
                                 <li>Чемпионат и Первенство ЦФО по современным танцевальным направлениям, г. Орел.</li> 
                             </ul> 
-                            <a href="#" class="button-more">
+                            <a href="#" class="button-more button-more--ensemble">
                                <span>Подробнее</span> 
                                 <svg class="button-more__arrow" width="25" height="19">
                                     <use href="#button-more-arrow"/>
@@ -180,7 +180,7 @@
                             </a>
                         </div>
                         <div>
-                        <video class="ensemble__video" poster="../img/home-videoposter.jpg" controls>
+                        <video class="ensemble__video" poster="img/home-videoposter.jpg" controls>
                             <source src="img/homepage-video.mp4" type="video/mp4">
                         </video>
                         <!--<img src="../img/home-videoposter.jpg" class="ensemble__video" alt=""> -->
@@ -221,36 +221,21 @@
                 <img src="../img/dancegirl.png" class="program__dancegirl" alt="">
                 <div class="container">
                     <h2 class="program__title">В нашей программе обучения</h2>
-                    <div class="clearfix">
-                        <div class="programm__intro">
-                            <svg width="8" height="59" class="program-text-decor">
-                                <use href="#large-circles"/>
-                            </svg>
-                            Занятия способствуют развитию фантазии, воображения и творческого подхода, веру в собственные силы, приобщают ребенка к танцевальному искусству, раскрывая перед ним его многообразие и красоту.
-                        </div>
+                    <div class="programm__intro clearfix">
+                        Занятия способствуют развитию фантазии, воображения и творческого подхода, веру в собственные силы, приобщают ребенка к танцевальному искусству, раскрывая перед ним его многообразие и красоту.
                     </div>
                     <ul class="program__list">
-                        <li>
-                            <span>Гимнастика</span>
-                        </li>
-                        <li>
-                            <span>Классическая хореография</span>
-                        </li>
-                        <li>
-                            <span>Народный танец</span>
-                        </li>
-                        <li>
-                            <span>Эстрадный танец</span>
-                        </li>
-                        <li>
-                            <span>Детский танец</span>
-                        </li>
-                        <li>
-                            <span>Современная хореография</span>
-                        </li>
+                        <li>Гимнастика</li>
+                        <li>Классическая хореография</li>
+                        <li>Народный танец</li>
+                        <li>Эстрадный танец</li>
+                        <li>Детский танец</li>
+                        <li>Современная хореография</li>
                     </ul>
                 </div>
-                <div class="program__costumedgirl"></div>
+                <div class="clearfix">
+                    <img src="../img/costumedgirl.jpg" class="program__costumedgirl">
+                </div>
                 <div class="container">
                     <div class="program-features">
                         <div class="program-features__years">
@@ -260,8 +245,8 @@
                             Участие в международных конкурсах
                         </div>
                         <div class="program-features__reports">
-                            <span>Отчетные концерты</span>
-                            <span>Открытые уроки</span>
+                            <a href="#" class="program-features__concerts">Отчетные концерты</a>
+                            <a href="#" class="program-features__lessons">Открытые уроки</a>
                         </div>
                     </div>
                     <div class="program__collective">
@@ -276,14 +261,16 @@
                 </div>
             </section>
             <div class="container">
-                <div class="social-flex">
+                <div class="social-grid">
                     <section class="reviews">
                         <header class="reviews__heading"> 
                             <h3 class="reviews__title">О нас говорят:</h3>
                             <a href="#" class="reviews__all">Все отзывы</a>
                         </header>
                         <div class="reviews-item">
-                            <div class="reviews-item__photo" style="background: url('img/review-photo.jpg') 50% 50% no-repeat; background-size: cover"></div>
+                            <div class="reviews-item__photo">
+                                <img src="../img/review-photo.jpg" alt="">
+                            </div>
                             <div class="reviews-item__caption">
                                 <div class="reviews-item__name">
                                     от кого отзыв
@@ -300,7 +287,9 @@
                             </div>
                         </div>
                         <div class="reviews-item">
-                            <div class="reviews-item__photo" style="background: url('img/review-photo-1.jpg') 50% 50% no-repeat; background-size: cover"></div>
+                            <div class="reviews-item__photo">
+                                <img src="../img/review-photo-1.jpg" alt="">
+                            </div>
                             <div class="reviews-item__caption">
                                 <div class="reviews-item__name">
                                     от кого отзыв
@@ -317,7 +306,9 @@
                             </div>
                         </div>
                         <div class="reviews-item">
-                            <div class="reviews-item__photo" style="background: url('img/review-photo-2.jpg') 50% 50% no-repeat; background-size: cover "></div>
+                            <div class="reviews-item__photo">
+                                <img src="../img/review-photo-2.jpg" alt="">
+                            </div>
                             <div class="reviews-item__caption">
                                 <div class="reviews-item__name">
                                     от кого отзыв
@@ -336,6 +327,7 @@
                     </section>
                     <section class="vk-group">
                         <h3 class="vk-group__title">МЫ ВКонтакте</h3>
+                        <img src="../img/psevdo-vk.jpg" alt="" style="max-width: 100%;">                
                     </section>
                 </div>
                 <section class="parents clearfix">
@@ -388,6 +380,8 @@
                         </a>
                     </div>
                 </section>
+            </div>
+            <div class="container container--map">
                 <section class="map">
                     <div class="js-toggler-usman toggler-usman-unactive">
                         <span class="map__toggler-content">Мы на карте в <span class="map__toggler-larger">Новой Усмани</span></span>
@@ -420,9 +414,9 @@
                     </div>
                     <div>
                         <a href="#" class="footer__agreement">Пользовательское соглашение</a>
-                        <a href="#">Политика конфиденциальности</a>
+                        <a href="#" class="footer__confidence">Политика конфиденциальности</a>
                     </div>
-                    <div>
+                    <div class="footer__links-flex">
                         <a href="#" class="footer__contacts">Контакты</a>
                         <a href="#">Карта сайта</a>
                     </div>
