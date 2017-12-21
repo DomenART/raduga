@@ -80,7 +80,7 @@ let homepageHeader = document.querySelector('.intro__container');
 
 if (homepageHeader) {
     window.addEventListener('scroll', function() {
-        if ((window.pageYOffset >= homepageHeader.offsetHeight) && (!window.matchMedia('(max-width: 639px)'))) {
+        if ((window.pageYOffset >= homepageHeader.offsetHeight) && (!window.matchMedia('(max-width: 639px)').matches)) {
             menuBar.classList.add('menu-bar-fixed');  
         } else {
             if (!menu.classList.contains('menu-opened')) {
@@ -98,8 +98,9 @@ let menuButtons = document.querySelectorAll('.button-menu');
 let menuShow = document.querySelectorAll('.button-menu__show');
 let menuHide = document.querySelectorAll('.button-menu__hide');
 let menuHeaderButton = document.querySelector('.header-menu');
+let menuHeaderDecor = document.querySelector('.header-menu__decor');
 
-menuButtons.forEach(element => {
+menuButtons.forEach(element => {    
     element.addEventListener('click', function() {
         menu.classList.toggle('menu-opened');
         menuButtons.forEach(element => {
@@ -112,10 +113,13 @@ menuButtons.forEach(element => {
             menuHide.forEach(element => {
                 element.hidden = false;
             });
-            if (!window.matchMedia('(max-width: 639px)').matches) {
-                menuHeaderButton.hidden = true;
+            if (window.matchMedia('(max-width: 639px)').matches) {
+                menuHeaderButton.hidden = false;
+                menuBarLogo.style.position = 'fixed';
+                menuBarThreshold.style.position = 'fixed';
             }
             menuBar.classList.add('menu-bar-fixed');
+            menuHeaderDecor.hidden = true;
         } else {
             menuShow.forEach(element => {
                 element.hidden = false;
@@ -124,9 +128,14 @@ menuButtons.forEach(element => {
                 element.hidden = true;
             });
             menuHeaderButton.hidden = false;          
-            if (window.pageYOffset < homepageHeader.offsetHeight) {
+            if ((window.pageYOffset < homepageHeader.offsetHeight) || (window.matchMedia('(max-width: 639px)').matches)) {
                 menuBar.classList.remove('menu-bar-fixed');
             }
+            if (window.matchMedia('(max-width: 639px)').matches) {
+                menuBarLogo.style.position = 'absolute';
+                menuBarThreshold.style.position = 'absolute';
+            }
+            menuHeaderDecor.hidden = false;
         }
     });
 });
@@ -146,8 +155,11 @@ window.addEventListener('load', function() {
     });
 });
 
-
 //адаптация под экраны меньше 767px
+let menuBarThreshold = document.querySelector('.menu-bar__threshold');
+let menuBarDivider = document.querySelector('.menu-bar__divider');
+let menuBarLogo = document.querySelector('.menu-bar__logo');
+
 if (window.matchMedia('(max-width: 639px)').matches) {
     let menuBarThreshold = document.querySelector('.menu-bar__threshold');
     let menuBarDivider = document.querySelector('.menu-bar__divider');
@@ -173,5 +185,38 @@ if (window.matchMedia('(max-width: 639px)').matches) {
     reviewsSection.appendChild(reviewsViewAll);
 
     footerBottom.appendChild(counterSite);
+    
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset >= homepageHeader.offsetHeight) {
+            menuHeaderButton.classList.add('header-menu-fixed');
+        } else {
+            menuHeaderButton.classList.remove('header-menu-fixed');
+        }
+    });
 }
 
+//Кнопка наверх
+
+let toTop = document.querySelector('.to-top');
+
+window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 20) {
+        toTop.hidden = false;
+    } else {
+        toTop.hidden = true;
+    }
+});
+
+toTop.addEventListener('click', function() {
+    if (window.scrollY != 0) {
+        
+        setInterval(toTopFunction(), 100) 
+
+        function toTopFunction() {
+            window.scrollBy(0, -200)
+        };
+
+    } else {
+        clearInterval(toTopFunction)
+    }
+});
