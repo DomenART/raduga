@@ -141,25 +141,56 @@ menuButtons.forEach(element => {
 });
 
 //Включить анимации  
+let introLogo = document.querySelector('.intro__logo');
 let menuBarText = document.querySelector('.menu-bar__title-text');
-
-window.addEventListener('load', function() {
-    document.body.classList.add('animations');
-    if ((!menuBar.classList.contains('menu-bar-fixed')) && (!window.matchMedia('(max-width: 639px)').matches)) {
-        menuBar.style.animation = '2s ease-in-out 0s menu-bar-appereance';
-    } else {
-        menuBarText.style.opacity = '1';
-    }
-    menuBar.addEventListener('animationend', function() {
-        menuBarText.style.opacity = '1';
-    });
-});
-
-//адаптация под экраны меньше 767px
+let introMajorFirst = document.querySelector('.intro-nav__major li:first-child');
+let introMajorLast = document.querySelector('.intro-nav__major li:last-child');
+let introMenuItems = document.querySelectorAll('.intro-nav__minor li');
 let menuBarThreshold = document.querySelector('.menu-bar__threshold');
 let menuBarDivider = document.querySelector('.menu-bar__divider');
 let menuBarLogo = document.querySelector('.menu-bar__logo');
 
+window.addEventListener('load', function() {
+    document.body.classList.add('js-animations');
+    setTimeout(function() {
+        introLogo.style.opacity = '1';
+    }, 1000);
+    introLogo.addEventListener('transitionend', function() {
+        if ((!menuBar.classList.contains('menu-bar-fixed')) && (!window.matchMedia('(max-width: 639px)').matches)) {
+            menuBar.style.height = '695px';
+        } else {
+            menuBarText.style.opacity = '1';
+        }
+        setTimeout(function() {
+            menuBar.style.height = 'auto';
+            menuBarText.style.opacity = '1';
+        }, 500);
+       setTimeout(function() {
+            menuBarThreshold.style.animation = '1s font-scale';
+       }, 1500);
+       setTimeout(function() {
+            introMajorFirst.style.opacity = '1';
+            introMajorFirst.style.animation = '1s slide-ltr';
+       }, 3000);
+       setTimeout(function() {
+            introMajorLast.style.opacity = '1';
+            introMajorLast.style.animation = '1s slide-ltr';
+        }, 3500);
+        setTimeout(function() {
+            introMenuItems.forEach(function(item, i, introMenuItems) {
+                setTimeout(function() {
+                    item.style.animation = '0.5s slide-ltr';
+                    item.style.opacity = '1';
+                }, i*500);
+            });
+        }, 4500);
+        introMenuItems[introMenuItems.length-1].addEventListener('animationend', function() {
+            menuHeaderButton.style.transform = 'scale(1)';
+        });
+    });
+});
+
+//адаптация под экраны меньше 639px
 if (window.matchMedia('(max-width: 639px)').matches) {
     let menuBarThreshold = document.querySelector('.menu-bar__threshold');
     let menuBarDivider = document.querySelector('.menu-bar__divider');
@@ -208,15 +239,5 @@ window.addEventListener('scroll', function() {
 });
 
 toTop.addEventListener('click', function() {
-    if (window.scrollY != 0) {
-        
-        setInterval(toTopFunction(), 100) 
-
-        function toTopFunction() {
-            window.scrollBy(0, -200)
-        };
-
-    } else {
-        clearInterval(toTopFunction)
-    }
+    window.scrollTo(0, 0)
 });

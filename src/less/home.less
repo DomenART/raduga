@@ -12,14 +12,6 @@
 @breakpoint-large: 1599px;
 @breakpoint-large: 1899px;
 
-@keyframes appereance {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
 
 @keyframes navdotvertical1 { 
     0% { 
@@ -61,7 +53,6 @@
     }
 }
 
-
 @keyframes menu-bar-appereance {
     0% {
         height: 0;
@@ -71,8 +62,50 @@
     }
 }
 
+@keyframes slide-ltr {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px)
+    }
+}
+
+@keyframes slide-rtl {
+    0% {
+        opacity: 0;
+        transform: translateX(100px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px)
+    }
+}
+
+.js-animations {
+    @media (min-width: @breakpoint-xsmall) {
+        .menu-bar__threshold {
+            animation: 0.5s linear 2s font-scale;
+        }
+    }
+    .ensemble__tutors-image {
+        img {
+            animation: 0.5s slide-ltr;
+        }
+    }
+    .ensemble__tutors-title {
+        animation: 0.5s slide-ltr 0.5s;
+    }
+}
+
 html {
     font-family: 'Noto Sans', sans-serif;
+}
+
+img {
+    max-width: 100%;
 }
 
 .button-menu {
@@ -175,10 +208,12 @@ html {
     position: absolute;
     top: 25%;
     left: 9.5%;
-    z-index: 100;
+    z-index: 10;
     box-shadow: 0 0 0 8px #009696;
     border: 2px solid rgba(51, 170, 171, 0.5);
     background-color: #299798;   
+    transform: scale(0);
+    transition: 0.5s transform;
     @media (max-width: @breakpoint-large) {
         left: 3.8%;
     }
@@ -186,12 +221,15 @@ html {
         position: fixed;
         top: 26px;
         left: 18px;
+        z-index: 800;
         padding: 0;
+        transform: none;
         box-shadow: 0 0 0 4px #009696;
     }
 }
 
 .header-menu-fixed {
+    z-index: 1000;
     background-color: #243c73;
     box-shadow: 0 0 0 8px #243c73;
     .header-menu__decor {
@@ -216,13 +254,14 @@ html {
     flex-direction: column;
     align-items: center;
     width: 110px;
+    height: 0;
     position: absolute;
     top: 45%;
     left: 9%;
     z-index: 10;
     overflow: hidden;
     background-color: #243c73;
-    transition: 0s;
+    transition: height 1s;
     @media (max-width: @breakpoint-large) {
         left: 3%;
     }
@@ -235,9 +274,10 @@ html {
 }
 
 .menu-bar-fixed {
+  //  height: auto !important;
     position: fixed;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     .menu-bar__threshold,
     .menu-bar__title,
     .menu-bar__divider {
@@ -247,7 +287,7 @@ html {
         }
     }
     @media (max-width: @breakpoint-xsmall) {
-        top: 30%;
+        top: ~"calc(100% - 346px)";
         .menu-bar__title {
             background-image: none;
         }
@@ -273,7 +313,7 @@ html {
         position: absolute;
         top: 31px;
         right: 10px;
-        z-index: 100;
+        z-index: 900;
         padding: 0 2px;
         background-color: #243c73;
         font-size: 11px;
@@ -288,6 +328,7 @@ html {
     border-bottom: 4px dotted #98cc07;
     @media (max-width: @breakpoint-xsmall) {
         margin-top: 5px;
+        top: 0;
     }
 }
 
@@ -321,6 +362,7 @@ html {
         position: absolute;
         top: 135px;
         left: -120px;
+        opacity: 1;
         font-size: 16px;
         letter-spacing: 2.4px;
     }
@@ -340,7 +382,7 @@ html {
         top: 23px;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 100;
+        z-index: 900;
         svg {
             width: 112px;
             height: 53px;
@@ -377,7 +419,7 @@ html {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 50;
+    z-index: 800;
     padding: 71px 0;
     background: #1e2433 url('../img/bg-menu.png') 50% 50% no-repeat;
     background-size: cover;
@@ -421,12 +463,15 @@ html {
     margin: 0;
     padding: 0;
     list-style-type: none;
+    li {
+        margin-bottom: 30px;
+    }
     a {
         position: relative;
         color: #cccccc;
         font-size: 18px;
         font-weight: 400;
-        line-height: 48px;
+        line-height: 1;
         text-transform: uppercase;
         text-decoration: none;
         letter-spacing: 1.35px;
@@ -456,6 +501,9 @@ html {
     @media (max-width: @breakpoint-xsmall) {
         margin-left: 106px;
         padding-top: 45px;
+        li {
+            margin-bottom: 24px;
+        }
         a {
             &::before {
                 width: 32px;
@@ -471,6 +519,7 @@ html {
     margin-bottom: 87px;
     background: url('../img/intro.jpg') no-repeat 50% 50%;
     background-size: cover;
+    background-attachment: fixed;
     position: relative;
     @media (max-width: @breakpoint-xsmall) {
         margin-bottom: 20px;
@@ -596,6 +645,8 @@ html {
     position: relative;
     display: block;
     margin-bottom: 170px;
+    opacity: 0;
+    transition: opacity 1s;
     span {
         position: absolute;
         top: 20px;
@@ -684,6 +735,7 @@ html {
     li {
         list-style: none;
         margin: 0 15px;
+        transition: opacity translate 0.5s;
         a {
             color: #ffffff;
             font-family: @font-alt;
@@ -697,6 +749,10 @@ html {
                 color: #000000;
                 background-color: #00ffff;
             }
+        }
+        &:first-child,
+        &:last-child {
+            opacity: 0;
         }
     }
     @media (max-width: @breakpoint-medium) {
@@ -712,6 +768,8 @@ html {
     li {
         list-style: none;
         margin: 0 20px;
+        opacity: 0;
+        transition: opacity translate 0.5s;
         a {
             color: #ffffff;
             font-size: 26px;
@@ -780,6 +838,7 @@ html {
     max-width: 1120px;
     margin: 0 auto;
     padding: 0 50px;
+    position: relative;
     @media (max-width: @breakpoint-xsmall) {
         padding: 0 10px;
     }
@@ -1012,7 +1071,7 @@ html {
 }
 
 .ensemble__tutors-image {
-    position: relative;
+    position: relative;  
 }
 
 .ensemble__photoalbum {
@@ -1121,11 +1180,8 @@ html {
     }
 }
 
-.program__dancegirl-container {
-    position: relative;
-}
-
 .program__dancegirl {
+    position: relative;
     width: 239px;
     height: 263px;
     position: absolute;
@@ -1163,7 +1219,7 @@ html {
     max-width: 507px;
     position: relative;
     float: right;
-    margin: 10px 25px 92px 0;
+    margin: 10px 25px 80px 0;
     padding-left: 14px;
     color: #666666;
     font-size: 14px;
@@ -1190,7 +1246,7 @@ html {
     }
     @media (max-width: @breakpoint-xsmall) {
         float: none;
-        margin: 0 0 42px 0;
+        margin: 0 0 77px 0;
         padding-left: 30px;
         &::before {
             width: 32px;
@@ -1278,7 +1334,7 @@ html {
         }
     }
     @media (max-width: @breakpoint-xsmall) { 
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2,1fr);     
     }
 }
 
@@ -1286,15 +1342,26 @@ html {
     width: 453px;
     height: 252px;
     float: right;
-    @media (max-width: @breakpoint-xsmall) {
+    @media (max-width: @breakpoint-xsmall) { 
         width: 236px;
         height: 133px;
+        float: none;
+        position: relative;
+        z-index: 100;
+        top: -30px;
+        right: -83px;
+        z-index: 10;
     }
 }
 
+.program__costumedgirl {
+   max-width: 100%;
+}
+
 .program-features {
-    padding-top: 120px;
     max-width: 853px;
+    margin-top: 90px;
+    padding-top: 155px;
     background-color: #f9f9f9;
     position: relative;
     &::before {
@@ -1306,24 +1373,33 @@ html {
         left: -100%;
         background-color: #f9f9f9;
         @media (max-width: @breakpoint-xsmall) {
-            width: calc(100% + 10px);
+            width: 110%;
             left: -10px;
         }
+    }
+    @media (max-width: @breakpoint-medium) {
+        margin-top: 190px;
+    }
+    @media (max-width: @breakpoint-xsmall) {
+        margin-top: -80px;
+        padding-top: 195px;
     }
 }
 
 .program-features__years {
     position: absolute;
     top: -90px;
-    margin-left: 52px;
+    left: -20px;
+    margin-left: 10px;
     margin-bottom: 30px;
     color: #463657;
     font-size: 31px;
     font-weight: 400;
     line-height: 1.48;
-    letter-spacing: 7.2px;
+    letter-spacing: 9.5px;
     @media (max-width: @breakpoint-xsmall) {
-        margin-left: 0;
+        top: -20px;
+        margin-left: -10px;
         font-size: 24px;
         letter-spacing: 5.58px;
     }
@@ -1331,26 +1407,29 @@ html {
 
 .program-features__number {
     position: relative;
+    z-index: 150;
     color: #66cccc;
-    font-size: 200px;
+    font-size: 245px;
     font-weight: 400;
     line-height: 1;
-    letter-spacing: -2.4px;
+    letter-spacing: -16px;
     @media (max-width: @breakpoint-xsmall) {
+        top: 30px;
+        left: 20px;
         font-size: 143px;
     }
 }
 
 .program-features__international {
-    margin-left: 111px;
-    margin-bottom: 57px;
+    margin-left: 70px;
+    margin-bottom: 45px;
     color: #5ac3c4;
     font-family: @font-alt;
     font-size: 18px;
     font-weight: 400;
     line-height: 2;
     text-transform: uppercase;
-    letter-spacing: 8.1px;
+    letter-spacing: 8px;
     @media (max-width: @breakpoint-xsmall) {
         margin-left: 0;
         letter-spacing: 7.2px;
@@ -1359,7 +1438,7 @@ html {
 }
 
 .program-features__reports {
-    margin-left: 111px;
+    margin-left: 70px;
     padding-bottom: 249px;
     @media (max-width: @breakpoint-xsmall) {
         margin: 0;
@@ -1390,6 +1469,9 @@ html {
             transform: translateX(-50%);
             border-bottom: 4px dotted #f355b2;
         }
+    }
+    @media (max-width: @breakpoint-small) {
+        margin-right: 20px;
     }
     @media (max-width: @breakpoint-xsmall) {
         margin-right: 0;
@@ -1441,17 +1523,18 @@ html {
     float: right;
     box-sizing: border-box;
     position: relative;
-    margin-top: -276px;
-    padding: 66px 36px 59px 54px;
+    top: -290px;
+    right: -5px;
+    padding: 40px 36px 59px 54px;
     background-color: #243c73;
     color: #ffffff;
-    font-family: "Noto Sans";
     font-size: 18px;
     font-style: italic;
     line-height: 1.8;
-    @media (max-width: @breakpoint-xsmall) {
+    @media (max-width: @breakpoint-medium) {
         float: none;
-        margin-top: 0;
+        top: 0;
+        right: 0;
         padding: 48px 12px 50px 16px;
         font-size: 16px;
         line-height: 1.5;
@@ -1465,11 +1548,11 @@ html {
     grid-column-gap: 20px;
     grid-row-gap: 40px;
     grid-template-areas: "reviews vk";
-    margin-top: 286px;
+    margin-top: 276px;
     margin-bottom: 92px;
     @media (max-width: @breakpoint-medium) {
         grid-template-columns: 2fr 1fr;
-        
+        margin-top: 20px;
     }
     @media (max-width: @breakpoint-small) {
         grid-template-areas: "reviews"
@@ -1478,7 +1561,7 @@ html {
         margin-bottom: 50px;
     }
     @media (max-width: @breakpoint-xsmall) {
-      margin-top: 0;
+        margin-top: 0;
     }
 }
 
@@ -1488,6 +1571,7 @@ html {
     border-top: 2px solid #f4f4f4;
     @media (max-width: @breakpoint-xsmall) {
         margin-right: 0;
+        border-top: none;
     }
 }
 
@@ -1908,7 +1992,7 @@ html {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 30px;
+    margin-top: 21px;
     margin-bottom: 63px;
     a {
         color: #7e7e7e;
@@ -2244,24 +2328,14 @@ a.footer__tel {
     background-size: cover;
 }
 
-.animations {
-    .intro__logo {
-        animation: 1s linear appereance;
-    }
-    @media (min-width: @breakpoint-xsmall) {
-        .menu-bar__threshold {
-            animation: 0.5s linear 2s font-scale;
-        }
-    }
-}
-
 .to-top {
     width: 60px;
     height: 81px;
     box-sizing: border-box;
     position: fixed;
     right: 1%;
-    bottom: 1%;
+    bottom: 10%;
+    z-index: 500;
     border: 4px solid rgba(153, 153, 153, 0.3);
     background-color: transparent;
     cursor: pointer;
@@ -2270,7 +2344,7 @@ a.footer__tel {
         height: 0;
         position: absolute;
         bottom: 4px;
-        left: calc(50% - 1px);
+        left: ~"calc(50% - 1px)";
         opacity: 0;
         border-left: 4px dotted #ccc;
         transition-duration: 0.2s; 

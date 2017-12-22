@@ -49,7 +49,7 @@ module.exports = {
                 'postcss-loader'
             ]
         }, {
-            test: /\.(png|jpg|gif|svg)$/,
+            test: /\.(png|jpg|gif|svg)/, 
             use: [{
                 loader: 'file-loader',
                 options: {
@@ -58,6 +58,15 @@ module.exports = {
                 }
             }]
         }, {
+            test: /\.(webm|mp4)$/,
+            use: [{
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]?[hash]',
+                    outputPath: 'img/'
+                }
+            }]
+        },{
             test: /\.(eot|woff|ttf|otf)$/,
             use: [{
                 loader: 'file-loader',
