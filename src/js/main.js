@@ -141,7 +141,10 @@ if (homepage) {
                 menuBarText.style.opacity = '1';
             }, 500);
             setTimeout(function() {
-                    menuBarThreshold.style.animation = '1s font-scale';
+                menuBarThreshold.style.animation = '1s font-scale';
+                menuBarThreshold.addEventListener('animationend', function() {
+                    menuBarThreshold.style.animation = '';
+                });
             }, 1500);
             setTimeout(function() {
                 introMajorFirst.style.animation = '1s slide-ltr forwards';
@@ -330,4 +333,31 @@ function scrollToTop(scrollDuration) {
 
 toTop.addEventListener('click', scrollToTop);
    
-     
+//Линии
+
+
+
+function horLineDrawing() {
+    let width = this.offsetWidth
+    console.log(this)
+}
+
+let line1 = document.querySelector('.line-1');
+let line2 = document.querySelector('.line-2');
+let line3 = document.querySelector('.line-3');
+
+window.addEventListener('scroll', function() {
+
+    let line1Coords = line1.getBoundingClientRect();
+
+    if (line1Coords.top < (document.documentElement.clientHeight / 2)) {
+        
+        line1Width = '150%';
+        let line1Step = line1.offsetWidth / 15;
+        line1.style.width += line1Step;
+        console.log(line1Step)
+    };
+});
+
+//line2.addEventListener('scroll', vertLineDrawing);
+//line3.addEventListener('scroll', horLineDrawing);
