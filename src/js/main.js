@@ -7,29 +7,20 @@
 // UIkit.use(Icons);
 
 
-// Переключение карт на главной
-let togglerUsman = document.querySelector('.js-toggler-usman');
-let togglerOtradnoe = document.querySelector('.js-toggler-otradnoe');
-let mapUsman = document.querySelector('.map__usman');
-let mapOtradnoe = document.querySelector('.map__otradnoe');
+//Фиксация и стилизация синего блока меню
+let menuBar = document.querySelector('.menu-bar');
+let homepageHeader = document.querySelector('.intro__container');
 
-if (togglerUsman) {
-    togglerUsman.onclick = function() {
-        mapUsman.hidden = false;
-        mapOtradnoe.hidden = true;
-        togglerUsman.classList.remove('toggler-usman-unactive');
-        togglerUsman.classList.add('toggler-usman-active')
-        togglerOtradnoe.classList.remove('toggler-otradnoe-active');
-        togglerOtradnoe.classList.add('toggler-otradnoe-unactive');
-    }
-    togglerOtradnoe.onclick = function() {
-        mapOtradnoe.hidden = false;
-        mapUsman.hidden = true;
-        togglerUsman.classList.remove('toggler-usman-active');
-        togglerUsman.classList.add('toggler-usman-unactive');
-        togglerOtradnoe.classList.remove('toggler-otradnoe-unactive');
-        togglerOtradnoe.classList.add('toggler-otradnoe-active');
-    }
+if (homepageHeader) {
+    window.addEventListener('scroll', function() {
+        if ((window.pageYOffset >= homepageHeader.offsetHeight) && (!window.matchMedia('(max-width: 639px)').matches)) {
+            menuBar.classList.add('menu-bar-fixed');  
+        } else {
+            if (!menu.classList.contains('menu-opened')) {
+                menuBar.classList.remove('menu-bar-fixed');
+            }
+        }
+    })
 }
 
 //Взаимодействие с формой
@@ -72,22 +63,6 @@ if (enrollForm) {
     enrollForm.addEventListener('submit', function() {
         enrollMessage.hidden = false;
     });
-}
-
-//Фиксация и стилизация синего блока меню
-let menuBar = document.querySelector('.menu-bar');
-let homepageHeader = document.querySelector('.intro__container');
-
-if (homepageHeader) {
-    window.addEventListener('scroll', function() {
-        if ((window.pageYOffset >= homepageHeader.offsetHeight) && (!window.matchMedia('(max-width: 639px)').matches)) {
-            menuBar.classList.add('menu-bar-fixed');  
-        } else {
-            if (!menu.classList.contains('menu-opened')) {
-                menuBar.classList.remove('menu-bar-fixed');
-            }
-        }
-    })
 }
 
 /* написать продолжение под внутренние страницы! */
@@ -140,55 +115,160 @@ menuButtons.forEach(element => {
     });
 });
 
-//Включить анимации  
-let introLogo = document.querySelector('.intro__logo');
-let menuBarText = document.querySelector('.menu-bar__title-text');
-let introMajorFirst = document.querySelector('.intro-nav__major li:first-child');
-let introMajorLast = document.querySelector('.intro-nav__major li:last-child');
-let introMenuItems = document.querySelectorAll('.intro-nav__minor li');
-let menuBarThreshold = document.querySelector('.menu-bar__threshold');
-let menuBarDivider = document.querySelector('.menu-bar__divider');
-let menuBarLogo = document.querySelector('.menu-bar__logo');
+//Включить анимации первого экрана главной
+let homepage = document.querySelector('.homepage');
 
-window.addEventListener('load', function() {
-    document.body.classList.add('js-animations');
-    setTimeout(function() {
-        introLogo.style.opacity = '1';
-    }, 1000);
-    introLogo.addEventListener('transitionend', function() {
-        if ((!menuBar.classList.contains('menu-bar-fixed')) && (!window.matchMedia('(max-width: 639px)').matches)) {
-            menuBar.style.height = '695px';
-        } else {
-            menuBarText.style.opacity = '1';
-        }
-        setTimeout(function() {
-            menuBar.style.height = 'auto';
-            menuBarText.style.opacity = '1';
-        }, 500);
-       setTimeout(function() {
-            menuBarThreshold.style.animation = '1s font-scale';
-       }, 1500);
-       setTimeout(function() {
-            introMajorFirst.style.opacity = '1';
-            introMajorFirst.style.animation = '1s slide-ltr';
-       }, 3000);
-       setTimeout(function() {
-            introMajorLast.style.opacity = '1';
-            introMajorLast.style.animation = '1s slide-ltr';
-        }, 3500);
-        setTimeout(function() {
-            introMenuItems.forEach(function(item, i, introMenuItems) {
-                setTimeout(function() {
-                    item.style.animation = '0.5s slide-ltr';
-                    item.style.opacity = '1';
-                }, i*500);
+if (homepage) {
+    window.addEventListener('load', function() {
+        let introLogo = document.querySelector('.intro__logo');
+        let menuBarText = document.querySelector('.menu-bar__title-text');
+        let introMajorFirst = document.querySelector('.intro-nav__major li:first-child');
+        let introMajorDivider = document.querySelector('.intro-nav__dot-vertical');
+        let introMajorLast = document.querySelector('.intro-nav__major li:last-child');
+        let introMenuItems = document.querySelectorAll('.intro-nav__minor li');
+        let menuBarThreshold = document.querySelector('.menu-bar__threshold');
+        let menuBarDivider = document.querySelector('.menu-bar__divider');
+        let menuBarLogo = document.querySelector('.menu-bar__logo');
+        introLogo.style.animation = '1s appereance forwards';
+        introLogo.addEventListener('animationend', function() {
+            if ((!menuBar.classList.contains('menu-bar-fixed')) && (!window.matchMedia('(max-width: 639px)').matches)) {
+                menuBar.style.height = '695px';
+            } else {
+                menuBarText.style.opacity = '1';
+            }
+            setTimeout(function() {
+                menuBar.style.height = 'auto';
+                menuBarText.style.opacity = '1';
+            }, 500);
+            setTimeout(function() {
+                    menuBarThreshold.style.animation = '1s font-scale';
+            }, 1500);
+            setTimeout(function() {
+                introMajorFirst.style.animation = '1s slide-ltr forwards';
+            }, 2000);
+            setTimeout(function() {
+                introMajorDivider.style.animation = '1s slide-up forwards';
+            }, 2500);
+            setTimeout(function() {
+                introMajorLast.style.animation = '1s slide-ltr forwards';
+            }, 3000);
+            setTimeout(function() {
+                introMenuItems.forEach(function(item, i, introMenuItems) {
+                    setTimeout(function() {
+                        item.style.animation = '0.5s slide-ltr forwards';
+                    }, i*500);
+                });
+            }, 3500);
+            introMenuItems[introMenuItems.length-1].addEventListener('animationend', function() {
+                menuHeaderButton.style.transform = 'scale(1)';
             });
-        }, 4500);
-        introMenuItems[introMenuItems.length-1].addEventListener('animationend', function() {
-            menuHeaderButton.style.transform = 'scale(1)';
         });
     });
-});
+
+    //анимации главной
+    let ensembleLinks = document.querySelector('.ensemble__links');
+
+    if (ensembleLinks) {
+        let tutorsImage = ensembleLinks.querySelector('.ensemble__tutors-image img');
+        let tutorsTitle = ensembleLinks.querySelector('.ensemble__tutors-title');
+        let photoalbumImage = ensembleLinks.querySelector('.ensemble__photoalbum-image img');
+        let photoalbumTitle = ensembleLinks.querySelector('.ensemble__photoalbum-title');
+        let videoalbumImage = ensembleLinks.querySelector('.ensemble__videoalbum-image img');
+        let videoalbumTitle = ensembleLinks.querySelector('.ensemble__videoalbum-title');
+
+        window.addEventListener('scroll', function() {
+            let ensembleLinksCoords = ensembleLinks.getBoundingClientRect();
+            let animated = false;
+            if ((ensembleLinksCoords.top < (document.documentElement.clientHeight / 2)) && (animated == false)) {
+                tutorsImage.style.animation = '1s slide-ltr forwards';
+                tutorsTitle.style.animation = '1s slide-ltr 1s forwards';
+                photoalbumImage.style.animation = '1s slide-rtl 1.5s forwards';
+                photoalbumTitle.style.animation = '1s slide-rtl-rotated 2s forwards';
+                videoalbumImage.style.animation = '1s slide-rtl 2.5s forwards';
+                videoalbumTitle.style.animation = '1s slide-rtl 3s forwards';
+                animated = true;
+            }
+        });
+    }
+
+    let costumedGirl = document.querySelector('.program__costumedgirl img');
+    
+    if (costumedGirl) {
+        window.addEventListener('scroll', function() {
+            let costumedGirlCoords = costumedGirl.getBoundingClientRect();
+            let animated = false;
+    
+            if ((costumedGirlCoords.bottom <  document.documentElement.clientHeight) && (animated == false)) {
+                costumedGirl.style.animation = '1s slide-up forwards';
+                animated = true;  
+            }
+        });
+    }
+    
+    let programCollective = document.querySelector('.program__collective-text'); 
+    
+    if (programCollective) {
+        window.addEventListener('scroll', function() {
+            let programCollectiveCoords = programCollective.getBoundingClientRect();
+            let animated = false;
+    
+            if ((programCollectiveCoords.bottom <  document.documentElement.clientHeight) && (animated == false)) {
+                programCollective.style.animation = '1s slide-up forwards';
+                animated = true;
+            }
+        });
+    }
+    
+    let programFeatures = document.querySelector('.program-features');
+    let programFeaturesYears = document.querySelector('.program-features__years');
+    let programFeaturesInternational = document.querySelector('.program-features__international');
+    let programFeaturesReports = document.querySelectorAll('.program-features__reports a'); 
+    
+    if (programFeatures) {
+        window.addEventListener('scroll', function() {
+            let programFeaturesCoords = programFeatures.getBoundingClientRect();
+            let animated = false;
+    
+            if ((programFeaturesCoords.top < (document.documentElement.clientHeight / 2)) && (animated == false)) {
+                programFeaturesYears.style.animation = '1s slide-ltr forwards';
+                programFeaturesInternational.style.animation = '1s slide-ltr 1s forwards';
+                setTimeout(function() {
+                    programFeaturesReports.forEach(function(item, i, programFeaturesReports) {
+                        setTimeout(function() {
+                            item.style.animation = '0.5s slide-ltr forwards';
+                        }, i*500);
+                    });
+                }, 1500);
+                animated = true;
+            }
+        });
+    }
+
+    // Переключение карт на главной
+    let togglerUsman = document.querySelector('.js-toggler-usman');
+    let togglerOtradnoe = document.querySelector('.js-toggler-otradnoe');
+    let mapUsman = document.querySelector('.map__usman');
+    let mapOtradnoe = document.querySelector('.map__otradnoe');
+
+    if (togglerUsman) {
+        togglerUsman.onclick = function() {
+            mapUsman.hidden = false;
+            mapOtradnoe.hidden = true;
+            togglerUsman.classList.remove('toggler-usman-unactive');
+            togglerUsman.classList.add('toggler-usman-active')
+            togglerOtradnoe.classList.remove('toggler-otradnoe-active');
+            togglerOtradnoe.classList.add('toggler-otradnoe-unactive');
+        }
+        togglerOtradnoe.onclick = function() {
+            mapOtradnoe.hidden = false;
+            mapUsman.hidden = true;0
+            togglerUsman.classList.remove('toggler-usman-active');
+            togglerUsman.classList.add('toggler-usman-unactive');
+            togglerOtradnoe.classList.remove('toggler-otradnoe-unactive');
+            togglerOtradnoe.classList.add('toggler-otradnoe-active');
+        }
+    }
+}
 
 //адаптация под экраны меньше 639px
 if (window.matchMedia('(max-width: 639px)').matches) {
@@ -227,7 +307,6 @@ if (window.matchMedia('(max-width: 639px)').matches) {
 }
 
 //Кнопка наверх
-
 let toTop = document.querySelector('.to-top');
 
 window.addEventListener('scroll', function() {
@@ -238,6 +317,17 @@ window.addEventListener('scroll', function() {
     }
 });
 
-toTop.addEventListener('click', function() {
-    window.scrollTo(0, 0)
-});
+function scrollToTop(scrollDuration) {
+    var scrollDuration = 1000;
+    let scrollStep = -window.scrollY / (scrollDuration / 15),
+    scrollInterval = setInterval(function(){
+        if ( window.scrollY != 0 ) {
+            window.scrollBy(0, scrollStep);
+        }
+        else clearInterval(scrollInterval); 
+    }, 15);
+};
+
+toTop.addEventListener('click', scrollToTop);
+   
+     

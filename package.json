@@ -37,6 +37,7 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
+    "gsap": "^1.20.3",
     "normalize.css": "^7.0.0",
     "uikit": "^3.0.0-beta.30"
   }
