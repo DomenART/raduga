@@ -333,31 +333,101 @@ function scrollToTop(scrollDuration) {
 
 toTop.addEventListener('click', scrollToTop);
    
+
+/*
 //Линии
 
-
-
-function horLineDrawing() {
-    let width = this.offsetWidth
-    console.log(this)
-}
+let lines = document.querySelectorAll('.line');
 
 let line1 = document.querySelector('.line-1');
 let line2 = document.querySelector('.line-2');
 let line3 = document.querySelector('.line-3');
+let line4 = document.querySelector('.line-4');
+let line5 = document.querySelector('.line-5');
+let line6 = document.querySelector('.line-6');
+let line7 = document.querySelector('.line-7');
+let line8 = document.querySelector('.line-8');
+let line9 = document.querySelector('.line-9');
+let line10 = document.querySelector('.line-10');
 
 window.addEventListener('scroll', function() {
-
-    let line1Coords = line1.getBoundingClientRect();
-
-    if (line1Coords.top < (document.documentElement.clientHeight / 2)) {
-        
-        line1Width = '150%';
-        let line1Step = line1.offsetWidth / 15;
-        line1.style.width += line1Step;
-        console.log(line1Step)
+    let line1Top = line1.getBoundingClientRect().top;
+    if (line1Top < (document.documentElement.clientHeight / 2)) {
+        line1.style.animation = '2s line-1-draw forwards';
     };
+    line1.addEventListener('animationend', function() {
+        let line2Top = line1.getBoundingClientRect().top;
+        if (line2Top < (document.documentElement.clientHeight / 2)) {
+            line2.style.animation = '2s line-2-draw forwards';
+        };
+    });
+    line2.addEventListener('animationend', function() {
+        let line3Top = line1.getBoundingClientRect().top;
+        if (line3Top < (document.documentElement.clientHeight / 2)) {
+            line3.style.animation = '2s line-3-draw forwards';
+        };
+    });
+    let line4Top = line1.getBoundingClientRect().top;
+    if (line4Top < (document.documentElement.clientHeight / 2)) {
+        line4.style.animation = '2s line-4-draw forwards';
+    };
+    line4.addEventListener('animationend', function() {
+        let line5Top = line1.getBoundingClientRect().top;
+        if (line5Top < (document.documentElement.clientHeight / 2)) {
+            line5.style.animation = '2s line-5-draw forwards';
+        };
+    });
+    line5.addEventListener('animationend', function() {
+        let line6Top = line1.getBoundingClientRect().top;
+        if (line6Top < (document.documentElement.clientHeight / 2)) {
+            line6.style.animation = '2s line-6-draw forwards';
+        };
+    });
+    line6.addEventListener('animationend', function() {
+        let line7Top = line1.getBoundingClientRect().top;
+        if (line7Top < (document.documentElement.clientHeight / 2)) {
+            line7.style.animation = '2s line-7-draw forwards';
+        };
+    });
+    line7.addEventListener('animationend', function() {
+        let line8Top = line1.getBoundingClientRect().top;
+        if (line8Top < (document.documentElement.clientHeight / 2)) {
+            line8.style.animation = '2s line-8-draw forwards';
+        };
+    });
+    line8.addEventListener('animationend', function() {
+        let line9Top = line1.getBoundingClientRect().top;
+        if (line9Top < (document.documentElement.clientHeight / 2)) {
+            line9.style.animation = '2s line-9-draw forwards';
+        };
+    });
+    line9.addEventListener('animationend', function() {
+        let line10Top = line1.getBoundingClientRect().top;
+        if (line10Top < (document.documentElement.clientHeight / 2)) {
+            line10.style.animation = '2s line-10-draw forwards';
+        };
+    });
 });
+*/
 
-//line2.addEventListener('scroll', vertLineDrawing);
-//line3.addEventListener('scroll', horLineDrawing);
+
+    let ensembleCanvas = document.querySelector('#ensembleCanvas');
+
+    if (ensembleCanvas.getContext) {
+        var ctx = ensembleCanvas.getContext('2d');
+
+
+        ctx.beginPath();
+        ctx.lineWidth = 2;
+        ctx.moveTo(-1000,50);
+        ctx.lineTo(600,50);
+        ctx.stroke();
+
+
+
+    }
+
+
+//document.querySelector('.ensemble__tutors-image img')
+
+// + document.querySelector('.ensemble__tutors-image img').offsetWidth + 30
