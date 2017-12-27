@@ -410,24 +410,102 @@ window.addEventListener('scroll', function() {
 });
 */
 
+        
+let canvasHomepage = document.querySelector('#canvasHomepage');
 
-    let ensembleCanvas = document.querySelector('#ensembleCanvas');
+canvasHomepage.setAttribute('width', document.documentElement.offsetWidth);
+canvasHomepage.setAttribute('height', document.documentElement.offsetHeight);
 
-    if (ensembleCanvas.getContext) {
-        var ctx = ensembleCanvas.getContext('2d');
+function getCoords(elem) { 
+    var box = elem.getBoundingClientRect();
+    return {
+        top: box.top + pageYOffset,
+        left: box.left + pageXOffset,
+        bottom: box.bottom + pageYOffset,
+        right: box.right + pageXOffset,
+    };
+}
+
+if (canvasHomepage.getContext) {
+    var ctx = canvasHomepage.getContext('2d');
+    let xDraw, yDraw
+    let tutorsImage = document.querySelector('.ensemble__tutors-image img');
+    let tutorsImageCoords = getCoords(tutorsImage);
+
+    ctx.beginPath();
+    ctx.strokeStyle = '#f355b2';
+    ctx.lineWidth = 2;
+
+    ctx.moveTo(-1000, tutorsImageCoords.top + (tutorsImage.offsetHeight * 0.1));
+
+    /*
+        xDraw = -1000;
+        let drawTimer = setInterval(function() {
+            ctx.lineTo(xDraw, tutorsImageCoords.top + tutorsImage.offsetHeight * 0.1);
+            if (xDraw == tutorsImageCoords.right + 27) {
+                xDraw = 0;
+                clearInterval(drawTimer);
+            } else {
+                xDraw += 10;
+            };
+        },1000)
+    */
 
 
-        ctx.beginPath();
-        ctx.lineWidth = 2;
-        ctx.moveTo(-1000,50);
-        ctx.lineTo(600,50);
-        ctx.stroke();
-
-
-
+/*
+    function draw(xDraw) {
+        if (xDraw > (tutorsImageCoords.right + 27)) {
+            return;
+        } else {
+            ctx.lineTo(xDraw, tutorsImageCoords.top + tutorsImage.offsetHeight * 0.1);
+            xDraw += 10;
+            requestAnimationFrame(draw); 
+        }
     }
+    requestAnimationFrame(draw(-1000));   
+*/
+    ctx.lineTo(tutorsImageCoords.right + 27, tutorsImageCoords.top + (tutorsImage.offsetHeight * 0.1));
 
+    ctx.moveTo(tutorsImageCoords.right + 27, tutorsImageCoords.top + (tutorsImage.offsetHeight * 0.1));
+    ctx.lineTo(tutorsImageCoords.right + 27, tutorsImageCoords.top + (tutorsImage.offsetHeight * 0.9));
 
-//document.querySelector('.ensemble__tutors-image img')
+    ctx.moveTo(tutorsImageCoords.right + 27, tutorsImageCoords.top + (tutorsImage.offsetHeight * 0.9));
+    ctx.lineTo(-1000, tutorsImageCoords.top + (tutorsImage.offsetHeight * 0.9));
 
-// + document.querySelector('.ensemble__tutors-image img').offsetWidth + 30
+    ctx.stroke(); 
+
+    
+
+    let programTitle = document.querySelector('.program__title');
+    let programTitleCoords = getCoords(programTitle);
+    let programList = document.querySelector('.program__list');
+    let programListCoords = getCoords(programList);
+
+    ctx.beginPath();
+    ctx.strokeStyle = '#f355b2';
+    ctx.lineWidth = 2;
+
+    ctx.moveTo(-1000, programTitleCoords.top + programTitle.offsetHeight);
+    ctx.lineTo(programTitleCoords.right + 75, programTitleCoords.top + programTitle.offsetHeight);
+
+    let programYears = document.querySelector('.program-features__years');
+    let programYearsCoords = getCoords(programYears);
+
+    ctx.lineTo(programTitleCoords.right + 75, programYearsCoords.top + 55);
+    ctx.lineTo(programTitleCoords.right - 100, programYearsCoords.top + 55);
+
+    let socialGrid = document.querySelector('.social-grid');
+    let socialGridCoords = getCoords(socialGrid);
+
+    ctx.lineTo(programTitleCoords.right - 100, socialGridCoords.top - 40);
+    ctx.lineTo(socialGridCoords.left - 40, socialGridCoords.top - 40);
+
+    let parentsButton = document.querySelector('.parents .button-more');
+    let parentsButtonCoords = getCoords(parentsButton);
+
+    ctx.lineTo(socialGridCoords.left- 40, parentsButtonCoords.top + (parentsButton.offsetHeight / 2));
+    ctx.lineTo(parentsButtonCoords.left, parentsButtonCoords.top + (parentsButton.offsetHeight / 2));
+
+    ctx.stroke(); 
+}
+

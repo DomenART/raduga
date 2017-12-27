@@ -860,12 +860,12 @@ img {
     position: relative;
 }
 
-.ensemble__canvas {
-    width: 100%;
-    height: 50%;
-    position: relative;
-    left: -50px;
-    z-index: 5000;
+.canvas-homepage {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    z-index: 5;
+    pointer-events: none;
 }
 
 .ensemble__heading {
@@ -1233,11 +1233,14 @@ img {
 
 .program__title {
     max-width: 1100px;
-    margin: 0 0 0 90px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 90px;
     font-size: 95px;
     z-index: -10;
     color: #299798;
-    opacity: 0.3;
+    opacity: 0.2;
     font-family: @font-alt;
     font-weight: 400;
     line-height: 0.9;
@@ -1377,6 +1380,8 @@ img {
     width: 453px;
     height: 252px;
     float: right;
+    position: relative;
+    z-index: 10;
     img {
         opacity: 0;
     }
@@ -1568,6 +1573,7 @@ img {
     position: relative;
     top: -290px;
     right: -5px;
+    z-index: 10;
     padding: 40px 36px 59px 54px;
     background-color: #243c73;
     color: #ffffff;
