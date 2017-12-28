@@ -3,9 +3,11 @@
  * Include UIkit
  */
 // import UIkit from 'uikit';
+// import UIkit from 'uikit';
 // import Icons from 'uikit/dist/js/uikit-icons';
 // UIkit.use(Icons);
 
+import ScrollMagic from 'scrollmagic';
 
 //Фиксация и стилизация синего блока меню
 let menuBar = document.querySelector('.menu-bar');
@@ -427,85 +429,119 @@ function getCoords(elem) {
 }
 
 if (canvasHomepage.getContext) {
+    let controller = new ScrollMagic.Controller();
     var ctx = canvasHomepage.getContext('2d');
     let xDraw, yDraw
     let tutorsImage = document.querySelector('.ensemble__tutors-image img');
     let tutorsImageCoords = getCoords(tutorsImage);
-
-    ctx.beginPath();
-    ctx.strokeStyle = '#f355b2';
-    ctx.lineWidth = 2;
-
-    ctx.moveTo(-1000, tutorsImageCoords.top + (tutorsImage.offsetHeight * 0.1));
-
-    /*
-        xDraw = -1000;
-        let drawTimer = setInterval(function() {
-            ctx.lineTo(xDraw, tutorsImageCoords.top + tutorsImage.offsetHeight * 0.1);
-            if (xDraw == tutorsImageCoords.right + 27) {
-                xDraw = 0;
-                clearInterval(drawTimer);
-            } else {
-                xDraw += 10;
-            };
-        },1000)
-    */
-
-
-/*
-    function draw(xDraw) {
-        if (xDraw > (tutorsImageCoords.right + 27)) {
-            return;
-        } else {
-            ctx.lineTo(xDraw, tutorsImageCoords.top + tutorsImage.offsetHeight * 0.1);
-            xDraw += 10;
-            requestAnimationFrame(draw); 
-        }
-    }
-    requestAnimationFrame(draw(-1000));   
-*/
-    ctx.lineTo(tutorsImageCoords.right + 27, tutorsImageCoords.top + (tutorsImage.offsetHeight * 0.1));
-
-    ctx.moveTo(tutorsImageCoords.right + 27, tutorsImageCoords.top + (tutorsImage.offsetHeight * 0.1));
-    ctx.lineTo(tutorsImageCoords.right + 27, tutorsImageCoords.top + (tutorsImage.offsetHeight * 0.9));
-
-    ctx.moveTo(tutorsImageCoords.right + 27, tutorsImageCoords.top + (tutorsImage.offsetHeight * 0.9));
-    ctx.lineTo(-1000, tutorsImageCoords.top + (tutorsImage.offsetHeight * 0.9));
-
-    ctx.stroke(); 
-
-    
-
     let programTitle = document.querySelector('.program__title');
     let programTitleCoords = getCoords(programTitle);
     let programList = document.querySelector('.program__list');
     let programListCoords = getCoords(programList);
-
-    ctx.beginPath();
-    ctx.strokeStyle = '#f355b2';
-    ctx.lineWidth = 2;
-
-    ctx.moveTo(-1000, programTitleCoords.top + programTitle.offsetHeight);
-    ctx.lineTo(programTitleCoords.right + 75, programTitleCoords.top + programTitle.offsetHeight);
-
     let programYears = document.querySelector('.program-features__years');
     let programYearsCoords = getCoords(programYears);
-
-    ctx.lineTo(programTitleCoords.right + 75, programYearsCoords.top + 55);
-    ctx.lineTo(programTitleCoords.right - 100, programYearsCoords.top + 55);
-
     let socialGrid = document.querySelector('.social-grid');
     let socialGridCoords = getCoords(socialGrid);
-
-    ctx.lineTo(programTitleCoords.right - 100, socialGridCoords.top - 40);
-    ctx.lineTo(socialGridCoords.left - 40, socialGridCoords.top - 40);
-
     let parentsButton = document.querySelector('.parents .button-more');
     let parentsButtonCoords = getCoords(parentsButton);
 
-    ctx.lineTo(socialGridCoords.left- 40, parentsButtonCoords.top + (parentsButton.offsetHeight / 2));
-    ctx.lineTo(parentsButtonCoords.left, parentsButtonCoords.top + (parentsButton.offsetHeight / 2));
+    ctx.strokeStyle = '#f355b2'
+    ctx.lineWidth = 2
+    ctx.globalCompositeOperation = 'copy'
+    
+    let start = {
+        x: 0,
+        y: tutorsImageCoords.top + (tutorsImage.offsetHeight * 0.1)
+    }
+    let offset = start.y - window.innerHeight * 0.7
+    let defaultDuration = window.innerHeight * 0.3
+    let points = [{
+        coords: {
+            x: tutorsImageCoords.right + 27,
+            y: tutorsImageCoords.top + tutorsImage.offsetHeight * 0.1
+        }
+    }, {
+        coords: {
+            x: tutorsImageCoords.right + 27,
+            y: tutorsImageCoords.top + tutorsImage.offsetHeight * 0.9
+        }
+    }, {
+        coords: {
+            x: 0,
+            y: tutorsImageCoords.top + tutorsImage.offsetHeight * 0.9
+        }
+    }, {
+        coords: {
+            x: 0,
+            y: programTitleCoords.top + programTitle.offsetHeight
+        }
+    }, {
+        coords: {
+            x: programTitleCoords.right + 75,
+            y: programTitleCoords.top + programTitle.offsetHeight
+        }
+    }, {
+        coords: {
+            x: programTitleCoords.right + 75,
+            y: programYearsCoords.top + 55
+        }
+    }, {
+        coords: {
+            x: programTitleCoords.right - 100,
+            y: programYearsCoords.top + 55
+        }
+    }, {
+        coords: {
+            x: programTitleCoords.right - 100,
+            y: socialGridCoords.top - 40
+        }
+    }, {
+        coords: {
+            x: socialGridCoords.left - 40,
+            y: socialGridCoords.top - 40
+        }
+    }, {
+        coords: {
+            x: socialGridCoords.left - 40,
+            y: parentsButtonCoords.top + (parentsButton.offsetHeight / 2)
+        }
+    }, {
+        coords: {
+            x: parentsButtonCoords.left,
+            y: parentsButtonCoords.top + (parentsButton.offsetHeight / 2)
+        }
+    }]
 
-    ctx.stroke(); 
+    points.forEach((point, index) => {
+        let prev = index > 0 ? points[index - 1].coords : start
+        let x = points[index].coords.x - prev.x
+        let y = points[index].coords.y - prev.y
+
+        points[index].prev = prev
+        points[index].move = {x, y}
+        points[index].duration = y && y - defaultDuration || defaultDuration
+        points[index].offset = index > 0 ? offset += points[index - 1].duration : offset
+    })
+
+    points.forEach((point, index) => {
+        new ScrollMagic.Scene({
+            duration: point.duration,
+            offset: point.offset
+        })
+        .addTo(controller)
+        .on('progress', e => {
+            let progress = e.progress.toFixed(3)
+            ctx.beginPath()
+            // console.log('start:', start.x, start.y)
+            ctx.moveTo(start.x, start.y)
+            for (let i = 0; i < index; i++) {
+                // console.log(i + ':', points[i].coords.x, points[i].coords.y)
+                ctx.lineTo(points[i].coords.x, points[i].coords.y)
+            }
+            // console.log('point:', point.move.x * progress, point.move.y * progress)
+            ctx.lineTo(point.prev.x + point.move.x * progress, point.prev.y + point.move.y * progress)
+            ctx.stroke()
+        })
+    })
 }
 

@@ -6,90 +6,471 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="cmsmagazine" content="ef9002bde22164e1bb8ca1b1793cf47b">
         <title>Радуга</title>
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="home.css">
     </head>
     <body>
-        <section class="intro">
-            <div class="header">
-                <ul class="header-social">
-                    <li>
-                        <a href="#" aria-label="Страница Вконтакте">
-                            <svg class="svg-vkontakte" width="26" height="26">
-                                <use xlink:href="#vkontakte" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" aria-label="Профиль в инстаграме">
-                            <svg class="svg-instagram" width="19" height="19">
-                                <use xlink:href="#instagram" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" aria-label="Канал на ютубе">
-                            <svg class="svg-youtube" width="20" height="20">
-                                <use xlink:href="#youtube" />
-                            </svg>
-                        </a>
-                    </li>
+        <main class="homepage">
+            <nav class="menu" hidden>
+                <ul class="menu__list">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Об ансамбле</a></li>
+                    <li><a href="#">Расписание</a></li>
+                    <li><a href="#">Преподаватели</a></li>
+                    <li><a href="#">Новости</a></li>
+                    <li><a href="#">Цены и акции</a></li>
+                    <li><a href="#">Фотоальбом</a></li>
+                    <li><a href="#">Видео</a></li>
+                    <li><a href="#">Отзывы</a></li>
+                    <li><a href="#">Контакты</a></li>
                 </ul>
-                <a href="mailto:radugaotr@mail.ru" class="header__email" title="Электронная почта">radugaotr@mail.ru</a>
-                <a href="tel:79202179964" class="header__phone" title="Телефон"><span>+7 (920)</span> 217-99-64</a>
-            </div>
-
-            <div class="intro__container">
-                <a href="/" class="intro__logo" aria-label="На главную">
-                    <span>детский хореографический ансамбль</span>
-                    <svg class="svg-logo" width="330" height="160">
-                        <use xlink:href="#logo" />
+                <div class="menu__substrate"></div>
+            </nav>
+            <button type="button" class="button-menu header-menu">
+                <span class="button-menu__show">меню</span>
+                <span class="button-menu__hide" hidden>закрыть</span>
+                <div class="header-menu__decor"></div>
+            </button>
+            <div class="menu-bar">
+                <div class="menu-bar__threshold">
+                    от 4 лет
+                </div>
+                <div class="menu-bar__divider"></div>
+                <div class="menu-bar__title">
+                    <div class="menu-bar__title-text">Детский <br>хореографический ансамбль</div>    
+                </div>
+                <div class="menu-bar__logo">
+                    <svg width="77" height="36">
+                        <use href="#logo" />
                     </svg>
-                </a>
-
-                <nav class="intro-nav">
-                    <ul class="intro-nav__first">
-                        <li>
-                            <a href="#">Об Ансамбле</a>
-                        </li>
-                        <li aria-hidden="true">
-                            <svg width="4" height="20" class="intro-nav__dot-vertical">
-                                <circle cx="2" cy="2" r="2" />
-                                <circle cx="2" cy="2" r="2" />
-                                <circle cx="2" cy="2" r="2" />
-                            </svg>
-                        </li>
-                        <li>
-                            <a href="#">Контакты</a>
-                        </li>
-                    </ul>
-                    <ul class="intro-nav__second">
-                        <li>
-                            <a href="#">Направления</a>
-                        </li>
-                        <li>
-                            <a href="#">Расписание</a>
-                        </li>
-                        <li>
-                            <a href="#">Тренировки&nbsp;с&nbsp;родителями</a>
-                        </li>
-                    </ul>
-                </nav>
+                </div>
+                <button type="button" class="button-menu menu-bar-button">
+                    <span class="button-menu__show">меню</span>
+                    <span class="button-menu__hide" hidden>закрыть</span>
+                </button>
             </div>
-        </section>
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
-
-        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;" aria-hidden="true">
+            <section class="intro">
+                <header class="header">
+                    <ul class="header-social">
+                        <li>
+                            <a href="#" aria-label="Страница Вконтакте">
+                                <svg class="svg-vkontakte" width="26" height="26">
+                                    <use href="#vkontakte" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Профиль в инстаграме">
+                                <svg class="svg-instagram" width="19" height="19">
+                                    <use href="#instagram" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Канал на ютубе">
+                                <svg class="svg-youtube" width="20" height="20">
+                                    <use href="#youtube" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="mailto:radugaotr@mail.ru" class="header__email" title="Электронная почта">radugaotr@mail.ru</a>
+                    <a href="tel:79202179964" class="header__phone" title="Телефон"><span>+7 (920)</span> 217-99-64</a>
+                </header>
+                <div class="intro__container">
+                    <a href="#" class="intro__logo" aria-label="На главную">
+                        <span>детский хореографический ансамбль</span>
+                        <svg class="svg-logo" width="330" height="160">
+                            <use href="#logo" />
+                        </svg>
+                    </a>
+                    <nav class="intro-nav">
+                        <ul class="intro-nav__major">
+                            <li>
+                                <a href="#">Об Ансамбле</a>
+                            </li>
+                            <li aria-hidden="true">
+                                <svg class="intro-nav__dot-vertical" width="5" height="20">
+                                    <use href="#three-circles" />
+                                </svg>
+                            </li>
+                            <li>
+                                <a href="#">Контакты</a>
+                            </li>
+                        </ul>
+                        <ul class="intro-nav__minor">
+                            <li>
+                                <a href="#">Направления</a>
+                            </li>
+                            <li>
+                                <a href="#">Расписание</a>
+                            </li>
+                            <li>
+                                <a href="#">Тренировки&nbsp;с&nbsp;родителями</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="enroll" hidden>
+                    <button type="button" class="form-close js-close"></button>
+                    <div class="enroll__title">
+                        Записаться<br>
+                        на урок
+                    </div>
+                    <form id="enroll" action="" method="post" class="js-form">
+                        <div>
+                            <input type="text" class="enroll__input" name="name" placeholder="Имя:">
+                        </div>
+                        <div>
+                            <input type="tel" class="enroll__input" name="tel" pattern="^[ 0-9]+$" minlength="8" placeholder="Телефон*:" required>
+                        </div>
+                        <div>
+                            <textarea class="enroll__textarea" placeholder="Сообщение*:" required></textarea>
+                        </div>
+                        <div class="enroll__agreement">
+                            <input type="checkbox" class="enroll__check" name="agreement" id="agreement" hidden required checked>
+                            <label for="agreement" class="enroll__check-lovely"></label>
+                            <label for="agreement" class="enroll__agreement-text">
+                                Прочитал(-а) пользовательское соглашение 
+                                и соглашаюсь на <a href="#">обработку своих <br>персональных данных</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="button-more enroll__submit">
+                            <span>Записаться</span>
+                            <svg class="button-more__arrow" width="25" height="19">
+                                <use href="#button-more-arrow"/>
+                            </svg>
+                        </button>
+                        <div class="agreement__tip">
+                            Поля, отмеченные *, обязательны для заполнения
+                        </div>
+                    </form>
+                    <div class="enroll-success" hidden>
+                        <div class="enroll-success__major-text">
+                            Ваше сообщение успешно отправлено,
+                        </div>
+                        <div class="enroll-success__minor-text">
+                            в ближайшее время мы свяжемся с вами.
+                        </div>
+                        <div class="enroll-success__logo"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="ensemble">
+                <h2 class="ensemble__background-title background-title">Об ансамбле</h2>
+                <div class="container">
+                    <div class="ensemble__heading">
+                        Хореографический ансамбль "Радуга" создан в 2005 году. За короткое время мы успели побывать на международных фестивалях:  
+                    </div>
+                    <div class="ensemble__grid">
+                        <div>
+                            <ul class="ensemble__list lovely-list">
+                                <li>Всероссийский Рейтинговый фестиваль - конкурс <b>"Сделано в России"</b>
+                                    г. Санкт-Петербург;</li>
+                                <li>Международный конкурс - фестиваль детского
+                                    и юношеского творчества <b>"Московское время"</b>
+                                    г. Москва;</li>
+                                <li>Международный конкурс - фестиваль детского юношеского творчества <b>"На берегах Невы"</b>
+                                    г. Москва;</li>
+                                <li>Чемпионат и Первенство ЦФО по современным танцевальным направлениям, г. Орел.</li> 
+                            </ul> 
+                            <a href="#" class="button-more button-more--ensemble">
+                               <span>Подробнее</span> 
+                                <svg class="button-more__arrow" width="25" height="19">
+                                    <use href="#button-more-arrow"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div>
+                        <video class="ensemble__video" poster="img/home-videoposter.jpg" controls>
+                            <source src="img/homepage-video.mp4" type="video/mp4">
+                        </video>
+                        <!--<img src="../img/home-videoposter.jpg" class="ensemble__video" alt=""> -->
+                            <div class="ensemble__about">
+                                В хореографическом ансамбле дети приобщаются к искусству танца, знакомясь с классическим балетом; источниками танцевальной культуры; самобытностью национальных танцев мира, связанных с жизненным укладом народов; современной музыкой; эстрадным танцем и др. 
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+                <div class="ensemble__links">
+                    <!--   <div class="line line-1"></div>
+                        <div class="line line-2"></div>
+                        <div class="line line-3"></div> -->
+                   
+                    <div class="ensemble__tutors">
+                        <a href="#" class="ensemble__tutors-image">
+                            <img src="img/home-tutor.jpg?a8982cefedf5d02369d3a3c7a71b22f3" alt="">
+                            <span class="ensemble-link ensemble__tutors-title">
+                                Преподаватели
+                                <svg width="4" height="28">
+                                    <use href="#four-circles"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="ensemble__photoalbum">
+                        <a href="#" class="ensemble__photoalbum-image">
+                            <img src="img/home-album.jpg?103e3c8d5356c1048bb9338a86e0599e" alt="">
+                            <span class="ensemble-link ensemble__photoalbum-title">
+                                Фотоальбом
+                                <svg width="4" height="28">
+                                    <use href="#four-circles"/>
+                                </svg>
+                            </span>
+                        </a> 
+                    </div>
+                    <div class="ensemble__videoalbum">
+                        <a href="#" class="ensemble__videoalbum-image">
+                            <img src="img/home-video.jpg?2bab03f786a3b8b10a8640bc3c1e6a8f" alt="">
+                            <span class="ensemble-link ensemble__videoalbum-title">
+                                Видео
+                                <svg width="4" height="28">
+                                    <use href="#four-circles"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="program">
+             <!--   <div class="line line-4"></div>
+                <div class="line line-5"></div>
+                <div class="line line-6"></div>
+                <div class="line line-7"></div>
+                <div class="line line-8"></div>
+                <div class="line line-9"></div>
+                <div class="line line-10"></div>-->
+                <div class="container">
+                    <div class="program__dancegirl">
+                        <img src="img/dancegirl.png?032a7d1ade5cbf295e1d5ea5b53c190b" alt="">
+                    </div>
+                    <h2 class="program__title">В программе обучения</h2>
+                    <div class="programm__intro clearfix">
+                        Занятия способствуют развитию фантазии, воображения и творческого подхода, веру в собственные силы, приобщают ребенка к танцевальному искусству, раскрывая перед ним его многообразие и красоту.
+                    </div>
+                    <ul class="program__list">
+                        <li>Гимнастика</li>
+                        <li>Классическая хореография</li>
+                        <li>Народный танец</li>
+                        <li>Эстрадный танец</li>
+                        <li>Детский танец</li>
+                        <li>Современная хореография</li>
+                    </ul>
+                </div>
+                <div class="program__costumedgirl clearfix">
+                    <img src="img/costumedgirl.jpg?0ff1dcb947f58ac6d7c037d0558a7fee">
+                </div>
+                <div class="container">
+                    <div class="program-features">
+                        <div class="program-features__years">
+                            <span class="program-features__number">12</span> лет работы
+                        </div>
+                        <div class="program-features__international">
+                            Участие в международных конкурсах
+                        </div>
+                        <div class="program-features__reports">
+                            <a href="#" class="program-features__concerts">Отчетные концерты</a>
+                            <a href="#" class="program-features__lessons">Открытые уроки</a>
+                        </div>
+                    </div>
+                    <div class="program__collective">
+                        <div class="program__collective-text">
+                            <p>
+                                В нашем коллективе Ваш ребёнок освоит комплекс упражнений, которые сформируют правильную осанку, красивую походку, выразительную пластику, разовьют ритмичность и музыкальность, координацию движений.
+                            </p>
+                            <p>
+                                Занятия создают ощущение радости, свободы движения, вызывают эмоциональный отклик
+                                на музыку, формируют более светлое восприятие жизни.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="container">
+                <div class="social-grid">
+                    <section class="reviews">
+                        <header class="reviews__heading"> 
+                            <h3 class="reviews__title">О нас говорят:</h3>
+                            <a href="#" class="reviews__all">Все отзывы</a>
+                        </header>
+                        <div class="reviews-item">
+                            <div class="reviews-item__photo">
+                                <img src="img/review-photo.jpg?41d390943de69cc570de84ec244ce5bf" alt="">
+                            </div>
+                            <div class="reviews-item__caption">
+                                <div class="reviews-item__name">
+                                    от кого отзыв
+                                </div>
+                                <div class="reviews-item__text">
+                                    В хореографическом ансамбле дети приобщаются к искусству танца, знакомясь с классическим балетом; источниками танцевальной культуры; самобытностью национальных танцев мира, связанных с жизненным укладом народов; современной музыкой...
+                                </div>
+                                <a href="#" class="reviews-item__full">
+                                    <span>Показать полностью</span>
+                                    <svg width="35" height="17" class="link-more">
+                                        <use href="#link-more-arrow"/>
+                                    </svg>
+                                </a>      
+                            </div>
+                        </div>
+                        <div class="reviews-item">
+                            <div class="reviews-item__photo">
+                                <img src="img/review-photo-1.jpg?c53a4c8a3d2e4ddb5362b0d8ff4df2ad" alt="">
+                            </div>
+                            <div class="reviews-item__caption">
+                                <div class="reviews-item__name">
+                                    от кого отзыв
+                                </div>
+                                <div class="reviews-item__text">
+                                    В хореографическом ансамбле дети приобщаются к искусству танца, знакомясь с классическим балетом; источниками танцевальной культуры; самобытностью национальных танцев мира, связанных с жизненным укладом народов; современной музыкой...
+                                </div>
+                                <a href="#" class="reviews-item__full">
+                                    <span>Показать полностью</span>
+                                    <svg width="35" height="17" class="link-more">
+                                        <use href="#link-more-arrow"/>
+                                    </svg>
+                                </a>      
+                            </div>
+                        </div>
+                        <div class="reviews-item">
+                            <div class="reviews-item__photo">
+                                <img src="img/review-photo-2.jpg?ed6011ef9c38ceab17c6369c23a0583c" alt="">
+                            </div>
+                            <div class="reviews-item__caption">
+                                <div class="reviews-item__name">
+                                    от кого отзыв
+                                </div>
+                                <div class="reviews-item__text">
+                                    В хореографическом ансамбле дети приобщаются к искусству танца, знакомясь с классическим балетом; источниками танцевальной культуры; самобытностью национальных танцев мира, связанных с жизненным укладом народов; современной музыкой...
+                                </div>
+                                <a href="#" class="reviews-item__full">
+                                    <span>Показать полностью</span>
+                                    <svg width="35" height="17" class="link-more">
+                                        <use href="#link-more-arrow"/>
+                                    </svg>
+                                </a>      
+                            </div>
+                        </div>
+                    </section>
+                    <section class="vk-group">
+                        <h3 class="vk-group__title">МЫ ВКонтакте</h3>
+                        <img src="img/psevdo-vk.jpg?7ba2b5475b295143ab8faf1374be0fd2" alt="" style="max-width: 100%;">                
+                    </section>
+                </div>
+                <section class="parents clearfix">
+                    <div class="parents__wrapper">
+                        <div class="parents__heading">
+                            А также наша команда професионалов приглашает родителей на тренировки:
+                        </div>
+                        <div class="parents__grid">
+                            <div class="parents-item">
+                                <div class="parents-item__image">
+                                    <img src="img/fitness.png?045339b7052664d647d15d6e22dbd591" alt="">
+                                </div>
+                                <div class="parent-item__title">
+                                    Фитнес
+                                </div>
+                            </div>
+                            <div class="parents-item">
+                                <div class="parents-item__image">
+                                    <img src="img/ioga.png?77af1dcc74616473842b1b324e4230de" alt=""> 
+                                </div>
+                                <div class="parent-item__title">
+                                    Стрейч - йога
+                                </div>
+                            </div>
+                            <div class="parents-item">
+                                <div class="parents-item__image">
+                                    <img src="img/ballet.png?51f915a240cb05ac08a0d59bc654a587" alt=""> 
+                                </div>
+                                <div class="parent-item__title">
+                                    Боди - балет
+                                </div>
+                            </div>
+                            <div class="parents-item">
+                                <div class="parents-item__image">
+                                    <img src="img/dances.png?89a122f9abe35dad9b8d5806b22d3e4e" alt="">
+                                </div>
+                                <div class="parent-item__title">
+                                    бальные танцы
+                                </div>
+                            </div>
+                        </div>
+                        <div class="parents__more">
+                            + индивидуальные тренировки по всем направлениям
+                        </div>
+                        <a href="#" class="button-more">
+                            <span>Записаться</span>
+                            <svg class="button-more__arrow" width="25" height="19">
+                                <use href="#button-more-arrow"/>
+                            </svg>
+                        </a>
+                    </div>
+                </section>
+            </div>
+            <div class="container container--map">
+                <section class="map">
+                    <div class="js-toggler-usman toggler-usman-unactive">
+                        <span class="map__toggler-content">Мы на карте в <span class="map__toggler-larger">Новой Усмани</span></span>
+                    </div>
+                    <div class="js-toggler-otradnoe toggler-otradnoe-active">
+                            <span class="map__toggler-content">Мы на карте в <span class="map__toggler-larger">Отрадном</span></span>
+                    </div>
+                    <div class="map__wrapper">
+                        <div class="map__otradnoe">
+                            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A482a0734e1e4193343293d9b8fec72bf6f05e3e1b87eda5f88ca6046f0d5c62a&amp;width=1120&amp;height=600&amp;lang=ru_RU&amp;scroll=true"></script>
+                        </div>
+                        <div class="map__usman" hidden>
+                            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Afb26eab5d8de156d638ad266d9cb6685589258117234cb4b321f7a3ce4a3b571&amp;width=1120&amp;height=600&amp;lang=ru_RU&amp;scroll=true"></script>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main> 
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__menu">
+                    <div class="footer__contacts-flex">
+                        <a href="tel:+7 (920)  217-99-64" class="footer__tel">+7 (920)  <span>217-99-64</span></a>
+                        <a href="#" class="footer__vk">
+                            <svg class="footer-vk" width="26" height="26">
+                                <use href="#vkontakte" />
+                            </svg>      
+                            Мы ВКонтакте
+                        </a>
+                    </div>
+                    <div class="footer__info-flex">
+                        <a href="#" class="footer__agreement">Пользовательское соглашение</a>
+                        <a href="#" class="footer__confidence">Политика конфиденциальности</a>
+                    </div>
+                    <div class="footer__links-flex">
+                        <a href="#" class="footer__contacts">Контакты</a>
+                        <a href="#">Карта сайта</a>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <div class="footer__bottom-left">
+                        <div class="footer__copyright">
+                            © 2017 г. "Радуга" - детский хореографический ансамбль.
+                            Копирование материалов без указания источника запрещено. 
+                        </div>
+                        <div class="footer__counter">
+                            <img src="img/counter.jpg?17fbac252e3377bcbdc19b646d1009a0" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#" class="footer__developer">
+                            Разработка сайта<br>
+                            ДоменАРТ
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="to-top" hidden>
+                <svg class="to-top__arrow" id="#to-top" width="18px" height="30px">
+                    <use href="#to-top"/>
+                </svg>
+            </div>
+        </footer>   
+        <svg xmlns="http://www.w3.org/2000/svg" hidden>
             <symbol id="logo" viewBox="0 0 330 160">
                 <title>logo</title>
                 <g transform="translate(-782 -203)">
@@ -113,8 +494,29 @@
                 <path d="M249.82,193.291c13.134,0,23.219-4.854,30.262-14.561c5.332-7.043,7.994-18.274,7.994-33.689V95.075 c0-15.225-2.669-26.363-7.994-33.406c-7.043-9.707-17.128-14.561-30.262-14.561c-12.756,0-22.75,4.854-29.98,14.561 c-5.327,7.043-7.992,18.181-7.992,33.406v49.965c0,15.225,2.662,26.457,7.992,33.689 C227.073,188.437,237.063,193.291,249.82,193.291z M237.541,89.935c0-13.134,4.093-19.701,12.279-19.701 s12.275,6.567,12.275,19.701v59.955c0,13.328-4.089,19.985-12.275,19.985s-12.279-6.661-12.279-19.985V89.935z"/>
                 <path d="M328.328,193.291c9.523,0,19.328-5.901,29.413-17.705v15.703h25.981V48.822h-25.981v108.777 c-5.712,8.186-11.133,12.275-16.279,12.275c-3.429,0-5.428-2.093-5.996-6.28c-0.191-0.381-0.287-3.715-0.287-9.994V48.822h-25.981 v112.492c0,9.705,0.767,16.84,2.286,21.411C313.961,189.768,319.574,193.291,328.328,193.291z"/>
             </symbol>
+            <symbol id="three-circles">
+                <circle cx="2" cy="2" r="2" />
+                <circle cx="2" cy="10" r="2" />
+                <circle cx="2" cy="18" r="2" />     
+            </symbol>
+            <symbol id="four-circles">
+                <circle cx="2" cy="2" r="2" />
+                <circle cx="2" cy="10" r="2" />
+                <circle cx="2" cy="18" r="2" />     
+                <circle cx="2" cy="26" r="2" />   
+            </symbol>
+            <symbol id="button-more-arrow">
+                <defs><path id="o5vxa" d="M608.38 1613.6a1.36 1.36 0 0 1 0-1.94l3.67-3.66H606a2 2 0 1 1 0-4h6.09l-3.72-3.69a1.36 1.36 0 0 1 .01-1.94 1.4 1.4 0 0 1 1.97 0l7.65 7.61-7.65 7.61a1.4 1.4 0 0 1-1.97.01zm5.7-7.62l-.08-.08a2.03 2.03 0 0 1 0 .16zM601 1606a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></defs><g><g transform="translate(-595 -1596)"><use fill="#fff" xlink:href="#o5vxa"/></g></g>
+            </symbol>
+            <symbol id="link-more-arrow">
+                <defs><path id="od0qa" d="M748.38 4396.6a1.36 1.36 0 0 1 0-1.94l3.67-3.66H746a2 2 0 1 1 0-4h6.09l-3.72-3.69a1.36 1.36 0 0 1 .01-1.94 1.4 1.4 0 0 1 1.97 0l7.65 7.61-7.65 7.61a1.4 1.4 0 0 1-1.97.01zm5.7-7.62l-.08-.08a2.04 2.04 0 0 1 0 .16zM741 4389a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-7 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-7 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></defs><g><g transform="translate(-721 -4379)"><use fill="#7fc1c1" xlink:href="#od0qa"/></g></g>
+            </symbol>
+            <symbol id="to-top">
+                <defs><path id="m3aha" d="M1857.6 1762.62c-.53.54-1.4.55-1.94 0l-3.66-3.67v6.05a2 2 0 1 1-4 0v-6-.09l-3.69 3.72c-.54.54-1.4.53-1.94-.01a1.4 1.4 0 0 1 0-1.97l7.61-7.65 7.61 7.65a1.4 1.4 0 0 1 .01 1.97zm-7.62-5.7l-.08.08a2.04 2.04 0 0 1 .16 0zm.02 13.08a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></defs><g><g transform="translate(-1840 -1751)"><use fill="#ccc" xlink:href="#m3aha"/></g></g>
+            </symbol>
         </svg>
-
-        <script type="text/javascript" src="main.js"></script></body>
+        <canvas id="canvasHomepage" class="canvas-homepage"></canvas>
+    <script type="text/javascript" src="main.js"></script> 
+    
     </body>
 </html>
