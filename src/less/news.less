@@ -1,0 +1,58 @@
+.news__pool {
+    column-gap: 20px;
+    column-count: 3;
+    margin-bottom: 120px;
+}
+
+.article-item {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 64px 32px 40px 28px;
+    border: 2px solid #f4f4f4;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    &:hover {
+        border: 2px solid #d0d4d7;
+        background-color: rgba(196, 199, 204, 0.5);
+        .article-item__title {
+            color: #000000;
+            position: relative;
+            &::before {
+                content: '';
+                width: 124px;
+                border-bottom: 4px dotted #c4c7cc;
+                position: absolute;
+                bottom: -15px;
+                left: 0;
+               
+            }
+        }
+    }
+}
+
+.review-item__date {
+    display: block;
+    color: #999999;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.article-item__title {
+    display: block;
+    margin-bottom: 54px;
+    color: #666666;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.28;
+    text-transform: uppercase;
+}
+
+.review-item__text {
+    display: block;
+    color: #666666;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.28;
+}

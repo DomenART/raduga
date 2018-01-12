@@ -51,10 +51,11 @@ if (forms) {
 
     //Кнопка закрытия блока формы
     let close = document.querySelector('.js-close');
-
-    close.addEventListener('click',function() {
-        this.parentNode.hidden = true;
-    });
+    if (close) {
+        close.addEventListener('click',function() {
+            this.parentNode.hidden = true;
+        });
+    }
 }
 
 //Отображение блока успешной отправки сообщения формы "Записаться на урок"
@@ -207,26 +208,26 @@ if (homepage) {
     });
 
     //анимации главной
-    let ensembleLinks = document.querySelector('.ensemble__links');
+    let ensembleLinks = document.querySelector('.js-ensemble-links');
 
     if (ensembleLinks) {
-        let tutorsImage = ensembleLinks.querySelector('.ensemble__tutors-image img');
-        let tutorsTitle = ensembleLinks.querySelector('.ensemble__tutors-title');
-        let photoalbumImage = ensembleLinks.querySelector('.ensemble__photoalbum-image img');
-        let photoalbumTitle = ensembleLinks.querySelector('.ensemble__photoalbum-title');
-        let videoalbumImage = ensembleLinks.querySelector('.ensemble__videoalbum-image img');
-        let videoalbumTitle = ensembleLinks.querySelector('.ensemble__videoalbum-title');
+        let tutorsImage = ensembleLinks.querySelector('.js-ensemble-tutors-image');
+        let tutorsTitle = ensembleLinks.querySelector('.js-ensemble-tutors-title');
+        let photoalbumImage = ensembleLinks.querySelector('.js-ensemble-photoalbum-image');
+        let photoalbumTitle = ensembleLinks.querySelector('.js-ensemble-photoalbum-title');
+        let videosImage = ensembleLinks.querySelector('.js-ensemble-videos-image');
+        let videosTitle = ensembleLinks.querySelector('.js-ensemble-videos-title');
 
         window.addEventListener('scroll', function() {
             let ensembleLinksCoords = ensembleLinks.getBoundingClientRect();
             let animated = false;
             if ((ensembleLinksCoords.top < (document.documentElement.clientHeight / 2)) && (animated == false)) {
-                tutorsImage.style.animation = '1s slide-ltr forwards';
-                tutorsTitle.style.animation = '1s slide-ltr 1s forwards';
-                photoalbumImage.style.animation = '1s slide-rtl 1.5s forwards';
-                photoalbumTitle.style.animation = '1s slide-rtl-rotated 2s forwards';
-                videoalbumImage.style.animation = '1s slide-rtl 2.5s forwards';
-                videoalbumTitle.style.animation = '1s slide-rtl 3s forwards';
+                tutorsImage.style.animation = '1s slide-ltr both';
+                tutorsTitle.style.animation = '1s slide-ltr 1s both';
+                photoalbumImage.style.animation = '1s slide-rtl 1.5s both';
+                photoalbumTitle.style.animation = '1s slide-rtl-rotated 2s both';
+                videosImage.style.animation = '1s slide-rtl 2.5s both';
+                videosTitle.style.animation = '1s slide-rtl 3s both';
                 animated = true;
             };
         });
@@ -302,7 +303,7 @@ if (homepage) {
         };
         togglerOtradnoe.onclick = function() {
             mapOtradnoe.hidden = false;
-            mapUsman.hidden = true;0
+            mapUsman.hidden = true;
             togglerUsman.classList.remove('toggler-usman-active');
             togglerUsman.classList.add('toggler-usman-unactive');
             togglerOtradnoe.classList.remove('toggler-otradnoe-unactive');
@@ -350,133 +351,169 @@ if (window.matchMedia('(max-width: 639px)').matches) {
 //Линии
 let canvasHomepage = document.querySelector('#canvasHomepage');
 
-canvasHomepage.setAttribute('width', document.documentElement.offsetWidth);
-canvasHomepage.setAttribute('height', document.documentElement.offsetHeight);
+if (canvasHomepage) {
+    canvasHomepage.setAttribute('width', document.documentElement.offsetWidth);
+    canvasHomepage.setAttribute('height', document.documentElement.offsetHeight);
 
-function getCoords(elem) { 
-    var box = elem.getBoundingClientRect();
-    return {
-        top: box.top + pageYOffset,
-        left: box.left + pageXOffset,
-        bottom: box.bottom + pageYOffset,
-        right: box.right + pageXOffset,
-    };
-}
-
-if ((canvasHomepage.getContext) && (window.matchMedia('(min-width: 639px)').matches)) {
-    let controller = new ScrollMagic.Controller();
-    var ctx = canvasHomepage.getContext('2d');
-    let xDraw, yDraw
-    let tutorsImage = document.querySelector('.ensemble__tutors-image img');
-    let tutorsImageCoords = getCoords(tutorsImage);
-    let programTitle = document.querySelector('.program__title');
-    let programTitleCoords = getCoords(programTitle);
-    let programList = document.querySelector('.program__list');
-    let programListCoords = getCoords(programList);
-    let programYears = document.querySelector('.program-features__years');
-    let programYearsCoords = getCoords(programYears);
-    let socialGrid = document.querySelector('.social-grid');
-    let socialGridCoords = getCoords(socialGrid);
-    let parentsButton = document.querySelector('.parents .button-more');
-    let parentsButtonCoords = getCoords(parentsButton);
-
-    ctx.strokeStyle = '#f355b2'
-    ctx.lineWidth = 2
-    ctx.globalCompositeOperation = 'copy'
-    
-    let start = {
-        x: 0,
-        y: tutorsImageCoords.top + tutorsImage.offsetHeight * 0.1
+    function getCoords(elem) { 
+        var box = elem.getBoundingClientRect();
+        return {
+            top: box.top + pageYOffset,
+            left: box.left + pageXOffset,
+            bottom: box.bottom + pageYOffset,
+            right: box.right + pageXOffset,
+        };
     }
-    let offset = start.y - window.innerHeight * 0.7
-    let defaultDuration = window.innerHeight * 0.3
-    let points = [{
-        coords: {
-            x: tutorsImageCoords.right + 27,
+
+    if ((canvasHomepage.getContext) && (window.matchMedia('(min-width: 639px)').matches)) {
+        let controller = new ScrollMagic.Controller();
+        var ctx = canvasHomepage.getContext('2d');
+        let xDraw, yDraw
+        let tutorsImage = document.querySelector('.ensemble__tutors-image img');
+        let tutorsImageCoords = getCoords(tutorsImage);
+        let programTitle = document.querySelector('.program__title');
+        let programTitleCoords = getCoords(programTitle);
+        let programList = document.querySelector('.program__list');
+        let programListCoords = getCoords(programList);
+        let programYears = document.querySelector('.program-features__years');
+        let programYearsCoords = getCoords(programYears);
+        let socialGrid = document.querySelector('.social-grid');
+        let socialGridCoords = getCoords(socialGrid);
+        let parentsButton = document.querySelector('.parents .button-more');
+        let parentsButtonCoords = getCoords(parentsButton);
+
+        ctx.strokeStyle = '#f355b2'
+        ctx.lineWidth = 2
+        ctx.globalCompositeOperation = 'copy'
+        
+        let start = {
+            x: 0,
             y: tutorsImageCoords.top + tutorsImage.offsetHeight * 0.1
         }
-    }, {
-        coords: {
-            x: tutorsImageCoords.right + 27,
-            y: tutorsImageCoords.top + tutorsImage.offsetHeight * 0.9
-        }
-    }, {
-        coords: {
-            x: 0,
-            y: tutorsImageCoords.top + tutorsImage.offsetHeight * 0.9
-        }
-    }, {
-        coords: {
-            x: 0,
-            y: programTitleCoords.top + programTitle.offsetHeight
-        }
-    }, {
-        coords: {
-            x: programTitleCoords.right + 75,
-            y: programTitleCoords.top + programTitle.offsetHeight
-        }
-    }, {
-        coords: {
-            x: programTitleCoords.right + 75,
-            y: programYearsCoords.top + 55
-        }
-    }, {
-        coords: {
-            x: programTitleCoords.right - 100,
-            y: programYearsCoords.top + 55
-        }
-    }, {
-        coords: {
-            x: programTitleCoords.right - 100,
-            y: socialGridCoords.top - 40
-        }
-    }, {
-        coords: {
-            x: socialGridCoords.left - 40,
-            y: socialGridCoords.top - 40
-        }
-    }, {
-        coords: {
-            x: socialGridCoords.left - 40,
-            y: parentsButtonCoords.top + (parentsButton.offsetHeight / 2)
-        }
-    }, {
-        coords: {
-            x: parentsButtonCoords.left,
-            y: parentsButtonCoords.top + (parentsButton.offsetHeight / 2)
-        }
-    }]
-
-    points.forEach((point, index) => {
-        let prev = index > 0 ? points[index - 1].coords : start
-        let x = points[index].coords.x - prev.x
-        let y = points[index].coords.y - prev.y
-
-        points[index].prev = prev
-        points[index].move = {x, y}
-        points[index].duration = y && y - defaultDuration || defaultDuration
-        points[index].offset = index > 0 ? offset += points[index - 1].duration : offset
-    })
-
-    points.forEach((point, index) => {
-        new ScrollMagic.Scene({
-            duration: point.duration,
-            offset: point.offset
-        })
-        .addTo(controller)
-        .on('progress', e => {
-            let progress = e.progress.toFixed(3)
-            ctx.beginPath()
-            // console.log('start:', start.x, start.y)
-            ctx.moveTo(start.x, start.y)
-            for (let i = 0; i < index; i++) {
-                // console.log(i + ':', points[i].coords.x, points[i].coords.y)
-                ctx.lineTo(points[i].coords.x, points[i].coords.y)
+        let offset = start.y - window.innerHeight * 0.7
+        let defaultDuration = window.innerHeight * 0.3
+        let points = [{
+            coords: {
+                x: tutorsImageCoords.right + 27,
+                y: tutorsImageCoords.top + tutorsImage.offsetHeight * 0.1
             }
-            // console.log('point:', point.move.x * progress, point.move.y * progress)
-            ctx.lineTo(point.prev.x + point.move.x * progress, point.prev.y + point.move.y * progress)
-            ctx.stroke()
+        }, {
+            coords: {
+                x: tutorsImageCoords.right + 27,
+                y: tutorsImageCoords.top + tutorsImage.offsetHeight * 0.9
+            }
+        }, {
+            coords: {
+                x: 0,
+                y: tutorsImageCoords.top + tutorsImage.offsetHeight * 0.9
+            }
+        }, {
+            coords: {
+                x: 0,
+                y: programTitleCoords.top + programTitle.offsetHeight
+            }
+        }, {
+            coords: {
+                x: programTitleCoords.right + 75,
+                y: programTitleCoords.top + programTitle.offsetHeight
+            }
+        }, {
+            coords: {
+                x: programTitleCoords.right + 75,
+                y: programYearsCoords.top + 55
+            }
+        }, {
+            coords: {
+                x: programTitleCoords.right - 100,
+                y: programYearsCoords.top + 55
+            }
+        }, {
+            coords: {
+                x: programTitleCoords.right - 100,
+                y: socialGridCoords.top - 40
+            }
+        }, {
+            coords: {
+                x: socialGridCoords.left - 40,
+                y: socialGridCoords.top - 40
+            }
+        }, {
+            coords: {
+                x: socialGridCoords.left - 40,
+                y: parentsButtonCoords.top + (parentsButton.offsetHeight / 2)
+            }
+        }, {
+            coords: {
+                x: parentsButtonCoords.left,
+                y: parentsButtonCoords.top + (parentsButton.offsetHeight / 2)
+            }
+        }]
+
+        points.forEach((point, index) => {
+            let prev = index > 0 ? points[index - 1].coords : start
+            let x = points[index].coords.x - prev.x
+            let y = points[index].coords.y - prev.y
+
+            points[index].prev = prev
+            points[index].move = {x, y}
+            points[index].duration = y && y - defaultDuration || defaultDuration
+            points[index].offset = index > 0 ? offset += points[index - 1].duration : offset
         })
-    })
+
+        points.forEach((point, index) => {
+            new ScrollMagic.Scene({
+                duration: point.duration,
+                offset: point.offset
+            })
+            .addTo(controller)
+            .on('progress', e => {
+                let progress = e.progress.toFixed(3)
+                ctx.beginPath()
+                // console.log('start:', start.x, start.y)
+                ctx.moveTo(start.x, start.y)
+                for (let i = 0; i < index; i++) {
+                    // console.log(i + ':', points[i].coords.x, points[i].coords.y)
+                    ctx.lineTo(points[i].coords.x, points[i].coords.y)
+                }
+                // console.log('point:', point.move.x * progress, point.move.y * progress)
+                ctx.lineTo(point.prev.x + point.move.x * progress, point.prev.y + point.move.y * progress)
+                ctx.stroke()
+            })
+        })
+    }
 }
 
+//Переключатель таблиц на странице цены
+
+let pricelist = document.querySelector('.prices__table-wrapper');
+
+if (pricelist) {
+    let usmanPriceControl = document.querySelector('.js-price-control-usman');
+    let otradnoePriceControl = document.querySelector('.js-price-control-otradnoe');
+    let otradnoePriceTable = document.querySelector('.js-price-table-otradnoe');
+    let usmanPriceTable = document.querySelector('.js-price-table-usman');
+    
+    usmanPriceControl.addEventListener('click', function() {
+        if (this.classList.contains('prices__control_disabled')) {
+            this.classList.remove('prices__control_disabled');
+            this.classList.add('prices__control_active');
+            otradnoePriceTable.hidden = true;
+            usmanPriceTable.hidden = false;
+            otradnoePriceControl.classList.remove('prices__control_active');
+            otradnoePriceControl.classList.add('prices__control_disabled');
+        }
+    });
+
+    otradnoePriceControl.addEventListener('click', function() {
+        if (this.classList.contains('prices__control_disabled')) {
+            this.classList.remove('prices__control_disabled');
+            this.classList.add('prices__control_active');
+            usmanPriceTable.hidden = true;
+            otradnoePriceTable.hidden = false;
+            usmanPriceControl.classList.remove('prices__control_active');
+            usmanPriceControl.classList.add('prices__control_disabled');
+        }
+    });
+        
+    
+}

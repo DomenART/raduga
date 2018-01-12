@@ -1,0 +1,122 @@
+.contacts__grid {
+    display: grid;
+    margin-left: 51px;
+    margin-bottom: 188px;
+    grid-template-columns: 479px 500px;
+    grid-gap: 60px;
+    position: relative;
+}
+
+.contacts__items {
+    display: grid;
+    grid-template-columns: 230px 280px;
+    grid-column-gap: 71px;
+    grid-row-gap: 85px;
+}
+
+.contacts__map {
+    filter: grayscale(100%);
+}
+
+.contacts-item {
+    padding-bottom: 7px;
+    position: relative; 
+    &::before {
+        content: '';
+        width: 230px;
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: #e7e8ec;
+    }
+}
+
+.contacts-item--phone {
+    padding-bottom: 19px;
+}
+
+.contacts-item--email {
+    &::before {
+        display: none;
+     }
+}
+
+.contacts-item__heading {
+    min-height: 20px;
+    margin-bottom: 36px;
+    position: relative;
+    color: #000000;
+    font-family: @font-alt;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    &::before {
+        content: '';
+        width: 124px;
+        position: absolute;
+        bottom: -13px;
+        left: 0;
+        border-bottom: 4px dotted #e0e0e0;
+    }
+}
+
+.contacts-item__heading--email {
+    margin-bottom: 42px;
+}
+
+.contacts-item__phone {
+    color: #000000;
+    font-family: @font-alt;
+    font-size: 24px;
+    text-decoration: none;
+    span {
+        font-size: 14px;
+    }
+    &:focus {
+        outline: none;
+        background: #00ffff;
+        color: #000;
+    }
+    &:hover,
+    &:active {
+        background: transparent;
+    }
+}
+
+.contacts-item__email {
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 3.2px;
+    text-decoration: none;
+    border-bottom: 1px dashed #ccc;
+    padding: 3px 0;
+    line-height: 1;
+    &:focus {
+        outline: none;
+        background: #00ffff;
+        color: #000;
+        border-bottom-color: #000000;
+    }
+    &:hover,
+    &:active {
+        background: transparent;
+        border-bottom-color: #ccc;
+    }
+}
+
+.contacts__social {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.box-decor--contacts {
+    left: -480px;
+}
+
+.aside__contacts-image {
+    margin-bottom: 19px;
+}

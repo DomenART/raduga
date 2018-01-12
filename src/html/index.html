@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="cmsmagazine" content="ef9002bde22164e1bb8ca1b1793cf47b">
         <title>Радуга</title>
-        <link rel="stylesheet" href="home.css">
+        <link rel="stylesheet" href="main.css">
     </head>
     <body>
         <main class="homepage">
@@ -49,7 +49,7 @@
                 </button>
             </div>
             <section class="intro">
-                <header class="header">
+                <header class="header header--homepage">
                     <ul class="header-social">
                         <li>
                             <a href="#" aria-label="Страница Вконтакте">
@@ -156,7 +156,7 @@
                 </div>
             </section>
             <section class="ensemble">
-                <h2 class="ensemble__background-title background-title">Об ансамбле</h2>
+                <h2 class="ensemble__background-title">Об ансамбле</h2>
                 <div class="container">
                     <div class="ensemble__heading">
                         Хореографический ансамбль "Радуга" создан в 2005 году. За короткое время мы успели побывать на международных фестивалях:  
@@ -181,64 +181,50 @@
                             </a>
                         </div>
                         <div>
-                        <video class="ensemble__video" poster="img/home-videoposter.jpg" controls>
-                            <source src="img/homepage-video.mp4" type="video/mp4">
-                        </video>
-                        <!--<img src="../img/home-videoposter.jpg" class="ensemble__video" alt=""> -->
+                            <iframe width="560" height="315"  class="ensemble__video"src="https://www.youtube.com/embed/etAXXbJ9d3s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             <div class="ensemble__about">
                                 В хореографическом ансамбле дети приобщаются к искусству танца, знакомясь с классическим балетом; источниками танцевальной культуры; самобытностью национальных танцев мира, связанных с жизненным укладом народов; современной музыкой; эстрадным танцем и др. 
                             </div>
                         </div>  
                     </div>
                 </div>
-                <div class="ensemble__links">
-                    <!--   <div class="line line-1"></div>
-                        <div class="line line-2"></div>
-                        <div class="line line-3"></div> -->
-                   
-                    <div class="ensemble__tutors">
-                        <a href="#" class="ensemble__tutors-image">
-                            <img src="../img/home-tutor.jpg" alt="">
-                            <span class="ensemble-link ensemble__tutors-title">
-                                Преподаватели
+                <div class="link-box link-box_photoalbum js-ensemble-links">       
+                    <div>
+                        <a href="#" class="link-object link-object_first">
+                            <img src="../img/home-tutor.jpg" class="js-ensemble-tutors-image" alt="">
+                            <span class="link-object__title js-ensemble-tutors-title">
+                                Категория
+                                <svg width="4" height="28"> 
+                                    <use href="#four-circles"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>    
+                    <div>
+                        <a href="#" class="link-object link-object_second">
+                            <img src="../img/home-album.jpg" class="js-ensemble-photoalbum-image" alt="">
+                            <span class="link-object__title js-ensemble-photoalbum-title">
+                                Категория
+                                <svg width="4" height="28"> 
+                                    <use href="#four-circles"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div> 
+                    <div>
+                        <a href="#" class="link-object link-object_third">
+                            <img src="../img/home-video.jpg" class="js-ensemble-videos-image" alt="">
+                            <span class="link-object__title js-ensemble-videos-title">
+                                Категория
                                 <svg width="4" height="28">
                                     <use href="#four-circles"/>
                                 </svg>
                             </span>
                         </a>
-                    </div>
-                    <div class="ensemble__photoalbum">
-                        <a href="#" class="ensemble__photoalbum-image">
-                            <img src="../img/home-album.jpg" alt="">
-                            <span class="ensemble-link ensemble__photoalbum-title">
-                                Фотоальбом
-                                <svg width="4" height="28">
-                                    <use href="#four-circles"/>
-                                </svg>
-                            </span>
-                        </a> 
-                    </div>
-                    <div class="ensemble__videoalbum">
-                        <a href="#" class="ensemble__videoalbum-image">
-                            <img src="../img/home-video.jpg" alt="">
-                            <span class="ensemble-link ensemble__videoalbum-title">
-                                Видео
-                                <svg width="4" height="28">
-                                    <use href="#four-circles"/>
-                                </svg>
-                            </span>
-                        </a>
-                    </div>
+                    </div>   
                 </div>
             </section>
             <section class="program">
-             <!--   <div class="line line-4"></div>
-                <div class="line line-5"></div>
-                <div class="line line-6"></div>
-                <div class="line line-7"></div>
-                <div class="line line-8"></div>
-                <div class="line line-9"></div>
-                <div class="line line-10"></div>-->
                 <div class="container">
                     <div class="program__dancegirl">
                         <img src="../img/dancegirl.png" alt="">
@@ -303,10 +289,10 @@
                                 <div class="reviews-item__text">
                                     В хореографическом ансамбле дети приобщаются к искусству танца, знакомясь с классическим балетом; источниками танцевальной культуры; самобытностью национальных танцев мира, связанных с жизненным укладом народов; современной музыкой...
                                 </div>
-                                <a href="#" class="reviews-item__full">
+                                <a href="#" class="links-full">
                                     <span>Показать полностью</span>
-                                    <svg width="35" height="17" class="link-more">
-                                        <use href="#link-more-arrow"/>
+                                    <svg width="35" height="17" class="link-full__arrow">
+                                        <use href="#arrow-right"/>
                                     </svg>
                                 </a>      
                             </div>
@@ -322,9 +308,9 @@
                                 <div class="reviews-item__text">
                                     В хореографическом ансамбле дети приобщаются к искусству танца, знакомясь с классическим балетом; источниками танцевальной культуры; самобытностью национальных танцев мира, связанных с жизненным укладом народов; современной музыкой...
                                 </div>
-                                <a href="#" class="reviews-item__full">
+                                <a href="#" class="link-full">
                                     <span>Показать полностью</span>
-                                    <svg width="35" height="17" class="link-more">
+                                    <svg width="35" height="17" class="link-full__arrow">
                                         <use href="#link-more-arrow"/>
                                     </svg>
                                 </a>      
@@ -341,19 +327,19 @@
                                 <div class="reviews-item__text">
                                     В хореографическом ансамбле дети приобщаются к искусству танца, знакомясь с классическим балетом; источниками танцевальной культуры; самобытностью национальных танцев мира, связанных с жизненным укладом народов; современной музыкой...
                                 </div>
-                                <a href="#" class="reviews-item__full">
+                                <a href="#" class="link-full">
                                     <span>Показать полностью</span>
-                                    <svg width="35" height="17" class="link-more">
+                                    <svg width="35" height="17" class="link-full__arrow">
                                         <use href="#link-more-arrow"/>
                                     </svg>
                                 </a>      
                             </div>
                         </div>
                     </section>
-                    <section class="vk-group">
+                    <div class="vk-group">
                         <h3 class="vk-group__title">МЫ ВКонтакте</h3>
                         <img src="../img/psevdo-vk.jpg" alt="" style="max-width: 100%;">                
-                    </section>
+                    </div>
                 </div>
                 <section class="parents clearfix">
                     <div class="parents__wrapper">
@@ -465,8 +451,8 @@
                 </div>
             </div>
             <div class="to-top" hidden>
-                <svg class="to-top__arrow" id="#to-top" width="18px" height="30px">
-                    <use href="#to-top"/>
+                <svg class="to-top__arrow" width="18px" height="30px">
+                    <use href="#control"/>
                 </svg>
             </div>
         </footer>   
@@ -511,7 +497,7 @@
             <symbol id="link-more-arrow">
                 <defs><path id="od0qa" d="M748.38 4396.6a1.36 1.36 0 0 1 0-1.94l3.67-3.66H746a2 2 0 1 1 0-4h6.09l-3.72-3.69a1.36 1.36 0 0 1 .01-1.94 1.4 1.4 0 0 1 1.97 0l7.65 7.61-7.65 7.61a1.4 1.4 0 0 1-1.97.01zm5.7-7.62l-.08-.08a2.04 2.04 0 0 1 0 .16zM741 4389a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-7 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-7 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></defs><g><g transform="translate(-721 -4379)"><use fill="#7fc1c1" xlink:href="#od0qa"/></g></g>
             </symbol>
-            <symbol id="to-top">
+            <symbol id="control">
                 <defs><path id="m3aha" d="M1857.6 1762.62c-.53.54-1.4.55-1.94 0l-3.66-3.67v6.05a2 2 0 1 1-4 0v-6-.09l-3.69 3.72c-.54.54-1.4.53-1.94-.01a1.4 1.4 0 0 1 0-1.97l7.61-7.65 7.61 7.65a1.4 1.4 0 0 1 .01 1.97zm-7.62-5.7l-.08.08a2.04 2.04 0 0 1 .16 0zm.02 13.08a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></defs><g><g transform="translate(-1840 -1751)"><use fill="#ccc" xlink:href="#m3aha"/></g></g>
             </symbol>
         </svg>

@@ -1,0 +1,49 @@
+.tutors {
+    position: relative;
+}
+
+
+.tutor-box {
+    display: grid;
+    grid-template-columns: 300px 527px;
+    grid-gap: 60px;
+    margin-bottom: 304px;
+    padding-left: 231px;
+    position: relative;
+    &::before {
+        content: '';
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 44px;
+        left: 0px;
+        background: url('../img/gray-tutors.jpg') 50% 50% no-repeat;
+        background-size: cover;
+    }
+}
+
+.tutor-box__img {
+    height: 300px;
+    margin-bottom: 80px;
+}
+
+.tutor-box__name {
+    margin-top: -10px;
+    margin-bottom: 75px;
+    position: relative;
+    color: #000000;
+    font-family: @font-alt;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    &::before {
+        content: '';
+        width: 124px;
+        position: absolute;
+        bottom: -17px;
+        left: 0;
+        border-bottom: 4px dotted #e0e0e0;
+    }
+}

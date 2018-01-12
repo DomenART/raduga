@@ -1,0 +1,123 @@
+.prices {
+    position: relative;
+}
+
+.pagetitle_prices {
+    margin-bottom: 115px; 
+}
+
+.prices__action {
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.prices__table-wrapper {
+    margin-bottom: 105px;
+    position: relative;
+}
+
+.prices__contols {
+    display: flex;
+    align-items: flex-end;
+}
+
+.prices__control {
+    width: 175px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.prices__control_disabled {
+    padding: 31px 0 26px;
+    background-color: #f1f1f1;
+    color: #666666;
+}
+
+.prices__control_active {
+    padding: 46px 0 28px;
+    background-color: #66cccc;
+    color: #ffffff;
+    span {
+        position: relative;
+        &::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+.prices__table {
+    width: 100%;
+    border: 2px solid #cccccc;
+    vertical-align: middle;
+    border-collapse: collapse;
+    background: #ffffff;
+    tr {
+        &:nth-of-type(2n+1) {
+            background-color: #f9f9f9;
+        }
+        &:first-of-type {
+            border-bottom: 2px solid #cccccc;
+        }
+    }
+    th {
+        padding: 25px 20px;
+        text-align: center;
+        color: #333333;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.28;
+        letter-spacing: 0.07px;
+        &:nth-child(1) {
+            background-color: #bae8e8;
+            text-transform: uppercase;
+        }
+        &:nth-child(2),
+        &:nth-child(4) {
+            background-color: #bbd8d8;
+        }
+        &:nth-child(3) {
+            background-color: #73e0f5;
+        }
+    }
+    td {
+        padding: 25px;
+        border: 1px solid #d6d6d6;
+        font-size: 14px;
+        &:first-of-type {
+            background-color: rgba(255, 255, 153, 0.2);
+            text-align: center;
+            font-weight: 700;
+        }
+        &:last-of-type {
+            text-align: center;
+            color: #243c73;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1;
+        }
+    }
+    
+}
+
+.prices__decor {
+    width: 100%;
+    height: 406px;
+    border: 2px solid #e0e0e0;
+    position: absolute;
+    top: 30.8%;
+    left: -54.4%;
+    z-index: -1;
+}
