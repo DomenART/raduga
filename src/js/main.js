@@ -48,15 +48,29 @@ if (forms) {
             });
         });
     });
-
-    //Кнопка закрытия блока формы
-    let close = document.querySelector('.js-close');
-    if (close) {
-        close.addEventListener('click',function() {
-            this.parentNode.hidden = true;
-        });
-    }
 }
+
+//Кнопка "Закрыть"
+let close = document.querySelector('.close-btn');
+if (close) {
+    close.addEventListener('click',function() {
+        this.parentNode.classList.add('hidden');
+        overlay.classList.add('hidden');
+    });
+}
+
+//закрыть по оверлею
+let overlay = document.querySelector('.overlay');
+let popup = document.querySelector('.popup');
+
+overlay.addEventListener('click',function() {
+    popup.classList.add('hidden');
+    overlay.classList.add('hidden');
+    console.log(popup)
+    console.log(overlay)
+   
+});
+
 
 //Отображение блока успешной отправки сообщения формы "Записаться на урок"
 let enrollForm = document.querySelector('#enroll');
@@ -514,6 +528,19 @@ if (pricelist) {
             usmanPriceControl.classList.add('prices__control_disabled');
         }
     });
-        
-    
 }
+
+// Popup просмотра фото
+let photos = document.querySelectorAll('.photo-item__btn');
+
+if (photos) {
+    let photoPopup = document.querySelector('.photo-popup');
+    photos.forEach(element => {
+        element.addEventListener('click', function() {
+            photoPopup.classList.remove('hidden');
+            overlay.classList.remove('hidden');
+        });
+    });
+}
+
+

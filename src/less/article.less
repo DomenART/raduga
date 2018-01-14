@@ -44,7 +44,7 @@
 }
 
 .article__aside {
-    height: 330px;
+    height: 338px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -52,9 +52,60 @@
     right: 40px;
     top: 0px;
     svg {
-        transform: translateY(5px);
+        transform: translate(-5px,8px);
     }
 }
+
+.ya-share2__list_direction_horizontal > .ya-share2__item {
+    &:hover {
+        filter: none;
+    }
+    .ya-share2__badge {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #d8d9d9;
+    }
+    .ya-share2__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+.ya-share2__item_service_vkontakte:hover .ya-share2__badge {
+    background-color: #48729e;
+}
+
+.ya-share2__item_service_facebook:hover .ya-share2__badge {
+    background-color: #3b5998
+}
+
+.ya-share2__item_service_odnoklassniki:hover .ya-share2__badge {
+    background-color: #eb722e;    
+}
+
+.ya-share2__item_service_moimir:hover .ya-share2__badge {
+    background-color: #168de2;
+}
+
+.ya-share2__item_service_gplus:hover .ya-share2__badge {
+    background-color: #dc4e41;
+}
+
+.ya-share2__item_service_twitter:hover .ya-share2__badge {
+    background-color: #00aced;
+}
+
+.ya-share_aside .ya-share2__list_direction_horizontal > .ya-share2__item {
+    display: block;
+    margin-bottom: 5px;
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
 
 .likes_aside {
     margin-bottom: 24px;
@@ -73,7 +124,11 @@
             color: #9933cc;
         }
     }
+    img {
+        margin-bottom: 25px;
+    }
 }
+
 
 .article-control {
     display: flex;
@@ -87,10 +142,12 @@
 }
 
 .article-control__share {
+    display: flex;
     margin-right: 100px;
 }
 
 .article-control__share-text {
+    margin-right: 30px;
     color: #666666;
     font-size: 14px;
     line-height: 1.2;
