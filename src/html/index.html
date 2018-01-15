@@ -118,23 +118,23 @@
                     </div>
                     <form id="enroll" action="" method="post" class="js-form">
                         <div>
-                            <input type="text" class="enroll__input" name="name" placeholder="Имя:">
+                            <input type="text" class="input" name="name" placeholder="Имя:">
                         </div>
                         <div>
-                            <input type="tel" class="enroll__input" name="tel" pattern="^[ 0-9]+$" minlength="8" placeholder="Телефон*:" required>
+                            <input type="tel" class="input" name="tel" pattern="^[ 0-9]+$" minlength="8" placeholder="Телефон*:" required>
                         </div>
                         <div>
-                            <textarea class="enroll__textarea" placeholder="Сообщение*:" required></textarea>
+                            <textarea class="textarea" placeholder="Сообщение*:" required></textarea>
                         </div>
                         <div class="enroll__agreement">
-                            <input type="checkbox" class="enroll__check" name="agreement" id="agreement" hidden required checked>
-                            <label for="agreement" class="enroll__check-lovely"></label>
-                            <label for="agreement" class="enroll__agreement-text">
+                            <input type="checkbox" class="check" name="agreement" id="agreement" hidden required checked>
+                            <label for="agreement" class="check-lovely"></label>
+                            <label for="agreement" class="agreement-text">
                                 Прочитал(-а) пользовательское соглашение 
                                 и соглашаюсь на <a href="#">обработку своих <br>персональных данных</a>
                             </label>
                         </div>
-                        <button type="submit" class="button-more enroll__submit">
+                        <button type="submit" class="button-more submit">
                             <span>Записаться</span>
                             <svg class="button-more__arrow" width="25" height="19">
                                 <use href="#button-more-arrow"/>
@@ -246,14 +246,14 @@
                     <img src="../img/costumedgirl.jpg">
                 </div>
                 <div class="container">
-                    <div class="program-features">
+                    <div class="program-features program-features_homepage">
                         <div class="program-features__years">
                             <span class="program-features__number">12</span> лет работы
                         </div>
                         <div class="program-features__international">
                             Участие в международных конкурсах
                         </div>
-                        <div class="program-features__reports">
+                        <div class="program-features__reports program-features__reports_homepage">
                             <a href="#" class="program-features__concerts">Отчетные концерты</a>
                             <a href="#" class="program-features__lessons">Открытые уроки</a>
                         </div>
@@ -342,11 +342,11 @@
                     </div>
                 </div>
                 <section class="parents clearfix">
-                    <div class="parents__wrapper">
-                        <div class="parents__heading">
+                    <div class="parents-box parents-box_about">
+                        <div class="parents-box__heading">
                             А также наша команда професионалов приглашает родителей на тренировки:
                         </div>
-                        <div class="parents__grid">
+                        <div class="parents-box__grid">
                             <div class="parents-item">
                                 <div class="parents-item__image">
                                     <img src="../img/fitness.png" alt="">
@@ -380,7 +380,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="parents__more">
+                        <div class="parents-box__more">
                             + индивидуальные тренировки по всем направлениям
                         </div>
                         <a href="#" class="button-more">
@@ -502,7 +502,7 @@
             </symbol>
         </svg>
         <canvas id="canvasHomepage" class="canvas-homepage"></canvas>
+        <div class="overlay hidden"></div>
     <script type="text/javascript" src="main.js"></script> 
-    
     </body>
 </html>

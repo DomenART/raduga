@@ -13,6 +13,7 @@ import './html/reviews.html'
 import './html/news.html'
 import './html/article.html'
 import './html/category.html'
+import './html/about.html'
 
 /* import styles */
 import './less/main.less'

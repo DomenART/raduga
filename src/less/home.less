@@ -1086,9 +1086,19 @@
     max-width: 853px;
     margin-top: 90px;
     padding-top: 155px;
-    background-color: #f9f9f9;
     position: relative;
     z-index: 5;
+    @media (max-width: @breakpoint-medium) {
+        margin-top: 190px;
+    }
+    @media (max-width: @breakpoint-xsmall) {
+        margin-top: -80px;
+        padding-top: 195px;
+    }
+}
+
+.program-features_homepage {
+    background-color: #f9f9f9;
     &::before {
         content: '';
         width: 100%;
@@ -1102,13 +1112,6 @@
             left: -10px;
         }
     }
-    @media (max-width: @breakpoint-medium) {
-        margin-top: 190px;
-    }
-    @media (max-width: @breakpoint-xsmall) {
-        margin-top: -80px;
-        padding-top: 195px;
-    }
 }
 
 .program-features__years {
@@ -1117,7 +1120,7 @@
     left: -20px;
     margin-left: 10px;
     margin-bottom: 30px;
-    opacity: 0;
+ //   opacity: 0;
     color: #463657;
     font-size: 31px;
     font-weight: 400;
@@ -1149,7 +1152,6 @@
 .program-features__international {
     margin-left: 70px;
     margin-bottom: 45px;
-    opacity: 0;
     color: #5ac3c4;
     font-family: @font-alt;
     font-size: 18px;
@@ -1166,14 +1168,15 @@
 
 .program-features__reports {
     margin-left: 70px;
-    padding-bottom: 249px;
-    a {
-        opacity: 0;
-    }
+    padding-bottom: 39px;
     @media (max-width: @breakpoint-xsmall) {
         margin: 0;
         padding-bottom: 27px;
     }
+}
+
+.program-features__reports_homepage {
+    padding-bottom: 249px;
 }
 
 .program-features__concerts {
@@ -1447,17 +1450,24 @@
     }
 }
 
-.parents__wrapper {
+.parents-box {
     width: 740px;
-    float: right;
+    margin-left: 209px;
     text-align: center;
     @media (max-width: @breakpoint-small) {
         width: 100%;
+    }
+}
+
+.parents-box_about {
+    float: right;
+    margin-left: 0;
+    @media (max-width: @breakpoint-small) {
         float: none;
     }
 }
 
-.parents__heading {
+.parents-box__heading {
     max-width: 450px;
     margin-bottom: 84px;
     position: relative;
@@ -1490,7 +1500,7 @@
     }
 }
 
-.parents__grid {
+.parents-box__grid {
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(148px,1fr));
     grid-gap: 34px;
@@ -1530,7 +1540,7 @@
     }
 }
 
-.parents__more {
+.parents-box__more {
     margin-bottom: 44px;
     color: #666666;
     font-size: 18px;

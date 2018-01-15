@@ -284,14 +284,13 @@ if (homepage) {
         window.addEventListener('scroll', function() {
             let programFeaturesCoords = programFeatures.getBoundingClientRect();
             let animated = false;
-    
             if ((programFeaturesCoords.top < (document.documentElement.clientHeight / 2)) && (animated == false)) {
-                programFeaturesYears.style.animation = '1s slide-ltr forwards';
-                programFeaturesInternational.style.animation = '1s slide-ltr 1s forwards';
+                programFeaturesYears.style.animation = '1s slide-ltr both';
+                programFeaturesInternational.style.animation = '1s slide-ltr 1s both';
                 setTimeout(function() {
                     programFeaturesReports.forEach(function(item, i, programFeaturesReports) {
                         setTimeout(function() {
-                            item.style.animation = '0.5s slide-ltr forwards';
+                            item.style.animation = '0.5s slide-ltr both';
                         }, i*500);
                     });
                 }, 1500);
