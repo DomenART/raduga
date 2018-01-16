@@ -115,9 +115,9 @@
                 </div>
             </section>
             <section class="about__reward">
-                <div class="background-title background-title_section">мы гордимся</div>
+                <div class="background-title background-title_reward">мы гордимся</div>
                 <div class="container">
-                    <h2 class="section-title">Наши достижения <br>и награды (h2)</h2>
+                    <h2 class="section-title section-title_rewards">Наши достижения <br>и награды (h2)</h2>
                     <div class="reward-box">
                         <div class="reward-box__year">2008</div>
                         <div class="reward-box__flex">
@@ -148,7 +148,7 @@
                 </div>
             </section>
             <section class="about__tutors">
-                <div class="background-title background-title_section">Наша команда</div>
+                <div class="background-title background-title_tutors">Наша команда</div>
                 <div class="container">
                     <h2 class="section-title">о Преподавателях (h2)</h2>
                     <div class="about__tutors-grid">
@@ -195,11 +195,11 @@
                 </div>
             </section>
             <section class="about__parents clearfix">
-                <div class="background-title background-title_section">Родителям</div>
+                <div class="background-title background-title_parents">Родителям</div>
                 <div class="container">
-                    <h2 class="section-title">Мы приглашаем Родителей <br>на тренировки (h2)</h2>
+                    <h2 class="section-title section-title_parents">Мы приглашаем Родителей <br>на тренировки (h2)</h2>
                     <div class="parents-box">
-                        <div class="parents-box__grid">
+                        <div class="parents-box__grid parents-box__grid-about">
                             <div class="parents-item">
                                 <div class="parents-item__image">
                                     <img src="../img/fitness.png" alt="">
@@ -240,38 +240,36 @@
                 </div>
             </section>
             <div class="container"> 
-                <section class="about__register">
-                    <div class="register">
-                        <form method="post">
-                            <div class="register__heading">
-                                <div class="register__title">
-                                    Записаться на урок
-                                </div>
-                                <div class="register__tip">
-                                    Поля, отмеченные *, обязательны для заполнения
-                                </div>
+                <div class="register about__register">
+                    <form method="post" class="register__form">
+                        <div class="register__heading">
+                            <div class="register__title">
+                                Записаться на урок
                             </div>
-                            <div class="register__inputs">
-                                <input type="text" class="input input_register" name="name" placeholder="Имя:">
-                                <input type="tel" class="input input_register" name="tel" pattern="^[0-9]+$" minlength="8" placeholder="Телефон*:" required>
-                                <button type="submit" class="btn-more submit">
-                                    <span>Записаться</span>
-                                    <svg class="button-more__arrow" width="25" height="19">
-                                        <use href="#button-more-arrow"/>
-                                    </svg>
-                                </button>
+                            <div class="register__tip">
+                                Поля, отмеченные *, обязательны для заполнения
                             </div>
-                            <div class="register__agreement">
-                                <input type="checkbox" class="check check_register" name="agreement" id="agreement" hidden required checked>
-                                <label for="agreement" class="check-lovely"></label>
-                                <label for="agreement" class="register__agreement-text">
-                                    Прочитал(-а) <a href="#">пользовательское соглашение </a>
-                                    и соглашаюсь на <a href="#">обработку своих персональных данных</a>
-                                </label>
-                            </div>
-                        </form>
-                    </div>
-                </section>
+                        </div>
+                        <div class="register__inputs">
+                            <input type="text" class="input input_register" name="name" placeholder="Имя:">
+                            <input type="tel" class="input input_register" name="tel" pattern="^[0-9]+$" minlength="8" placeholder="Телефон*:" required>
+                            <button type="submit" class="btn-more submit btn-more_register">
+                                <span>Записаться</span>
+                                <svg class="button-more__arrow" width="25" height="19">
+                                    <use href="#button-more-arrow"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="register__agreement">
+                            <input type="checkbox" class="check check_register" name="agreement" id="agreement" hidden required checked>
+                            <label for="agreement" class="check-lovely"></label>
+                            <label for="agreement" class="register__agreement-text">
+                                Прочитал(-а) <a href="#">пользовательское соглашение </a>
+                                и соглашаюсь на <a href="#">обработку своих персональных данных</a>
+                            </label>
+                        </div>
+                    </form>
+                </div>
             </div>
         </main>
         <div class="container">

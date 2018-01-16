@@ -840,6 +840,43 @@ h6 {
   background: url(img/list-marker.svg?42c117a9c46a373ba3bdb35ff1301006) 50% 50% no-repeat;
   background-size: cover;
 }
+input,
+textarea {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+input:focus,
+textarea:focus {
+  outline: 1px solid #0066cc;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #666666;
+  font-family: "Noto Sans";
+  font-size: 14px;
+  font-weight: 400;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #666666;
+  font-family: "Noto Sans";
+  font-size: 14px;
+  font-weight: 400;
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  color: #666666;
+  font-family: "Noto Sans";
+  font-size: 14px;
+  font-weight: 400;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #666666;
+  font-family: "Noto Sans";
+  font-size: 14px;
+  font-weight: 400;
+}
 .enroll--modal {
   position: absolute;
   top: 79px;
@@ -852,43 +889,6 @@ h6 {
           box-sizing: border-box;
   padding: 41px 26px 24px 32px;
   background-color: #cbd1d5;
-}
-.enroll input,
-.enroll textarea {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-.enroll input:focus,
-.enroll textarea:focus {
-  outline: 1px solid #0066cc;
-}
-.enroll input::-webkit-input-placeholder,
-.enroll textarea::-webkit-input-placeholder {
-  color: #666666;
-  font-family: "Noto Sans";
-  font-size: 14px;
-  font-weight: 400;
-}
-.enroll input:-ms-input-placeholder,
-.enroll textarea:-ms-input-placeholder {
-  color: #666666;
-  font-family: "Noto Sans";
-  font-size: 14px;
-  font-weight: 400;
-}
-.enroll input::-ms-input-placeholder,
-.enroll textarea::-ms-input-placeholder {
-  color: #666666;
-  font-family: "Noto Sans";
-  font-size: 14px;
-  font-weight: 400;
-}
-.enroll input::placeholder,
-.enroll textarea::placeholder {
-  color: #666666;
-  font-family: "Noto Sans";
-  font-size: 14px;
-  font-weight: 400;
 }
 .close-btn {
   width: 31px;
@@ -1406,6 +1406,9 @@ h6 {
           box-shadow: 0 0 6px rgba(0, 0, 0, 0.27);
   background-color: #252c3f;
 }
+.register__form {
+  width: 820px;
+}
 .register__heading {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1413,7 +1416,7 @@ h6 {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  margin-bottom: 43px;
+  margin-bottom: 30px;
 }
 .register__title {
   margin-right: 25px;
@@ -1436,7 +1439,7 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 7px;
 }
 .btn-more_register {
   min-width: 260px;
@@ -1459,6 +1462,12 @@ h6 {
 }
 .register__agreement-text a {
   color: #cccccc;
+}
+.input_register {
+  margin-right: 11px;
+}
+.btn-more_register {
+  min-width: 260px;
 }
 .section-title {
   padding-left: 77px;
@@ -3736,10 +3745,10 @@ a.footer__tel span {
 }
 .tutor-box__img {
   height: 300px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .tutor-box__name {
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   text-align: right;
   color: #000000;
   font-size: 14px;
@@ -4758,13 +4767,22 @@ a.footer__tel span {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 555px;
+  margin-right: -25px;
+  margin-top: -17px;
   float: right;
 }
 .about__reward {
-  padding-top: 100px;
+  padding-top: 70px;
   position: relative;
 }
+.section-title_rewards {
+  margin-bottom: 50px;
+}
+.background-title_reward {
+  top: 95px;
+}
 .reward-box__year {
+  margin-left: 110px;
   margin-bottom: 37px;
   padding-left: 16px;
   border-left: 8px dotted rgba(41, 151, 152, 0.3);
@@ -4780,7 +4798,8 @@ a.footer__tel span {
   -webkit-box-align: top;
       -ms-flex-align: top;
           align-items: top;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  margin-left: 50px;
 }
 .reward-box__title {
   margin-right: 30px;
@@ -4791,7 +4810,7 @@ a.footer__tel span {
   line-height: 1.2;
 }
 .reward-box__title p:first-of-type {
-  margin-top: 0;
+  margin-top: -2px;
 }
 .reward-box__img {
   min-width: 530px;
@@ -4801,10 +4820,10 @@ a.footer__tel span {
   color: #666666;
   font-size: 14px;
   font-style: italic;
-  line-height: 2;
+  line-height: 1.8;
 }
 .reward-box__desc p:first-of-type {
-  margin-top: 0;
+  margin-top: -5px;
 }
 .reward-box__control {
   display: -webkit-box;
@@ -4842,14 +4861,17 @@ a.footer__tel span {
   background-color: #66cccc;
 }
 .about__tutors {
-  padding-top: 100px;
+  padding-top: 105px;
   position: relative;
+}
+.background-title_tutors {
+  top: 120px;
 }
 .about__tutors-grid {
   display: grid;
   grid-template-columns: 300px 527px;
   grid-gap: 60px;
-  margin-top: 100px;
+  margin-top: 135px;
   margin-bottom: 304px;
   padding-left: 231px;
   position: relative;
@@ -4871,10 +4893,10 @@ a.footer__tel span {
   font-size: 24px;
   text-transform: uppercase;
   letter-spacing: 0.6px;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 .about__tutors-subtitle {
-  margin-bottom: 55px;
+  margin-bottom: 45px;
   position: relative;
   text-transform: uppercase;
   color: #999999;
@@ -4904,16 +4926,21 @@ a.footer__tel span {
   background-color: #d4eaea;
 }
 .about__parents {
-  margin-bottom: 82px;
-  padding-top: 100px;
+  margin-bottom: 40px;
+  padding-top: 5px;
   position: relative;
 }
-.about__register {
-  margin-bottom: 113px;
-  padding-top: 100px;
+.parents-box__grid-about {
+  margin-bottom: 22px;
 }
-.input_register {
-  margin-right: 11px;
+.section-title_parents {
+  margin-bottom: 105px;
+}
+.background-title_parents {
+  top: 35px;
+}
+.about__register {
+  margin-bottom: 125px;
 }
 .recent-article {
   display: block;
@@ -4921,7 +4948,7 @@ a.footer__tel span {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin-bottom: 20px;
-  padding: 30px 32px 40px 28px;
+  padding: 40px 32px 40px 28px;
   border: 2px solid #f4f4f4;
   background-color: #f9f9f9;
   text-decoration: none;
@@ -4944,7 +4971,7 @@ a.footer__tel span {
 }
 .recent-article__heading {
   display: block;
-  margin-bottom: 40px;
+  margin-bottom: 45px;
   color: #000000;
   font-family: "Stark", sans-serif;
   font-size: 24px;
@@ -4960,7 +4987,7 @@ a.footer__tel span {
 }
 .recent-article__title {
   display: block;
-  margin-bottom: 54px;
+  margin-bottom: 38px;
   color: #666666;
   font-size: 14px;
   font-weight: 700;
@@ -4969,8 +4996,9 @@ a.footer__tel span {
 }
 .recent-article__text {
   display: block;
+  margin-bottom: 25px;
   color: #666666;
   font-size: 14px;
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 1.3;
 }
