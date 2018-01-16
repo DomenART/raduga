@@ -332,12 +332,10 @@ h6 {
     padding-top: 120px;
 } 
 
-.control-bar {
+.control-buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: 200px;
-    float: right;
     position: relative;
 }
 
@@ -636,8 +634,8 @@ input, textarea {
 
 .vk-group__title {
     position: absolute;
-    top: 95px;
-    right: -135px;
+    top: 105px;
+    right: -145px;
     margin: 0;
     transform: rotate(90deg);
     opacity: 0.3;
@@ -948,7 +946,6 @@ input, textarea {
 .favorite__link {
     display: inline-block;
     margin-top: 50px;
-
 }
 
 .resources-count {
@@ -1113,43 +1110,81 @@ input, textarea {
     &:hover {
         color: darken(#a5c0c0, 20%);
         span {
+            /*
             padding-right: 0;
-            transition: padding-right 0.5s;
+            transition-property: padding-right;
+            transition-duration: 1s;
+            */
             &::after {
                 display: none;
             }
         }
         .link-control__arrow {
             opacity: 1;
-            transform: translate(30px, -50%);
-            transition-duration: 0.5s opacity,transform;
+            transition-property: opacity,transform;
+            transition-duration: 0.5s;
         }
     }
     span {
         display: inline-block;
         position: relative;
         padding-bottom: 3px;    
-        padding-right: 10px;
         border-bottom: 1px solid #a5c0c0;
+        transition-property: padding-right;
+        transition-duration: 0.5s;
         &::after {
             content: '';
             width: 4px;
             height: 4px;
             position: absolute;
             top: 50%;
-            right: 0px;
             border-radius: 50%;
             background-color: #a5c0c0;
             transform: translateY(-50%);
+            transition-property: display;
             transition-duration: 0.5s;
         }
     }
     .link-control__arrow {
         position: absolute;
-        right: 0px;
         top: 50%;
-        transform: translate(16px, -50%);
+        transform: translate(0, -50%);
         opacity: 0;
-        transition: transform, opacity 0.5s;
+        transition-property: opacity,transform;
+        transition-duration: 0.5s;
+    }
+}
+
+.link-control_right {
+    &:hover {
+        .link-control__arrow {
+            transform: translate(30px, -50%);
+        }
+    }
+    span {
+        padding-right: 10px;
+        &::after {
+            right: 0;
+        }
+    }
+    .link-control__arrow {
+        right: -2px;
+    }
+}
+
+.link-control_left {
+    &:hover {
+        .link-control__arrow {
+            transform: translate(-30px, -50%);
+        }
+    }
+    span {
+        padding-left: 10px;
+        &::after {
+            left: 0;
+        }
+    }
+    .link-control__arrow {
+        left: -2px;
     }
 }

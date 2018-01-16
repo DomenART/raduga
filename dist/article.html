@@ -79,9 +79,19 @@
                 Новости
             </div>
             <div class="container">
-                <div class="link-control link-control_article">
-                    <a href="#" class="link-control__prev">Предыдущая</a>
-                    <a href="#" class="link-control__next">Следующая</a>
+                <div class="link-control_article">
+                    <a href="#" class="link-control link-control_left">
+                        <svg width="38" height="17" class="link-control__arrow">
+                            <use href="#link-more-arrow"/>
+                        </svg>
+                        <span>Предыдущая</span>
+                    </a>
+                    <a href="#" class="link-control link-control_right">
+                        <span>Следующая</span>
+                        <svg width="38" height="17" class="link-control__arrow">
+                            <use href="#link-more-arrow"/>
+                        </svg>
+                    </a>
                 </div>
                 <article>
                     <div class="article__heading">
@@ -185,8 +195,18 @@
                         </div>
                     </div>
                     <div class="article-control__neighbors">
-                        <a href="#" class="link-control link-control__prev">Предыдущая</a>
-                        <a href="#" class="link-control link-control__next">Следующая</a>
+                        <a href="#" class="link-control link-control_left">
+                            <svg width="38" height="17" class="link-control__arrow">
+                                <use href="#link-more-arrow"/>
+                            </svg>
+                            <span>Предыдущая</span>
+                        </a>
+                        <a href="#" class="link-control link-control_right">
+                            <span>Следующая</span>
+                            <svg width="38" height="17" class="link-control__arrow">
+                                <use href="#link-more-arrow"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <section class="readmore">
@@ -314,15 +334,8 @@
             <symbol id="button-more-arrow">
                 <defs><path id="o5vxa" d="M608.38 1613.6a1.36 1.36 0 0 1 0-1.94l3.67-3.66H606a2 2 0 1 1 0-4h6.09l-3.72-3.69a1.36 1.36 0 0 1 .01-1.94 1.4 1.4 0 0 1 1.97 0l7.65 7.61-7.65 7.61a1.4 1.4 0 0 1-1.97.01zm5.7-7.62l-.08-.08a2.03 2.03 0 0 1 0 .16zM601 1606a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></defs><g><g transform="translate(-595 -1596)"><use fill="#fff" xlink:href="#o5vxa"/></g></g>
             </symbol>
-            <symbol id="control">
-                <defs><path id="m3aha" d="M1857.6 1762.62c-.53.54-1.4.55-1.94 0l-3.66-3.67v6.05a2 2 0 1 1-4 0v-6-.09l-3.69 3.72c-.54.54-1.4.53-1.94-.01a1.4 1.4 0 0 1 0-1.97l7.61-7.65 7.61 7.65a1.4 1.4 0 0 1 .01 1.97zm-7.62-5.7l-.08.08a2.04 2.04 0 0 1 .16 0zm.02 13.08a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></defs><g><g transform="translate(-1840 -1751)"><use fill="#ccc" xlink:href="#m3aha"/></g></g>
-            </symbol>
-            <symbol id="arrow-left">
-                    <defs><path id="o5vxa" d="M608.38 1613.6a1.36 1.36 0 0 1 0-1.94l3.67-3.66H606a2 2 0 1 1 0-4h6.09l-3.72-3.69a1.36 1.36 0 0 1 .01-1.94 1.4 1.4 0 0 1 1.97 0l7.65 7.61-7.65 7.61a1.4 1.4 0 0 1-1.97.01zm5.7-7.62l-.08-.08a2.03 2.03 0 0 1 0 .16zM601 1606a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></defs><g><g transform="translate(-595 -1596)"><use fill="#fff" xlink:href="#o5vxa"/></g></g>
-
-            </symbol>
-            <symbol id="arrow">
-                <defs><path id="xvy4a" d="M1450.38 5175.6a1.36 1.36 0 0 1 0-1.94l3.67-3.66H1448a2 2 0 1 1 0-4h6.09l-3.72-3.69a1.36 1.36 0 0 1 .01-1.94 1.4 1.4 0 0 1 1.97 0l7.65 7.61-7.65 7.61a1.4 1.4 0 0 1-1.97.01zm5.7-7.62l-.08-.08a2.04 2.04 0 0 1 0 .16zm-13.08.02a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></defs><g><g transform="translate(-1437 -5158)"><use fill="#bcd3d3" xlink:href="#xvy4a"/></g></g>
+            <symbol id="link-more-arrow">
+                <defs><path id="od0qa" d="M748.38 4396.6a1.36 1.36 0 0 1 0-1.94l3.67-3.66H746a2 2 0 1 1 0-4h6.09l-3.72-3.69a1.36 1.36 0 0 1 .01-1.94 1.4 1.4 0 0 1 1.97 0l7.65 7.61-7.65 7.61a1.4 1.4 0 0 1-1.97.01zm5.7-7.62l-.08-.08a2.04 2.04 0 0 1 0 .16zM741 4389a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-7 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-7 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></defs><g><g transform="translate(-721 -4379)"><use fill="#7fc1c1" xlink:href="#od0qa"/></g></g>
             </symbol>
             <symbol id="map-pin">
                 <?xml version="1.0" encoding="UTF-8"?>
@@ -381,6 +394,7 @@
                     </svg>
             </symbol>
         </svg>
+        <div class="overlay hidden"></div>
         <script type="text/javascript" src="main.js"></script> 
     </body>
 </html>
