@@ -507,24 +507,24 @@ if (pricelist) {
     let usmanPriceTable = document.querySelector('.js-price-table-usman');
     
     usmanPriceControl.addEventListener('click', function() {
-        if (this.classList.contains('prices__control_disabled')) {
-            this.classList.remove('prices__control_disabled');
-            this.classList.add('prices__control_active');
+        if (this.classList.contains('tab-bar__item_disabled')) {
+            this.classList.remove('tab-bar__item_disabled');
+            this.classList.add('tab-bar__item_active');
             otradnoePriceTable.hidden = true;
             usmanPriceTable.hidden = false;
-            otradnoePriceControl.classList.remove('prices__control_active');
-            otradnoePriceControl.classList.add('prices__control_disabled');
+            otradnoePriceControl.classList.remove('tab-bar__item_active');
+            otradnoePriceControl.classList.add('tab-bar__item_disabled');
         }
     });
 
     otradnoePriceControl.addEventListener('click', function() {
-        if (this.classList.contains('prices__control_disabled')) {
-            this.classList.remove('prices__control_disabled');
-            this.classList.add('prices__control_active');
+        if (this.classList.contains('tab-bar__item_disabled')) {
+            this.classList.remove('tab-bar__item_disabled');
+            this.classList.add('tab-bar__item_active');
             usmanPriceTable.hidden = true;
             otradnoePriceTable.hidden = false;
-            usmanPriceControl.classList.remove('prices__control_active');
-            usmanPriceControl.classList.add('prices__control_disabled');
+            usmanPriceControl.classList.remove('tab-bar__item_active');
+            usmanPriceControl.classList.add('tab-bar__item_disabled');
         }
     });
 }

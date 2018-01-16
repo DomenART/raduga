@@ -19,45 +19,6 @@
     position: relative;
 }
 
-.prices__contols {
-    display: flex;
-    align-items: flex-end;
-}
-
-.prices__control {
-    width: 175px;
-    cursor: pointer;
-    text-align: center;
-    font-size: 16px;
-    line-height: 1;
-}
-
-.prices__control_disabled {
-    padding: 31px 0 26px;
-    background-color: #f1f1f1;
-    color: #666666;
-}
-
-.prices__control_active {
-    padding: 46px 0 28px;
-    background-color: #66cccc;
-    color: #ffffff;
-    span {
-        position: relative;
-        &::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: #ffffff;
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    }
-}
-
 .prices__table {
     width: 100%;
     border: 2px solid #cccccc;

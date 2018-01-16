@@ -14,6 +14,8 @@ import './html/news.html'
 import './html/article.html'
 import './html/category.html'
 import './html/about.html'
+import './html/timetable.html'
+import './html/directions.html'
 
 /* import styles */
 import './less/main.less'
