@@ -74,14 +74,15 @@
             <a href="mailto:radugaotr@mail.ru" class="header__email" title="Электронная почта">radugaotr@mail.ru</a>
             <a href="tel:79202179964" class="header__phone" title="Телефон"><span>+7 (920)</span> 217-99-64</a>
         </header>
-        <main class="tutors innerpage">
+        <main class="videos innerpage">
             <div class="background-title">
                 информация
             </div>
             <div class="container">
+                <div class="box-decor"></div> 
                 <h1 class="pagetitle pagetitle_videos">Видео</h1>
                 <div class="resources-count">Загружено <b>25</b> видео</div>
-                <div class="favorite">
+                <div class="videos__favorite favorite">
                     <div>
                         <iframe width="530" height="298" src="https://www.youtube.com/embed/etAXXbJ9d3s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
@@ -96,7 +97,6 @@
                                 Краткое описание ролика, Международный конкурс - фестиваль детского юношеского творчества "На берегах Невы"г. Москва; Чемпионат и Первенство ЦФО по современным танцевальным направлениям, г. Орел.
                         </div>
                     </div>
-                    <div class="box-decor"></div> 
                 </div>
                 <div class="videos__pool">
                     <div>
@@ -119,7 +119,7 @@
                     </div>
                 </div>
                 <div class="clearfix">
-                    <div class="videos__control">
+                    <div class="videos__control control-bar">
                         <div class="control-buttons">
                             <button type="button" class="control-btn control_disabled">
                                 <svg class="control-btn__arrow control-btn__arrow_left" id="#control" width="18px" height="30px">
@@ -132,7 +132,7 @@
                                 </svg>
                             </button>
                         </div>
-                        <div class="videos__control-links">
+                        <div class="control-links">
                             <a href="#" class="link-control link-control_left">
                                 <svg width="38" height="17" class="link-control__arrow">
                                     <use href="#link-more-arrow"/>
@@ -152,7 +152,7 @@
         </main>
         <div class="container">
             <aside class="innerpage-aside">
-                <div>
+                <div class="innerpage-aside__first">
                     <div class="innerpage-aside__decor"></div>
                     <div class="enroll">
                         <div class="enroll__title">
@@ -161,23 +161,23 @@
                         </div>
                         <form id="enroll" action="" method="post" class="js-form">
                             <div>
-                                <input type="text" class="enroll__input" name="name" placeholder="Имя:">
+                                <input type="text" class="input" name="name" placeholder="Имя:">
                             </div>
                             <div>
-                                <input type="tel" class="enroll__input" name="tel" pattern="^[ 0-9]+$" minlength="8" placeholder="Телефон*:" required>
+                                <input type="tel" class="input" name="tel" pattern="^[ 0-9]+$" minlength="8" placeholder="Телефон*:" required>
                             </div>
                             <div>
-                                <textarea class="enroll__textarea" placeholder="Сообщение*:" required></textarea>
+                                <textarea class="textarea" placeholder="Сообщение*:" required></textarea>
                             </div>
                             <div class="enroll__agreement">
-                                <input type="checkbox" class="enroll__check" name="agreement" id="agreement" hidden required checked>
-                                <label for="agreement" class="enroll__check-lovely"></label>
+                                <input type="checkbox" class="check" name="agreement" id="agreement" hidden required checked>
+                                <label for="agreement" class="check-lovely"></label>
                                 <label for="agreement" class="enroll__agreement-text">
                                     Прочитал(-а) пользовательское соглашение 
                                     и соглашаюсь на <a href="#">обработку своих <br>персональных данных</a>
                                 </label>
                             </div>
-                            <button type="submit" class="button-more enroll__submit">
+                            <button type="submit" class="enroll__submit btn-more submit">
                                 <span>Записаться</span>
                                 <svg class="button-more__arrow" width="25" height="19">
                                     <use href="#button-more-arrow"/>
@@ -198,7 +198,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="innerpage-aside__second">
                     <div class="address">
                         <header class="address__header">
                             <div class="address__title">
@@ -209,14 +209,14 @@
                             </div>
                         </header>
                         <div>
-                            <div class="address-text address-text--aside">
+                            <div class="address-text address-text_aside">
                                 <svg class="" width="16" height="24">
                                     <use href="#map-pin"/>
                                 </svg>
                                 с. Новая Усмань,<br>
                                 ул. Ленина, 228 В <span>(2 этаж)</span>
                             </div>
-                            <div class="address-text address-text--aside">
+                            <div class="address-text address-text_aside">
                                 <svg class="" width="16" height="24">
                                     <use href="#map-pin"/>
                                 </svg>
@@ -228,9 +228,11 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="innerpage-aside__third">
                     <div class="vk-members"></div>
                 </div>
-                <div>
+                <div class="innerpage-aside__fourth">
                     <div class="vk-group">
                         <h3 class="vk-group__title">МЫ ВКонтакте</h3>
                         <img src="../img/psevdo-vk.jpg" alt="" style="max-width: 100%;">                
@@ -336,10 +338,8 @@
                     xmlns:xlink="http://www.w3.org/1999/xlink">
                     <defs>
                     <style type="text/css">
-                    <![CDATA[
-                    .str0 {stroke:#51CBCA;stroke-width:17.64}
-                    .fil0 {fill:#51CBCA;fill-rule:nonzero}
-                    ]]>
+                        .str0 {stroke:#51CBCA;stroke-width:17.64}
+                       .fil0 {fill:#51CBCA;fill-rule:nonzero}
                     </style>
                     </defs>
                     <g id="Слой_x0020_1">

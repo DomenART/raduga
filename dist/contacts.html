@@ -79,18 +79,19 @@
                 Наша команда
             </div>
             <div class="container">
+                 <div class="box-decor box-decor_contacts"></div> 
                 <h1 class="pagetitle">Контакты</h1>
                 <div class="contacts__grid">
                     <div class="contacts__map">
                         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0fe5f581c964cdcc3f101f5bd46d8fb70a8dd57f30a7c42266eb057ba3946fec&amp;width=479&amp;height=300&amp;lang=ru_RU&amp;scroll=true"></script>
                     </div>
                     <div class="contacts__items">
-                        <div class="contacts-item contacts-item--phone">
+                        <div class="contacts-item contacts-item_phone">
                             <div class="contacts-item__heading">Звоните</div>
                             <a href="tel:79202179964" class="contacts-item__phone" title="Телефон"><span>+7 (920)</span> 217-99-64</a>
                         </div>
-                        <div class="contacts-item contacts-item--email">
-                            <div class="contacts-item__heading contacts-item__heading--email">Пишите</div>
+                        <div class="contacts-item contacts-item_email">
+                            <div class="contacts-item__heading contacts-item__heading_email">Пишите</div>
                             <a href="mailto:radugaotr@mail.ru" class="contacts-item__email" title="Электронная почта">radugaotr@mail.ru</a>
                         </div>
                         <div class="contacts-item">
@@ -117,13 +118,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="box-decor box-decor--contacts"></div> 
                 </div>
             </div>
        </main>
         <div class="container">
             <aside class="innerpage-aside">
-                <div>
+                <div class="innerpage-aside__first">
                     <div class="innerpage-aside__decor"></div>
                     <div class="enroll">
                         <div class="enroll__title">
@@ -132,23 +132,23 @@
                         </div>
                         <form id="enroll" action="" method="post" class="js-form">
                             <div>
-                                <input type="text" class="enroll__input" name="name" placeholder="Имя:">
+                                <input type="text" class="input" name="name" placeholder="Имя:">
                             </div>
                             <div>
-                                <input type="tel" class="enroll__input" name="tel" pattern="^[ 0-9]+$" minlength="8" placeholder="Телефон*:" required>
+                                <input type="tel" class="input" name="tel" pattern="^[ 0-9]+$" minlength="8" placeholder="Телефон*:" required>
                             </div>
                             <div>
-                                <textarea class="enroll__textarea" placeholder="Сообщение*:" required></textarea>
+                                <textarea class="textarea" placeholder="Сообщение*:" required></textarea>
                             </div>
                             <div class="enroll__agreement">
-                                <input type="checkbox" class="enroll__check" name="agreement" id="agreement" hidden required checked>
-                                <label for="agreement" class="enroll__check-lovely"></label>
+                                <input type="checkbox" class="check" name="agreement" id="agreement" hidden required checked>
+                                <label for="agreement" class="check-lovely"></label>
                                 <label for="agreement" class="enroll__agreement-text">
                                     Прочитал(-а) пользовательское соглашение 
                                     и соглашаюсь на <a href="#">обработку своих <br>персональных данных</a>
                                 </label>
                             </div>
-                            <button type="submit" class="button-more enroll__submit">
+                            <button type="submit" class="enroll__submit btn-more submit">
                                 <span>Записаться</span>
                                 <svg class="button-more__arrow" width="25" height="19">
                                     <use href="#button-more-arrow"/>
@@ -169,13 +169,13 @@
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div class="aside__contacts-image">
-                        <img src="img/contacts-aside-image.jpg?9e2712f16742f3642c6c38eb2c40ff17" alt="">
-                    </div>
+                <div class="innerpage-aside__second">
+                    <img src="img/contacts-aside-image.jpg?9e2712f16742f3642c6c38eb2c40ff17" alt="">
+                </div>
+                <div class="innerpage-aside__third">
                     <div class="vk-members"></div>
                 </div>
-                <div>
+                <div class="innerpage-aside__fourth">
                     <div class="vk-group">
                         <h3 class="vk-group__title">МЫ ВКонтакте</h3>
                         <img src="img/psevdo-vk.jpg?7ba2b5475b295143ab8faf1374be0fd2" alt="" style="max-width: 100%;">                
@@ -222,12 +222,13 @@
                     </div>
                 </div>
             </div>
-            <div class="to-top" hidden>
-                <svg class="to-top__arrow" width="18px" height="30px">
-                    <use href="#control"/>
-                </svg>
-            </div>
         </footer>   
+        <div class="to-top" hidden>
+            <svg class="to-top__arrow" width="18px" height="30px">
+                <use href="#control"/>
+            </svg>
+        </div>
+        <div class="overlay hidden"></div>
         <svg xmlns="http://www.w3.org/2000/svg" hidden>
             <symbol id="logo" viewBox="0 0 330 160">
                 <title>logo</title>
@@ -281,10 +282,8 @@
                     xmlns:xlink="http://www.w3.org/1999/xlink">
                     <defs>
                     <style type="text/css">
-                    <![CDATA[
                     .str0 {stroke:#51CBCA;stroke-width:17.64}
                     .fil0 {fill:#51CBCA;fill-rule:nonzero}
-                    ]]>
                     </style>
                     </defs>
                     <g id="Слой_x0020_1">

@@ -1,31 +1,28 @@
 .pagetitle_videos {
-    margin-bottom: 50px;
+    margin-bottom: 55px;
 }
 
 .videos__pool {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
+    & > div {
+        justify-self: center;
+    }
+    @media (max-width: @breakpoint-small) {
+        grid-template-columns: 1fr; 
+    }
 }
 
 .videos__item {
     width: 100%;
 }
 
+
 .videos__control {
-    min-width: 200px;
-    float: right;
     margin-top: 30px;
     margin-bottom: 155px;
 }
-
-.videos__control-links {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 15px;
-}
-
 
 .videos__start {
     position: absolute;
