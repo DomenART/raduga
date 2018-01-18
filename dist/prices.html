@@ -79,6 +79,7 @@
                 Цены и акции 
             </div>
             <div class="container">
+                <div class="box-decor"></div>
                 <h1 class="pagetitle pagetitle_prices">Цены и акции</h1>
                 <div class="prices__action">
                     <img src="img/action.jpg?6cea72644c6e577937df9bb07a3fcc23" alt="">
@@ -255,11 +256,10 @@
                    
                 </div>
             </div> 
-            <div class="prices__decor"></div>
         </main>
         <div class="container">
             <aside class="innerpage-aside">
-                <div>
+                <div class="innerpage-aside__first">
                     <div class="innerpage-aside__decor"></div>
                     <div class="enroll">
                         <div class="enroll__title">
@@ -268,23 +268,23 @@
                         </div>
                         <form id="enroll" action="" method="post" class="js-form">
                             <div>
-                                <input type="text" class="enroll__input" name="name" placeholder="Имя:">
+                                <input type="text" class="input" name="name" placeholder="Имя:">
                             </div>
                             <div>
-                                <input type="tel" class="enroll__input" name="tel" pattern="^[ 0-9]+$" minlength="8" placeholder="Телефон*:" required>
+                                <input type="tel" class="input" name="tel" pattern="^[ 0-9]+$" minlength="8" placeholder="Телефон*:" required>
                             </div>
                             <div>
-                                <textarea class="enroll__textarea" placeholder="Сообщение*:" required></textarea>
+                                <textarea class="textarea" placeholder="Сообщение*:" required></textarea>
                             </div>
                             <div class="enroll__agreement">
-                                <input type="checkbox" class="enroll__check" name="agreement" id="agreement" hidden required checked>
-                                <label for="agreement" class="enroll__check-lovely"></label>
+                                <input type="checkbox" class="check" name="agreement" id="agreement" hidden required checked>
+                                <label for="agreement" class="check-lovely"></label>
                                 <label for="agreement" class="enroll__agreement-text">
                                     Прочитал(-а) пользовательское соглашение 
                                     и соглашаюсь на <a href="#">обработку своих <br>персональных данных</a>
                                 </label>
                             </div>
-                            <button type="submit" class="button-more enroll__submit">
+                            <button type="submit" class="enroll__submit btn-more submit">
                                 <span>Записаться</span>
                                 <svg class="button-more__arrow" width="25" height="19">
                                     <use href="#button-more-arrow"/>
@@ -305,7 +305,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="innerpage-aside__second">
                     <div class="address">
                         <header class="address__header">
                             <div class="address__title">
@@ -316,14 +316,14 @@
                             </div>
                         </header>
                         <div>
-                            <div class="address-text address-text--aside">
+                            <div class="address-text address-text_aside">
                                 <svg class="" width="16" height="24">
                                     <use href="#map-pin"/>
                                 </svg>
                                 с. Новая Усмань,<br>
                                 ул. Ленина, 228 В <span>(2 этаж)</span>
                             </div>
-                            <div class="address-text address-text--aside">
+                            <div class="address-text address-text_aside">
                                 <svg class="" width="16" height="24">
                                     <use href="#map-pin"/>
                                 </svg>
@@ -335,9 +335,11 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="innerpage-aside__third">
                     <div class="vk-members"></div>
                 </div>
-                <div>
+                <div class="innerpage-aside__fourth">
                     <div class="vk-group">
                         <h3 class="vk-group__title">МЫ ВКонтакте</h3>
                         <img src="img/psevdo-vk.jpg?7ba2b5475b295143ab8faf1374be0fd2" alt="" style="max-width: 100%;">                
@@ -384,12 +386,13 @@
                     </div>
                 </div>
             </div>
-            <div class="to-top" hidden>
-                <svg class="to-top__arrow" width="18px" height="30px">
-                    <use href="#control"/>
-                </svg>
-            </div>
-        </footer>   
+        </footer>  
+        <div class="to-top" hidden>
+            <svg class="to-top__arrow" width="18px" height="30px">
+                <use href="#control"/>
+            </svg>
+        </div>
+        <div class="overlay hidden"></div>
         <svg xmlns="http://www.w3.org/2000/svg" hidden>
             <symbol id="logo" viewBox="0 0 330 160">
                 <title>logo</title>

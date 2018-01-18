@@ -52,7 +52,8 @@ h2 {
         opacity: 0.7;
         position: absolute;
         left: 0;
-        top: 0;
+        top: 50%;
+        transform: translateY(-50%);
     }
 }
 
@@ -1105,7 +1106,7 @@ button.enroll__submit {
 .register {
     display: flex;
     justify-content: center;
-    padding: 50px 0 40px;
+    padding: 50px 10px 40px;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.27);
     background-color: #252c3f;
 }
@@ -1118,6 +1119,10 @@ button.enroll__submit {
     display: flex;
     align-items: flex-end;
     margin-bottom: 30px;
+    @media (max-width: @breakpoint-medium) {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .register__title {
@@ -1140,6 +1145,10 @@ button.enroll__submit {
     display: flex;
     align-items: center;
     margin-bottom: 7px;
+    @media (max-width: @breakpoint-medium) {
+        flex-direction: column;
+        align-items: center;
+    }
 } 
 
 .btn-more_register {
@@ -1166,6 +1175,13 @@ button.enroll__submit {
 
 .input_register {
     margin-right: 11px;
+    @media (max-width: @breakpoint-medium) {
+        width: 75%;
+    }
+    @media (max-width: @breakpoint-xsmall) {
+        width: 100%;
+        margin-right: 0;
+    }
 }
 
 .btn-more_register {
@@ -1174,6 +1190,12 @@ button.enroll__submit {
 
 .section-title {
     letter-spacing: 0.7px;
+    @media (max-width: @breakpoint-xsmall) {
+        padding-left: 0;
+        &::before {
+            display: none;
+        }
+    }
 }
 
 .tab-bar {
