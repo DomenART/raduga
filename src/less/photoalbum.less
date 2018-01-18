@@ -1,9 +1,3 @@
-.photoalbum__pool {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 60px;
-}
-
 .link-box {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -34,6 +28,9 @@
             svg {
                 fill: #f355b2;
             }
+            @media (max-width: @breakpoint-xsmall) {
+                right: 0;
+            }
         }
     }
     div:nth-child(3) {  
@@ -48,6 +45,19 @@
             }
         }
     }
+    @media (max-width: @breakpoint-xsmall) {
+        grid-template-columns: 1fr;
+        max-height: none;
+        div:nth-child(1) {
+            grid-row: 1;
+        }
+        div:nth-child(2) {
+            top: 0;
+        }
+        div:nth-child(3) {
+            top: 0;
+        }
+    }
 }
 
 .link-box_photoalbum {
@@ -60,11 +70,15 @@
         left: -50%;
         top: 20%;
         border: 2px solid #f355b2;
+        @media (max-width: @breakpoint-xsmall) {
+            display: none;
+        }
     }
 }
 
 .link-object {
     position: relative;
+    text-decoration: none;
 }
 
 .link-object__title {
@@ -80,7 +94,10 @@
         padding-right: 6px;
         font-size: 24px;
         letter-spacing: 0.25px;
-    }   
+    } 
+    @media (max-width: @breakpoint-small) {
+        position: static;
+    }  
 }
 
 .photoalbum__pool {
@@ -105,6 +122,9 @@
                 fill: #00ffff;
             }
         }
+        @media (max-width: @breakpoint-small) {
+            grid-row: 1;
+        }
     }
     div:nth-child(5n-3) {
         top: 110px;
@@ -117,6 +137,9 @@
                 fill: #f355b2;
             }
         }
+        @media (max-width: @breakpoint-small) {
+            top: 0;
+        }
     }
     div:nth-child(5n-2) {  
         top: 95px;
@@ -127,6 +150,9 @@
             svg {
                fill: #8ae005
             }
+        }
+        @media (max-width: @breakpoint-small) {
+            top: 0;
         }
     }
     div:nth-child(5n-1) {  
@@ -140,6 +166,9 @@
                 fill: #00ffff;
             }
         }
+        @media (max-width: @breakpoint-small) {
+            top: 0;
+        }
     }
     div:nth-child(5n) {  
         top: 100px;
@@ -151,5 +180,12 @@
                 fill: #00ffff;
             }
         }
+        @media (max-width: @breakpoint-small) {
+             top: 0;
+        }
+    }
+    @media (max-width: @breakpoint-small) {
+        grid-template-columns: 1fr;
+        margin-bottom: 150px;
     }
 }

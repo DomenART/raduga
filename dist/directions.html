@@ -80,8 +80,9 @@
                 обучения
             </div>
             <div class="container">
+                <div class="box-decor"></div> 
                 <h1 class="pagetitle">Направления (h1)</h1>
-                <div class="favorite">
+                <div class="directions__favorite favorite">
                     <div>
                         <img src="img/reviews-intro.jpg?5a41d73f1441ca8641304f015ea9ae27" alt="">
                     </div>
@@ -96,7 +97,6 @@
                             Краткий кступительный текст, что-то о направлениях ансамбля и тд, Международный конкурс - фестиваль детского юношеского творчества "На берегах Невы"г. Москва; Чемпионат и Первенство ЦФО по современным танцевальным направлениям, г. Орел.
                         </div>
                     </div>
-                    <div class="box-decor"></div> 
                 </div>
                 <div class="directions__pool">
                     <div class="direction-item">
@@ -257,7 +257,7 @@
         </main>
         <div class="container">
             <aside class="innerpage-aside">
-                <div>
+                <div class="innerpage-aside__first">
                     <div class="innerpage-aside__decor"></div>
                     <div class="enroll">
                         <div class="enroll__title">
@@ -266,23 +266,23 @@
                         </div>
                         <form id="enroll" action="" method="post" class="js-form">
                             <div>
-                                <input type="text" class="enroll__input" name="name" placeholder="Имя:">
+                                <input type="text" class="input" name="name" placeholder="Имя:">
                             </div>
                             <div>
-                                <input type="tel" class="enroll__input" name="tel" pattern="^[ 0-9]+$" minlength="8" placeholder="Телефон*:" required>
+                                <input type="tel" class="input" name="tel" pattern="^[ 0-9]+$" minlength="8" placeholder="Телефон*:" required>
                             </div>
                             <div>
-                                <textarea class="enroll__textarea" placeholder="Сообщение*:" required></textarea>
+                                <textarea class="textarea" placeholder="Сообщение*:" required></textarea>
                             </div>
                             <div class="enroll__agreement">
-                                <input type="checkbox" class="enroll__check" name="agreement" id="agreement" hidden required checked>
-                                <label for="agreement" class="enroll__check-lovely"></label>
+                                <input type="checkbox" class="check" name="agreement" id="agreement" hidden required checked>
+                                <label for="agreement" class="check-lovely"></label>
                                 <label for="agreement" class="enroll__agreement-text">
                                     Прочитал(-а) пользовательское соглашение 
                                     и соглашаюсь на <a href="#">обработку своих <br>персональных данных</a>
                                 </label>
                             </div>
-                            <button type="submit" class="button-more enroll__submit">
+                            <button type="submit" class="enroll__submit btn-more submit">
                                 <span>Записаться</span>
                                 <svg class="button-more__arrow" width="25" height="19">
                                     <use href="#button-more-arrow"/>
@@ -303,7 +303,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="innerpage-aside__second">
                     <div class="address">
                         <header class="address__header">
                             <div class="address__title">
@@ -314,14 +314,14 @@
                             </div>
                         </header>
                         <div>
-                            <div class="address-text address-text--aside">
+                            <div class="address-text address-text_aside">
                                 <svg class="" width="16" height="24">
                                     <use href="#map-pin"/>
                                 </svg>
                                 с. Новая Усмань,<br>
                                 ул. Ленина, 228 В <span>(2 этаж)</span>
                             </div>
-                            <div class="address-text address-text--aside">
+                            <div class="address-text address-text_aside">
                                 <svg class="" width="16" height="24">
                                     <use href="#map-pin"/>
                                 </svg>
@@ -333,18 +333,20 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="innerpage-aside__third">
                     <div class="vk-members"></div>
                 </div>
-                <div>
+                <div class="innerpage-aside__fourth">
                     <div class="vk-group">
                         <h3 class="vk-group__title">МЫ ВКонтакте</h3>
                         <img src="img/psevdo-vk.jpg?7ba2b5475b295143ab8faf1374be0fd2" alt="" style="max-width: 100%;">                
                     </div>
                 </div>
-            </aside>
-        </div>
-        <footer class="footer">
-            <div class="container">
+        </aside>
+    </div>
+    <footer class="footer">
+        <div class="container">
                 <div class="footer__menu">
                     <div class="footer__contacts-flex">
                         <a href="tel:+7 (920)  217-99-64" class="footer__tel">+7 (920)<span>217-99-64</span></a>

@@ -6,11 +6,20 @@
     width: 225px;
     margin-left: 190px;
     margin-bottom: 50px;
+    @media (max-width: @breakpoint-xsmall) {
+        margin: 0 auto 50px;
+    }
 }
 
 .article__heading {
     display: flex;
     align-items: flex-start;
+    @media (max-width: @breakpoint-medium) {
+        font-size: 36px;
+    }
+    @media (max-width: @breakpoint-xsmall) {
+        flex-direction: column;
+    }
 }
 
 .pagetitle_article {
@@ -21,8 +30,11 @@
 }
 
 .article__social {
-    @media (max-width: @breakpoint-xsmall) {
+    @media (max-width: @breakpoint-small) {
         display: flex;
+    }
+    @media (max-width: @breakpoint-xsmall) {
+        margin-bottom: 20px;
     }
 }
 
@@ -54,6 +66,9 @@
     @media (max-width: @breakpoint-medium) {
         padding-left: 0;
     }
+    @media (max-width: @breakpoint-small) {
+        padding-right: 0;
+    }
 
 }
 
@@ -68,9 +83,13 @@
     svg {
         transform: translate(-5px,8px);
     }
-    @media (max-width: @breakpoint-xsmall) {
+    @media (max-width: @breakpoint-small) {
         position: static;
         height: auto;
+        flex-direction: row;
+    }
+    @media (max-width: @breakpoint-xsmall) {
+        flex-direction: column;
     }
 }
 
@@ -122,12 +141,17 @@
     &:last-of-type {
         margin-bottom: 0;
     }
+    @media (max-width: @breakpoint-small) {
+        display: inline-block;
+        margin-right: 5px;
+        margin-bottom: 0;
+    }
 }
 
 .likes_aside {
     margin-bottom: 24px;
-    @media (max-width: @breakpoint-xsmall) {
-        margin-right: 10px;
+    @media (max-width: @breakpoint-small) {
+        margin-right: 20px;
         margin-bottom: 0;
     }
 }
@@ -163,11 +187,21 @@
     padding: 41px 0 38px;
     border-top: 1px solid #f4f4f4;
     border-bottom: 1px solid #f4f4f4;
+    @media (max-width: @breakpoint-medium) {
+        flex-direction: column;
+    }
 }
 
 .article-control__share {
     display: flex;
     margin-right: 100px;
+    @media (max-width: @breakpoint-medium) {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    @media (max-width: @breakpoint-xsmall) {
+        flex-direction: column;
+    }
 }
 
 .article-control__share-text {
@@ -175,11 +209,18 @@
     color: #666666;
     font-size: 14px;
     line-height: 1.2;
+    @media (max-width: @breakpoint-xsmall) {
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
 }
 
 .article-control__social {
     display: flex;
     align-items: center;
+    @media (max-width: @breakpoint-medium) {
+        margin-bottom: 20px;
+    }
 }
 
 .likes_control {
@@ -189,6 +230,9 @@
 .article-control__neighbors {
     min-width: 225px;
     margin-right: 79px;
+    @media (max-width: @breakpoint-medium) {
+        margin-right: 0;
+    }
 }
 
 .readmore__heading {
@@ -205,4 +249,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
+    @media (max-width: @breakpoint-small) {
+        grid-template-columns: 1fr;
+    }
 }

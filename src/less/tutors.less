@@ -3,7 +3,7 @@
 }
 
 
-.tutors__grid {
+.tutor-box {
     display: grid;
     grid-template-columns: 300px 527px;
     grid-gap: 60px;
@@ -19,6 +19,14 @@
         left: 0px;
         background: url('../img/gray-tutors.jpg') 50% 50% no-repeat;
         background-size: cover;
+        @media (max-width: @breakpoint-medium) {
+            display: none;
+        }
+    }
+    @media (max-width: @breakpoint-medium) {
+        grid-template-columns: 1fr;
+        margin-bottom: 100px;
+        padding-left: 0;
     }
 }
 
@@ -27,14 +35,6 @@
     margin-bottom: 10px;
 }
 
-.tutor-box__name {
-    margin-bottom: 2px;
-    text-align: right;
-    color: #000000;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 1.28;
-}
 
 .tutor-box__position {
     text-align: right;
@@ -49,7 +49,7 @@
     margin-bottom: 80px;
 }
 
-.tutors__name {
+.tutor-box__name {
     margin-top: -10px;
     margin-bottom: 75px;
     position: relative;

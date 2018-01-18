@@ -116,6 +116,7 @@ h6 {
 
 .innerpage {
     padding-top: 260px;
+    overflow: hidden;
     @media (max-width: @breakpoint-xsmall) {
         padding-top: 120px;
     }
@@ -124,12 +125,17 @@ h6 {
 .pagetitle {
     margin-top: 0;
     margin-bottom: 129px;
+    position: relative;
+    z-index: 10;
     font-family: @font-alt;
     font-size: 48px;    
     font-weight: 400;
     line-height: 1;
     text-transform: uppercase;
     letter-spacing: 1.2px;
+    @media (max-width: @breakpoint-xsmall) {
+        font-size: 30px;
+    }
 }
 
 .header {
@@ -297,7 +303,8 @@ h6 {
     height: 408px;
     border: 2px solid #e0e0e0;
     position: absolute;
-    top: 6.5%;
+    //top: 6.5%;
+    top: 130px;
     left: -57.5%;
     z-index: -1;
     @media (max-width: @breakpoint-medium) {
@@ -1015,6 +1022,9 @@ button.enroll__submit {
     line-height: 1.41;
     text-transform: uppercase;
     letter-spacing: 1.2px;
+    @media (max-width: @breakpoint-xsmall) {
+       font-size: 18px;
+    }
 }
 
 .favorite__subtitle {
@@ -1039,6 +1049,9 @@ button.enroll__submit {
 .favorite__desc {
     color: #666666;
     line-height: 1.44;
+    @media (max-width: @breakpoint-xsmall) {
+        font-size: 16px;
+    }
 }
 
 .favorite__link {
@@ -1065,7 +1078,11 @@ button.enroll__submit {
         background-color: #bbddf1;
         opacity: 0.3;
     }
+    @media (max-width: @breakpoint-xsmall) {
+        margin-left: 0;
+    }
 }
+
 
 .overlay {
     position: relative;

@@ -1,8 +1,21 @@
+.directions__favorite {
+    margin-bottom: 195px;
+    @media (max-width: @breakpoint-xsmall) {
+        margin-bottom: 50px;
+    }   
+}
+
 .directions__pool {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
     margin-bottom: 144px;
+    @media (max-width: @breakpoint-small) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: @breakpoint-xsmall) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .direction-item {

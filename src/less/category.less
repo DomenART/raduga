@@ -1,14 +1,28 @@
+.category__favorite {
+    margin-bottom: 205px;
+    @media (max-width: @breakpoint-xsmall) {
+        margin-bottom: 50px;
+    }   
+}
+
 .category__pool {
     display: grid;
     grid-gap: 0;
     grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 130px;
+    @media (max-width: @breakpoint-small) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: @breakpoint-xsmall) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .photo-item {
     position: relative;
     object-fit: cover;
     line-height: 1;
+    justify-self: center;
     &:hover {
         .photo-item__hovered {
             display: flex;
