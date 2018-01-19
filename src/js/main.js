@@ -50,26 +50,6 @@ if (forms) {
     });
 }
 
-//Кнопка "Закрыть"
-let close = document.querySelector('.close-btn');
-if (close) {
-    close.addEventListener('click',function() {
-        this.parentNode.classList.add('hidden');
-        overlay.classList.add('hidden');
-    });
-}
-
-//закрыть по оверлею
-let overlay = document.querySelector('.overlay');
-let popup = document.querySelector('.popup');
-
-overlay.addEventListener('click',function() {
-    popup.classList.add('hidden');
-    overlay.classList.add('hidden');
-    console.log(popup)
-    console.log(overlay)
-   
-});
 
 
 //Отображение блока успешной отправки сообщения формы "Записаться на урок"
@@ -530,16 +510,42 @@ if (pricelist) {
 }
 
 // Popup просмотра фото
-let photos = document.querySelectorAll('.photo-item__btn');
+let photos = document.querySelectorAll('.play-btn');
 
 if (photos) {
-    let photoPopup = document.querySelector('.photo-popup');
+    let popup = document.querySelector('.popup');
     photos.forEach(element => {
         element.addEventListener('click', function() {
-            photoPopup.classList.remove('hidden');
-            overlay.classList.remove('hidden');
+            popup.classList.remove('hidden');
         });
     });
 }
 
+let overlay = document.querySelector('.overlay');
+let popup = document.querySelector('.popup');
 
+//Кнопка "Закрыть"
+let close = document.querySelector('.close-btn');
+if (close) {
+    close.addEventListener('click',function() {
+        popup.classList.add('hidden');
+    });
+}
+
+//закрыть по оверлею
+popup.addEventListener('click', function(event) {
+    if (event.target === popup) {
+        popup.classList.add('hidden');
+    }
+});
+
+
+//адаптация переключателей фотографий
+let photoControls = document.querySelectorAll('.photo-popup__control');
+
+if (photoControls) {
+    let photoImage = document.querySelector('.photo-popup__img');
+    if (window.matchMedia('(max-width: 639px)').matches) {
+        photoImage.appendChild(photoControls);
+    }
+}

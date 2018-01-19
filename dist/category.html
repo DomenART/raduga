@@ -79,12 +79,12 @@
                 Фотоальбом
             </div>
             <div class="container">
-                    <div class="box-decor"></div> 
                 <h1 class="pagetitle pagetitle_videos">Название категории<br>фотоальбома</h1>
                 <div class="resources-count">В этом альбоме <b>37</b> фото</div>
                 <div class="category__favorite favorite">
                     <div>
-                        <img src="img/reviews-intro.jpg?5a41d73f1441ca8641304f015ea9ae27" alt="">                
+                        <img src="img/reviews-intro.jpg?5a41d73f1441ca8641304f015ea9ae27" alt="">    
+                        <div class="box-decor"></div>             
                     </div>
                     <div>
                         <div class="favorite__title">
@@ -189,45 +189,47 @@
                     </div>
                 </div>
             </div>
-            <div class="photo-popup popup hidden">
-                <button type="button" class="close-btn"></button>
-                <div class="photo-popup__img">
-                    <img src="img/photo-popup.jpg?efcffe163ba48fb0f99627ba645ad528" alt="">
+            <div class="popup hidden"> 
+                <div class="photo-popup popup-content">
+                    <button type="button" class="close-btn"></button>
+                    <div class="photo-popup__img">
+                        <img src="img/photo-popup.jpg?efcffe163ba48fb0f99627ba645ad528" alt="">
+                    </div>
+                    <div class="photo-popup__desc">
+                        <div class="photo-popup__counter">
+                            <span>3</span> 
+                            из 
+                            <span>19</span>
+                        </div>
+                        <div class="photo-popup__row">
+                            <div class="photo-popup__date">
+                                <time>12.11.2017</time>
+                            </div>
+                            <div class="likes">
+                                <svg width="24" height="21">
+                                    <use href="#like"/> 
+                                </svg>
+                                147
+                            </div>
+                        </div>
+                        <div class="photo-popup__title">
+                            Название фотографии, длина названия в полноразмерном просмотре не ограничивается
+                        </div>
+                        <div class="photo-popup__text">
+                            Описание фотографии, если есть, если нет, текстовый блок просто не выводится. Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. 
+                        </div>
+                        <div class="photo-popup__share">
+                            <script src="http://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+                            <script src="http://yastatic.net/share2/share.js"></script>
+                            <div class="photo-popup__share-text">
+                                Поделись с друзьями:
+                            </div>
+                            <div class="photo-popup__share-bar ya-share2" data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter" data-size="s"></div>                                               
+                        </div>
+                    </div>
+                    <button class="photo-popup__control photo-popup__control_left"></button>
+                    <button class="photo-popup__control photo-popup__control_right"></button>
                 </div>
-                <div class="photo-popup__desc">
-                    <div class="photo-popup__counter">
-                        <span>3</span> 
-                        из 
-                        <span>19</span>
-                    </div>
-                    <div class="photo-popup__row">
-                        <div class="photo-popup__date">
-                            <time>12.11.2017</time>
-                        </div>
-                        <div class="likes">
-                            <svg width="24" height="21">
-                                <use href="#like"/> 
-                            </svg>
-                            147
-                        </div>
-                    </div>
-                    <div class="photo-popup__title">
-                        Название фотографии, длина названия в полноразмерном просмотре не ограничивается
-                    </div>
-                    <div class="photo-popup__text">
-                        Описание фотографии, если есть, если нет, текстовый блок просто не выводится. Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. 
-                    </div>
-                    <div class="photo-popup__share">
-                        <script src="http://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
-                        <script src="http://yastatic.net/share2/share.js"></script>
-                        <div class="photo-popup__share-text">
-                            Поделись с друзьями:
-                        </div>
-                        <div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter" data-size="s"></div>                                               
-                    </div>
-                </div>
-                <button class="photo-popup__control photo-popup__control_left"></button>
-                <button class="photo-popup__control photo-popup__control_right"></button>
             </div>   
         </main>
         <div class="container">
@@ -365,7 +367,6 @@
                 <use href="#control"/>
             </svg>
         </div>
-        <div class="overlay hidden"></div>
         <svg xmlns="http://www.w3.org/2000/svg" hidden>
             <symbol id="logo" viewBox="0 0 330 160">
                 <title>logo</title>

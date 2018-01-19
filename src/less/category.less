@@ -1,6 +1,6 @@
 .category__favorite {
     margin-bottom: 205px;
-    @media (max-width: @breakpoint-xsmall) {
+    @media (max-width: @breakpoint-small) {
         margin-bottom: 50px;
     }   
 }
@@ -82,23 +82,31 @@
     grid-gap: 0;
     width: 64.5%;
     box-sizing: border-box;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 500;
-    transform: translate(-50%,-50%);
     background-color: #ffffff;
+    @media (max-width: @breakpoint-large) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: @breakpoint-medium) {
+        grid-template-columns: 1fr;
+    }
+    @media (max-width: @breakpoint-xsmall) {
+        width: 90%;
+    }
 }
 
 .photo-popup__img {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .photo-popup__desc {
     box-sizing: border-box;
     padding: 17px 54px 35px 30px;
+    @media (max-width: @breakpoint-xsmall) {
+        padding: 17px 10px 35px 10px;
+    }
 }
 
 .photo-popup__counter {
@@ -110,6 +118,9 @@
     span {
         color: #000000;
         font-weight: 700;
+    }
+    @media (max-width: @breakpoint-xsmall) {
+        margin-bottom: 15px;
     }
 }
 
@@ -135,6 +146,9 @@
     font-size: 24px;
     line-height: 1.2;
     letter-spacing: 0.6px;
+    @media (max-width: @breakpoint-xsmall) {
+        font-size: 18px;
+    }
 }
 
 .photo-popup__text {
@@ -145,6 +159,9 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
+    @media (max-width: @breakpoint-xsmall) {
+        font-size: 14px;
+    }
 }
 
 .photo-popup__share {
@@ -155,6 +172,10 @@
 
 .photo-popup__share-text {
     margin-right: 10px;
+}
+
+.photo-popup__share-bar {
+    min-width: 164px;
 }
 
 .photo-popup__control {
@@ -181,6 +202,17 @@
     &:hover {
         background-color: #000000;
     }
+    @media (max-width: @breakpoint-xsmall) {
+        width: 50px;
+        height: 50px;
+        border-radius: 0;
+        transform: translateY(-100%);
+        &::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+        }
+    }
 }
 
 .photo-popup__control_left {
@@ -188,11 +220,17 @@
     &::before {
         transform: translate(-50%,-50%) rotate(45deg);
     }
+    @media (max-width: @breakpoint-xsmall) {
+        left: 0;
+    }
 }
 
 .photo-popup__control_right {
     right: -80px;
     &::before {
         transform: translate(-50%,-50%) rotate(-135deg);
+    }
+    @media (max-width: @breakpoint-xsmall) {
+        right: 0;
     }
 }

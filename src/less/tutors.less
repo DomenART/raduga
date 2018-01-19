@@ -2,11 +2,17 @@
     position: relative;
 }
 
+.tutors__tutor-box {
+    margin-bottom: 304px;
+    @media (max-width: @breakpoint-medium) {
+        margin-bottom: 100px;
+    }
+}
+
 .tutor-box {
     display: grid;
     grid-template-columns: 300px 527px;
     grid-gap: 60px;
-    margin-bottom: 304px;
     padding-left: 231px;
     position: relative;
     &::before {
@@ -24,7 +30,6 @@
     }
     @media (max-width: @breakpoint-medium) {
         grid-template-columns: 1fr;
-        margin-bottom: 100px;
         padding-left: 0;
     }
 }
