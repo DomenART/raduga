@@ -422,8 +422,6 @@ p {
   margin: 1.5em 0;
 }
 h2 {
-  padding-left: 77px;
-  position: relative;
   margin: 100px 0 40px;
   color: #0d0d0d;
   font-family: "Stark", sans-serif;
@@ -431,18 +429,6 @@ h2 {
   font-weight: 400;
   line-height: 1.125;
   text-transform: uppercase;
-}
-h2::before {
-  content: '';
-  width: 62px;
-  height: 62px;
-  background-color: #bbddf1;
-  opacity: 0.7;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
 }
 h3 {
   margin: 120px 0 0;
@@ -1185,6 +1171,8 @@ textarea::placeholder {
 .btn-more {
   display: inline-block;
   width: 290px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 22px;
   border: 0;
   background-color: #299798;
@@ -1212,7 +1200,7 @@ textarea::placeholder {
   -webkit-transition-property: opacity, right;
   transition-property: opacity, right;
 }
-.btn-more:hover .button-more__arrow {
+.btn-more:hover .btn-more__arrow {
   opacity: 1;
   -webkit-transform: translate(8px, 1px);
           transform: translate(8px, 1px);
@@ -1239,7 +1227,7 @@ textarea::placeholder {
   -webkit-transition-property: opacity, right;
   transition-property: opacity, right;
 }
-.btn-more .button-more__arrow {
+.btn-more .btn-more__arrow {
   opacity: 0.5;
   -webkit-transform: translate(0, 1px);
           transform: translate(0, 1px);
@@ -1248,6 +1236,7 @@ textarea::placeholder {
 }
 @media (max-width: 639px) {
   .btn-more {
+    width: 100%;
     font-size: 18px;
     padding: 22px 46px;
   }
@@ -1762,7 +1751,21 @@ textarea::placeholder {
   }
 }
 .section-title {
+  padding-left: 77px;
+  position: relative;
   letter-spacing: 0.7px;
+}
+.section-title::before {
+  content: '';
+  width: 62px;
+  height: 62px;
+  background-color: #bbddf1;
+  opacity: 0.7;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 @media (max-width: 639px) {
   .section-title {
@@ -2319,12 +2322,6 @@ textarea::placeholder {
           box-shadow: 0 0 0 8px #009696;
   border: 2px solid rgba(51, 170, 171, 0.5);
   background-color: #299798;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-transition: 0.5s -webkit-transform;
-  transition: 0.5s -webkit-transform;
-  transition: 0.5s transform;
-  transition: 0.5s transform, 0.5s -webkit-transform;
 }
 @media (max-width: 1899px) {
   .header-menu {
@@ -2343,6 +2340,14 @@ textarea::placeholder {
     -webkit-box-shadow: 0 0 0 4px #009696;
             box-shadow: 0 0 0 4px #009696;
   }
+}
+.header-menu_homepage {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 0.5s -webkit-transform;
+  transition: 0.5s -webkit-transform;
+  transition: 0.5s transform;
+  transition: 0.5s transform, 0.5s -webkit-transform;
 }
 .header-menu-fixed {
   z-index: 1000;
@@ -2378,12 +2383,11 @@ textarea::placeholder {
       -ms-flex-align: center;
           align-items: center;
   width: 110px;
-  height: 695px;
+  height: auto;
   position: absolute;
   top: 45%;
   left: 9%;
   z-index: 10;
-  opacity: 0;
   overflow: hidden;
   background-color: #243c73;
   -webkit-transition: height 1s;
@@ -2400,6 +2404,13 @@ textarea::placeholder {
     height: 346px;
     top: 121px;
     left: 15px;
+  }
+}
+.menu-bar_homepage {
+  opacity: 0;
+}
+@media (max-width: 639px) {
+  .menu-bar_homepage {
     opacity: 1;
   }
 }
@@ -2497,11 +2508,6 @@ textarea::placeholder {
   position: absolute;
   top: 43%;
   left: -115%;
-  opacity: 0;
-  -webkit-transition-duration: 1s;
-          transition-duration: 1s;
-  -webkit-transition-property: opacity;
-  transition-property: opacity;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
   color: #ffffff;
@@ -2519,6 +2525,13 @@ textarea::placeholder {
     font-size: 16px;
     letter-spacing: 2.4px;
   }
+}
+.menu-bar__title-text_homepage {
+  opacity: 0;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
 }
 .menu-bar__logo {
   display: -webkit-box;
@@ -2804,6 +2817,8 @@ textarea::placeholder {
   margin-left: -3.6px;
   opacity: 0;
   fill: #299798;
+  -webkit-transition: none;
+  transition: none;
 }
 .intro-nav__dot-vertical circle:nth-child(1) {
   -webkit-animation: navdotvertical1 .8s ease;
@@ -2970,7 +2985,7 @@ textarea::placeholder {
 }
 .ensemble__grid {
   display: grid;
-  grid-template-columns: 480px 250px;
+  grid-template-columns: 480px 520px;
   grid-template-areas: "left-column right-column";
   grid-column-gap: 118px;
   grid-row-gap: 50px;
@@ -3335,6 +3350,9 @@ textarea::placeholder {
     letter-spacing: 5.58px;
   }
 }
+.program-features__years_homepage {
+  opacity: 0;
+}
 .program-features__number {
   position: relative;
   z-index: 0;
@@ -3368,6 +3386,9 @@ textarea::placeholder {
     letter-spacing: 7.2px;
     line-height: 1.3;
   }
+}
+.program-features__international_homepage {
+  opacity: 0;
 }
 .program-features__reports {
   margin-left: 70px;
@@ -3424,6 +3445,9 @@ textarea::placeholder {
             transform: none;
   }
 }
+.program-features__concerts_homepage {
+  opacity: 0;
+}
 .program-features__lessons {
   display: inline-block;
   position: relative;
@@ -3455,6 +3479,9 @@ textarea::placeholder {
     -webkit-transform: none;
             transform: none;
   }
+}
+.program-features__lessons_homepage {
+  opacity: 0;
 }
 .program__collective {
   max-width: 527px;
@@ -4063,6 +4090,7 @@ a.footer__tel span {
   }
 }
 .tutor-box__vacancy {
+  margin-bottom: 27px;
   text-align: right;
   color: #666666;
   font-size: 14px;
@@ -4353,6 +4381,7 @@ a.footer__tel span {
 }
 .link-object {
   position: relative;
+  z-index: 50;
   text-decoration: none;
 }
 .link-object__title {
@@ -5373,12 +5402,20 @@ a.footer__tel span {
     font-size: 18px;
   }
 }
+.box-decor_about-intro {
+  border-color: #d3d3d3;
+  z-index: 5;
+  top: 64px;
+  left: -75.7%;
+}
 .about__age {
   max-width: 800px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin-left: 174px;
   padding: 55px 20px 70px;
+  position: relative;
+  z-index: 10;
   border: 12px solid rgba(255, 255, 255, 0.7);
   text-align: center;
   color: #666666;

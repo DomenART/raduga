@@ -11,19 +11,22 @@ import ScrollMagic from 'scrollmagic';
 
 //Фиксация и стилизация синего блока меню
 let menuBar = document.querySelector('.menu-bar');
-let homepageHeader = document.querySelector('.intro__container');
+let menuBarButton = document.querySelector('.menu-bar-button');
 
-if (homepageHeader) {
-    window.addEventListener('scroll', function() {
-        if ((window.pageYOffset >= homepageHeader.offsetHeight) && (!window.matchMedia('(max-width: 639px)').matches)) {
-            menuBar.classList.add('menu-bar-fixed');  
-        } else {
-            if (!menu.classList.contains('menu-opened')) {
-                menuBar.classList.remove('menu-bar-fixed');
-            }
-        }
-    })
-}
+window.addEventListener('scroll', function() {
+    if ((window.pageYOffset >= 950) && (!window.matchMedia('(max-width: 639px)').matches)) {
+        menuBar.classList.add('menu-bar-fixed');
+        if (!homepage) {
+            menuBarLogo.classList.remove('hidden');
+            menuBarButton.classList.remove('hidden');
+        }  
+    } else {
+        if (!menu.classList.contains('menu-opened')) {
+            menuBar.classList.remove('menu-bar-fixed');         
+        }     
+    }
+})
+
 
 //Взаимодействие с формой
 let forms = document.querySelectorAll('form');
@@ -49,8 +52,6 @@ if (forms) {
         });
     });
 }
-
-
 
 //Отображение блока успешной отправки сообщения формы "Записаться на урок"
 let enrollForm = document.querySelector('#enroll');
@@ -141,6 +142,7 @@ let homepage = document.querySelector('.homepage');
 let menuBarLogo = document.querySelector('.menu-bar__logo');
 
 if (homepage) {
+    
     window.addEventListener('load', function() {
         let introLogo = document.querySelector('.intro__logo');
         let menuBarText = document.querySelector('.menu-bar__title-text');
@@ -177,9 +179,9 @@ if (homepage) {
                     if (window.matchMedia('(max-width: 1199px)').matches) {
                         introMajorDivider.style.animation = '1s slide-up-divider-xsmall forwards';
                     } else {
-                        introMajorDivider.style.animation = '1s slide-up forwards';
+                        introMajorDivider.style.animation = '1s slide-up forwards'; 
                     }
-                    introMajorDivider.addEventListener('animationend', function(){
+                    introMajorDivider.addEventListener('animationend', function() {
                         introMajorDivider.style.animation = '';
                         introMajorDivider.style.opacity = '1';
                     })
@@ -200,7 +202,7 @@ if (homepage) {
             });
         });
     });
-
+  
     //анимации главной
     let ensembleLinks = document.querySelector('.js-ensemble-links');
 
@@ -254,7 +256,7 @@ if (homepage) {
             }
         });
     }
-    
+  
     let programFeatures = document.querySelector('.program-features');
     let programFeaturesYears = document.querySelector('.program-features__years');
     let programFeaturesInternational = document.querySelector('.program-features__international');
@@ -278,7 +280,7 @@ if (homepage) {
             }
         });
     }
-
+    
     // Переключение карт на главной
     let togglerUsman = document.querySelector('.js-toggler-usman');
     let togglerOtradnoe = document.querySelector('.js-toggler-otradnoe');
@@ -293,7 +295,7 @@ if (homepage) {
             togglerUsman.classList.add('toggler-usman-active')
             togglerOtradnoe.classList.remove('toggler-otradnoe-active');
             togglerOtradnoe.classList.add('toggler-otradnoe-unactive');
-        };
+        }
         togglerOtradnoe.onclick = function() {
             mapOtradnoe.hidden = false;
             mapUsman.hidden = true;
@@ -324,12 +326,9 @@ if (window.matchMedia('(max-width: 639px)').matches) {
 
     introContainer.appendChild(menuBarThreshold);
     menuBarThreshold.appendChild(menuBarDivider);
-    introContainer.appendChild(menuBarLogo);
-    
+    introContainer.appendChild(menuBarLogo);  
     programList.parentNode.insertBefore(programList, programIntro);
-
     reviewsSection.appendChild(reviewsViewAll);
-
     footerBottom.appendChild(counterSite);
     
     window.addEventListener('scroll', function() {
@@ -362,7 +361,7 @@ if (canvasHomepage) {
         let controller = new ScrollMagic.Controller();
         var ctx = canvasHomepage.getContext('2d');
         let xDraw, yDraw
-        let tutorsImage = document.querySelector('.ensemble__tutors-image img');
+        let tutorsImage = document.querySelector('.js-ensemble-tutors-image');
         let tutorsImageCoords = getCoords(tutorsImage);
         let programTitle = document.querySelector('.program__title');
         let programTitleCoords = getCoords(programTitle);
@@ -372,7 +371,7 @@ if (canvasHomepage) {
         let programYearsCoords = getCoords(programYears);
         let socialGrid = document.querySelector('.social-grid');
         let socialGridCoords = getCoords(socialGrid);
-        let parentsButton = document.querySelector('.parents .button-more');
+        let parentsButton = document.querySelector('.js-parents-button-more');
         let parentsButtonCoords = getCoords(parentsButton);
 
         ctx.strokeStyle = '#f355b2'
@@ -533,11 +532,13 @@ if (close) {
 }
 
 //закрыть по оверлею
-popup.addEventListener('click', function(event) {
-    if (event.target === popup) {
-        popup.classList.add('hidden');
-    }
-});
+if (popup) {
+    popup.addEventListener('click', function(event) {
+        if (event.target === popup) {
+            popup.classList.add('hidden');
+        }
+    });
+}
 
 
 //адаптация переключателей фотографий

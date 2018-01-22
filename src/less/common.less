@@ -35,8 +35,6 @@ p {
 }
 
 h2 {
-    padding-left: 77px;
-    position: relative;
     margin: 100px 0 40px;
     color: #0d0d0d;
     font-family: @font-alt;
@@ -44,17 +42,6 @@ h2 {
     font-weight: 400;
     line-height: 1.125;
     text-transform: uppercase;
-    &::before {
-        content: '';
-        width: 62px;
-        height: 62px;
-        background-color: #bbddf1;
-        opacity: 0.7;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-    }
 }
 
 h3 {
@@ -756,6 +743,7 @@ button.enroll__submit {
 .btn-more {
     display: inline-block;
     width: 290px;
+    box-sizing: border-box;
     padding: 22px;
     border: 0;
     background-color: #299798;
@@ -781,7 +769,7 @@ button.enroll__submit {
                 transition-property: opacity, right;
             }
         }
-        .button-more__arrow {
+        .btn-more__arrow {
             opacity: 1;
             transform: translate(8px, 1px);
             transition-duration: 0.5s;
@@ -803,12 +791,13 @@ button.enroll__submit {
             transition-property: opacity, right;
         }
     }
-    .button-more__arrow {
+    .btn-more__arrow {
         opacity: 0.5;
         transform: translate(0, 1px);
         transition-duration: 0.5s;
     }
     @media (max-width: @breakpoint-xsmall) {
+        width: 100%;
         font-size: 18px;
         padding: 22px 46px;
         span {
@@ -1287,7 +1276,20 @@ button.enroll__submit {
 }
 
 .section-title {
+    padding-left: 77px;
+    position: relative;
     letter-spacing: 0.7px;
+    &::before {
+        content: '';
+        width: 62px;
+        height: 62px;
+        background-color: #bbddf1;
+        opacity: 0.7;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
     @media (max-width: @breakpoint-xsmall) {
         padding-left: 0;
         &::before {

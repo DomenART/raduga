@@ -224,8 +224,6 @@
     box-shadow: 0 0 0 8px #009696;
     border: 2px solid rgba(51, 170, 171, 0.5);
     background-color: #299798;   
-    transform: scale(0);
-    transition: 0.5s transform;
     @media (max-width: @breakpoint-large) {
         left: 4%;
     }
@@ -238,6 +236,11 @@
         transform: none;
         box-shadow: 0 0 0 4px #009696;
     }
+}
+
+.header-menu_homepage {
+    transform: scale(0);
+    transition: 0.5s transform;
 }
 
 .header-menu-fixed {
@@ -266,12 +269,12 @@
     flex-direction: column;
     align-items: center;
     width: 110px;
-    height: 695px;
+  //  height: 695px;
+    height: auto;
     position: absolute;
     top: 45%;
     left: 9%;
     z-index: 10;
-    opacity: 0;
     overflow: hidden;
     background-color: #243c73;
     transition: height 1s;
@@ -283,6 +286,12 @@
         height: 346px;
         top: 121px;
         left: 15px;
+    }
+}
+
+.menu-bar_homepage {
+    opacity: 0;
+    @media (max-width: @breakpoint-xsmall) {
         opacity: 1;
     }
 }
@@ -363,9 +372,6 @@
     position: absolute;
     top: 43%;
     left: -115%;
-    opacity: 0;
-    transition-duration: 1s;
-    transition-property: opacity;
     transform: rotate(-90deg);
     color: #ffffff;
     font-size: 18px;
@@ -380,6 +386,12 @@
         font-size: 16px;
         letter-spacing: 2.4px;
     }
+}
+
+.menu-bar__title-text_homepage {
+    opacity: 0;
+    transition-duration: 1s;
+    transition-property: opacity;
 }
 
 .menu-bar__logo {
@@ -625,6 +637,7 @@
     margin-left: -3.6px;
     opacity: 0;
     fill: #299798;
+    transition: none;
     circle {
     //    transform: translateY(20px);
         &:nth-child(1) {
@@ -782,7 +795,7 @@
 
 .ensemble__grid {
     display: grid;
-    grid-template-columns: 480px 250px;
+    grid-template-columns: 480px 520px;
     grid-template-areas: "left-column right-column";
     grid-column-gap: 118px;
     grid-row-gap: 50px;
@@ -1111,7 +1124,6 @@
     left: -20px;
     margin-left: 10px;
     margin-bottom: 30px;
- //   opacity: 0;
     color: #463657;
     font-size: 31px;
     font-weight: 400;
@@ -1123,6 +1135,10 @@
         font-size: 24px;
         letter-spacing: 5.58px;
     }
+}
+
+.program-features__years_homepage {
+    opacity: 0;
 }
 
 .program-features__number {
@@ -1155,6 +1171,10 @@
         letter-spacing: 7.2px;
         line-height: 1.3;
     }
+}
+
+.program-features__international_homepage {
+    opacity: 0;
 }
 
 .program-features__reports {
@@ -1209,6 +1229,10 @@
     }
 }
 
+.program-features__concerts_homepage {
+    opacity: 0;
+}
+
 .program-features__lessons {
     display: inline-block;
     position: relative;
@@ -1240,6 +1264,10 @@
             }
         }
     }
+}
+
+.program-features__lessons_homepage {
+    opacity: 0;
 }
 
 .program__collective {
