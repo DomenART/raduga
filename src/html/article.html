@@ -39,7 +39,7 @@
             </div>
             <div class="menu-bar__logo">
                 <svg width="77" height="36">
-                    <use href="#logo" />
+                    <use xlink:href="/img/sprite.svg#logo" />
                 </svg>
             </div>
             <button type="button" class="button-menu menu-bar-button">
@@ -52,21 +52,21 @@
                 <li>
                     <a href="#" aria-label="Страница Вконтакте">
                         <svg class="svg-vkontakte" width="26" height="26">
-                            <use href="#vkontakte" />
+                            <use xlink:href="/img/sprite.svg#vkontakte" />
                         </svg>
                     </a>
                 </li>
                 <li>
                     <a href="#" aria-label="Профиль в инстаграме">
                         <svg class="svg-instagram" width="19" height="19">
-                            <use href="#instagram" />
+                            <use xlink:href="/img/sprite.svg#instagram" />
                         </svg>
                     </a>
                 </li>
                 <li>
                     <a href="#" aria-label="Канал на ютубе">
                         <svg class="svg-youtube" width="20" height="20">
-                            <use href="#youtube" />
+                            <use xlink:href="/img/sprite.svg#youtube" />
                         </svg>
                     </a>
                 </li>
@@ -81,15 +81,15 @@
             <div class="container">
                 <div class="link-control_article control-links">
                     <a href="#" class="link-control link-control_left">
-                        <svg width="38" height="17" class="link-control__arrow">
-                            <use href="#link-arrow-left"/>
+                        <svg width="26" height="17" class="link-control__arrow link-control__arrow_left link-control__arrow_disabled">
+                            <use xlink:href="img/sprite.svg#link-arrow-left"/>
                         </svg>
                         <span>Предыдущая</span>
                     </a>
                     <a href="#" class="link-control link-control_right">
                         <span>Следующая</span>
-                        <svg width="38" height="17" class="link-control__arrow">
-                            <use href="#link-arrow-right"/>
+                        <svg width="26" height="17" class="link-control__arrow link-control__arrow_right">
+                            <use xlink:href="img/sprite.svg#link-arrow-right"/>
                         </svg>
                     </a>
                 </div>
@@ -107,14 +107,14 @@
                         <div class="article__aside">
                             <div class="article__social">
                                 <div class="likes likes_aside">
-                                    <svg width="24" height="21">
-                                        <use href="#like"/> 
+                                    <svg class="like-icon" width="24" height="21">
+                                        <use xlink:href="img/sprite.svg#like"/> 
                                     </svg>
                                     147
                                 </div>
                                 <div class="comments">
-                                    <svg width="28" height="22">
-                                        <use href="#comment"/> 
+                                    <svg class="comment-icon" width="28" height="22">
+                                        <use xlink:href="img/sprite.svg#comment"/> 
                                     </svg>
                                     12
                                 </div>
@@ -182,29 +182,29 @@
                     </div>
                     <div class="article-control__social">
                         <div class="likes likes_control">
-                            <svg width="24" height="21">
-                                <use href="#like"/> 2
+                            <svg width="24" height="21" class="like-icon">
+                                <use xlink:href="img/sprite.svg#like"/>
                             </svg>
                             147
                         </div>
                         <div class="comments">
-                            <svg width="28" height="22">
-                                <use href="#comment"/> 
+                            <svg width="28" height="22" class="comment-icon"> 
+                                <use xlink:href="img/sprite.svg#comment"/> 
                             </svg>
                             12
                         </div>
                     </div>
                     <div class="article-control__neighbors control-links">
                         <a href="#" class="link-control link-control_left">
-                            <svg width="38" height="17" class="link-control__arrow">
-                                <use href="#link-arrow-left"/>
+                            <svg width="26" height="17" class="link-control__arrow link-control__arrow_left">
+                                <use xlink:href="img/sprite.svg#link-arrow-left"/>
                             </svg>
                             <span>Предыдущая</span>
                         </a>
                         <a href="#" class="link-control link-control_right">
                             <span>Следующая</span>
-                            <svg width="38" height="17" class="link-control__arrow">
-                                <use href="#link-arrow-right"/>
+                            <svg width="26" height="17" class="link-control__arrow link-control__arrow_right">
+                                <use xlink:href="img/sprite.svg#link-arrow-right"/>
                             </svg>
                         </a>
                     </div>
@@ -258,7 +258,7 @@
                         <a href="tel:+7 (920)  217-99-64" class="footer__tel">+7 (920)<span>217-99-64</span></a>
                         <a href="#" class="footer__vk">
                             <svg class="footer-vk" width="26" height="26">
-                                <use href="#vkontakte" />
+                                <use href="img/sprite.svg#vkontakte" />
                             </svg>      
                             Мы ВКонтакте
                         </a>
@@ -292,8 +292,8 @@
             </div>
         </footer>    
         <div class="to-top" hidden>
-            <svg class="to-top__arrow" width="18px" height="30px">
-                <use xlink:href="../img/sprite.svg#control"/>
+            <svg class="to-top__arrow to-top-icon" width="18px" height="30px">
+                <use xlink:href="img/sprite.svg#to-top"/>
             </svg>
         </div>
         <script type="text/javascript" src="main.js"></script> 
