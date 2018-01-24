@@ -8,10 +8,10 @@
 // UIkit.use(Icons);
 
 
-import './home.js';
+import './homepage.js';
 import './maps.js';
 import './adaptation.js';
-import './common.js';
+import './totop.js';
 import './maps.js';
 import './menu.js';
 import './photo.js';

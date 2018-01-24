@@ -1,6 +1,7 @@
 import ScrollMagic from 'scrollmagic';
 
 //Включить анимации первого экрана главной
+/*
 var homepage = document.querySelector('.homepage');
 var menuBar = document.querySelector('.menu-bar');
 var menuBarLogo = document.querySelector('.menu-bar__logo');
@@ -281,3 +282,4 @@ if (homepage) {
         }
     }
 }
+*/

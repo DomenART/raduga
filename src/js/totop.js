@@ -2,7 +2,7 @@
 let toTop = document.querySelector('.to-top');
 
 window.addEventListener('scroll', function() {
-    if (window.pageYOffset > 200) {
+    if (window.pageYOffset > document.documentElement.clientHeight) {
         toTop.hidden = false;
     } else {
         toTop.hidden = true;
